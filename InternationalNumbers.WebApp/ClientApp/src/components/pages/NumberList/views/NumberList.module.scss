@@ -1,0 +1,22 @@
+﻿.table {
+    border: 1px solid grey;
+
+    th {
+        background-color: #f2f2f2;
+    }
+}
+
+.cell {
+    border: 1px solid grey;
+
+    &.cellLabel{
+        width: 18em;
+    }
+    &.cellLanguage {
+        width: 14em;
+    }
+    &.cellNumber {
+        width: 3em;
+        text-align: center;
+    }
+}

@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { BasicLayout } from './components/templates/BasicLayout/views/BasicLayout';
 import { Home } from './components/pages/Home/views/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
+import { NumberList } from './components/pages/NumberList/views/NumberList';
 
 import './globals/css/global.css'
 
@@ -14,8 +13,7 @@ export default class App extends Component {
     return (
       <BasicLayout>
         <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
+        <Route path='/number_list' component={NumberList} />
       </BasicLayout>
     );
   }
