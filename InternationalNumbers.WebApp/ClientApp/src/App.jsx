@@ -3,6 +3,7 @@ import { Route } from 'react-router';
 import { BasicLayout } from './components/templates/BasicLayout/views/BasicLayout';
 import { Home } from './components/pages/Home/views/Home';
 import { NumberList } from './components/pages/NumberList/views/NumberList';
+import { NumberQuiz } from './components/pages/NumberQuiz/views/NumberQuiz';
 
 import './globals/css/global.css'
 
@@ -14,6 +15,7 @@ export default class App extends Component {
       <BasicLayout>
         <Route exact path='/' component={Home} />
         <Route path='/number_list' component={NumberList} />
+        <Route path='/number_quiz' component={NumberQuiz} />
       </BasicLayout>
     );
   }

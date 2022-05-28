@@ -1,0 +1,25 @@
+﻿
+.isLastAnswerIncorrect {
+    animation: flashing 0.1s ease;
+    background-color: #ffffff;
+
+    @keyframes flashing {
+        0% {
+            background-color: #ffa0a0;
+        }
+    }
+}
+
+.scoreArea {
+    text-align: right;
+}
+
+.quizSelectionArea {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+    width: 100%;
+    margin-bottom: 16px;
+}
