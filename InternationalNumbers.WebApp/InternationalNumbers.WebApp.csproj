@@ -15,9 +15,22 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\src\assets\images\numbers\arabia\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\src\assets\images\numbers\arabia\**" />
+    <EmbeddedResource Remove="ClientApp\src\assets\images\numbers\arabia\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\src\assets\images\numbers\arabia\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\assets\images\numbers\sanji\" />
+    <Folder Include="ClientApp\src\assets\images\numbers\kanji_old\" />
+    <Folder Include="ClientApp\src\assets\images\numbers\kanji\" />
+    <Folder Include="ClientApp\src\components\atoms\" />
+    <Folder Include="ClientApp\src\components\molecules\" />
+    <Folder Include="ClientApp\src\constants\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
