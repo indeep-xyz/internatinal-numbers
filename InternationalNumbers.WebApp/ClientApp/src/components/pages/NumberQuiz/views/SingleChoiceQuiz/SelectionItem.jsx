@@ -12,36 +12,36 @@ export class SelectionItem extends Component {
     }
 
     renderWhenAnswered() {
-        const { numberItem, numberItemIndex, isBiggestNumber } = this.props;
+        const { quizSelection, quizSelectionIndex, isBiggestNumber } = this.props;
         const classNameForBiggestNumber = isBiggestNumber ? styles.isBiggestNumber : "";
 
         return (
             <div
-                key={numberItemIndex}
+                key={quizSelectionIndex}
                 className={`${styles.quizSelectionItem} ${classNameForBiggestNumber}`}
             >
-                <div className={styles.correctNumber}>{numberItem.numberValue}</div>
-                <div className={styles.numberCharacter}>{numberItem.numberCharacter}</div>
-                <div className={styles.label}>{numberItem.label}</div>
+                <div className={styles.correctNumber}>{quizSelection.numberValue}</div>
+                <div className={styles.numberCharacter}>{quizSelection.numberCharacter}</div>
+                <div className={styles.label}>{quizSelection.label}</div>
             </div>
         );
     }
 
     renderWhenNotAnswered() {
-        const { numberItem, numberItemIndex, answerBiggestNumber, isBiggestNumber, doesViewHint } = this.props;
+        const { quizSelection, quizSelectionIndex, answerBiggestNumber, isBiggestNumber, doesViewHint } = this.props;
 
         return (
             <div
-                key={numberItemIndex}
+                key={quizSelectionIndex}
                 className={styles.quizSelectionItem}
             >
                 <div
                     className={styles.numberCharacter}
                     onClick={() => answerBiggestNumber(isBiggestNumber)}
                 >
-                    {numberItem.numberCharacter}
+                    {quizSelection.numberCharacter}
                 </div>
-                <div className={styles.label}>{doesViewHint ? numberItem.label : null}</div>
+                <div className={styles.label}>{doesViewHint ? quizSelection.label : null}</div>
             </div>
         );
     }

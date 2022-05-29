@@ -16,15 +16,15 @@
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Compile Remove="ClientApp\src\assets\images\numbers\arabia\**" />
-    <Compile Remove="ClientApp\src\helpers\InternationalNumber\constants\numbers\**" />
+    <Compile Remove="ClientApp\src\helpers\NumberDictionary\constants\numbers\**" />
     <Content Remove="$(SpaRoot)**" />
     <Content Remove="ClientApp\src\assets\images\numbers\arabia\**" />
-    <Content Remove="ClientApp\src\helpers\InternationalNumber\constants\numbers\**" />
+    <Content Remove="ClientApp\src\helpers\NumberDictionary\constants\numbers\**" />
     <EmbeddedResource Remove="ClientApp\src\assets\images\numbers\arabia\**" />
-    <EmbeddedResource Remove="ClientApp\src\helpers\InternationalNumber\constants\numbers\**" />
+    <EmbeddedResource Remove="ClientApp\src\helpers\NumberDictionary\constants\numbers\**" />
     <None Remove="$(SpaRoot)**" />
     <None Remove="ClientApp\src\assets\images\numbers\arabia\**" />
-    <None Remove="ClientApp\src\helpers\InternationalNumber\constants\numbers\**" />
+    <None Remove="ClientApp\src\helpers\NumberDictionary\constants\numbers\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import * as styles from './NumberList.module.scss';
-import { InternationalNumberOutputMode } from '../../../../helpers/InternationalNumber/constants/generals';
-import InternationalNumberItemFactory from '../../../../helpers/InternationalNumber/InternationalNumberDefinition/InternationalNumberDefinitionFactory';
+import { NumberQuizMode } from '../../../../helpers/NumberDictionary/constants/generals';
+import NumberDictionaryFactory from '../../../../helpers/NumberDictionary/NumberDictionaryFactory';
 
 export class NumberList extends Component {
     static displayName = NumberList.name;
@@ -13,7 +13,7 @@ export class NumberList extends Component {
     }
 
     render() {
-        const numberItems = InternationalNumberItemFactory.createAll(InternationalNumberOutputMode.Character);
+        const dictionaries = NumberDictionaryFactory.createAll(NumberQuizMode.Character);
 
         const numberCharacters = [];
         for (let i = 0; i < 10; i++) {
@@ -33,17 +33,17 @@ export class NumberList extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {numberItems.map(ni => this.renderRow(ni))}
+                        {dictionaries.map(ni => this.renderRow(ni))}
                     </tbody>
                 </table>
             </div>
         );
     }
 
-    renderRow(numberItem) {
+    renderRow(dictionary) {
         const numberCharacters = [];
         for (let i = 0; i < 10; i++) {
-            const char = numberItem.character[String(i)];
+            const char = dictionary.characters[String(i)];
 
             numberCharacters.push(
                 Array.isArray(char)
@@ -53,9 +53,9 @@ export class NumberList extends Component {
         }
 
         return (
-            <tr key={numberItem.name}>
-                <td className={`${styles.cell} ${styles.cellLabel}`}>{numberItem.label}</td>
-                <td className={`${styles.cell} ${styles.cellLanguage}`}>{numberItem.language}</td>
+            <tr key={dictionary.name}>
+                <td className={`${styles.cell} ${styles.cellLabel}`}>{dictionary.label}</td>
+                <td className={`${styles.cell} ${styles.cellLanguage}`}>{dictionary.language}</td>
                 {numberCharacters.map((nc, index) => <td key={index} className={`${styles.cell} ${styles.cellNumber}`}>{nc}</td>)}
             </tr>
         );

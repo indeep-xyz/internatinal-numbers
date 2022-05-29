@@ -1,6 +1,6 @@
-﻿import * as numberDefinitions from './constants';
+﻿import * as numberDefinitions from './dictionaries';
 
-export default class InternationalNumberDefinition {
+export default class NumberDictionary {
 
     static getNumberNames() {
         return Object.keys(numberDefinitions);
@@ -12,8 +12,10 @@ export default class InternationalNumberDefinition {
         this.name = name;
         this.label = numberDefinition.label;
         this.language = numberDefinition.language;
-        this.character = numberDefinition.character;
+        this.characters = numberDefinition.character;
 
         this.outputMode = outputMode;
     }
+
+
 }
