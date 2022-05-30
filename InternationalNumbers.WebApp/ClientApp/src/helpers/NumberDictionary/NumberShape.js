@@ -48,7 +48,7 @@ export default class NumberShape {
     static reduce(sourceDictionaries) {
         const dictionaryKeys = Object.keys(sourceDictionaries);
 
-        const value = Math.floor(Math.random() * 9);
+        const value = Math.floor(Math.random() * 10);
         const dictionary = sourceDictionaries[dictionaryKeys[Math.floor(Math.random() * dictionaryKeys.length)]];
         const dictionaryShapes = dictionary.shapes[String(value)];
 
