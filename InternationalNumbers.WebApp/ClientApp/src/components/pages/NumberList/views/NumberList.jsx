@@ -46,7 +46,7 @@ export class NumberList extends Component {
             const dictionaryShape = dictionary.shapes[String(i)];
 
             numberShapes.push(
-                dictionaryShape.map(ds => <React.Fragment>{ds}<br /></React.Fragment>)
+                dictionaryShape.map((ds, dsIndex) => <React.Fragment key={dsIndex}>{ds}<br /></React.Fragment>)
             );
         }
 
