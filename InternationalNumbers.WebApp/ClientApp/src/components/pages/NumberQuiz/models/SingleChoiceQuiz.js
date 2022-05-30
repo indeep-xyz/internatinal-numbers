@@ -1,6 +1,6 @@
 ﻿import NumberDictionaryFactory from '../../../../helpers/NumberDictionary/NumberDictionaryFactory';
 import { NumberQuizMode } from '../../../../helpers/NumberDictionary/constants/generals';
-import ReducedNumberDictionary from '../../../../helpers/NumberDictionary/ReducedNumberDictionary';
+import NumberShape from '../../../../helpers/NumberDictionary/NumberShape';
 
 /**
  * 択一型のクイズを表すオブジェクト。
@@ -11,7 +11,7 @@ export class SingleChoiceQuiz {
 
     /**
      * クイズの選択肢。
-     * @member {object}
+     * @member {Array<NumberShape>}
      */
     quizSelections;
 
@@ -32,7 +32,7 @@ export class SingleChoiceQuiz {
      * @param {number} currentScore 現在スコア。この点数によってクイズの選択肢数が変化する
      */
     constructor(currentScore) {
-        this.numberItems = NumberDictionaryFactory.createAll(NumberQuizMode.Character);
+        this.numberItems = NumberDictionaryFactory.createAll(NumberQuizMode.Shape);
 
         this.quizSelections = this.createQuizSelections(currentScore);
         this.isAnswered = false;
@@ -46,7 +46,7 @@ export class SingleChoiceQuiz {
      * @returns {boolean}
      */
     isBiggestNumber(answeredNumberItem) {
-        return this.quizSelections.every(qni => qni.numberValue <= answeredNumberItem.numberValue);
+        return this.quizSelections.every(qni => qni.value <= answeredNumberItem.value);
     }
 
     /**
@@ -60,9 +60,9 @@ export class SingleChoiceQuiz {
 
         let i = 0;
         while (i < numberOfSelections) {
-            const quizSelection = ReducedNumberDictionary.reduce(this.numberItems);
+            const quizSelection = NumberShape.reduce(this.numberItems);
 
-            if (numberItems.find(ni => ni.numberCharacter === quizSelection.numberCharacter) === undefined) {
+            if (numberItems.find(ni => ni.equals(quizSelection)) === undefined) {
                 numberItems.push(quizSelection);
                 i++;
             }
@@ -78,7 +78,7 @@ export class SingleChoiceQuiz {
     isSameNumbersAll() {
         return this
             .quizSelections
-            .every(ni => ni.numberValue === this.quizSelections[0].numberValue);
+            .every(ni => ni.value === this.quizSelections[0].value);
     }
 
     /**

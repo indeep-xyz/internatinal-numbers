@@ -1,3 +1,3 @@
 export const NumberQuizMode = {
-    SingleChoiceCharacter: 1,
+    SingleChoiceShape: 1,
 };

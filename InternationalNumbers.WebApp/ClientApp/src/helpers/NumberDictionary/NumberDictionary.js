@@ -1,18 +1,18 @@
-﻿import * as numberDefinitions from './dictionaries';
+﻿import * as numberDictionaryItems from './constants/dictionarieItems';
 
 export default class NumberDictionary {
 
     static getNumberNames() {
-        return Object.keys(numberDefinitions);
+        return Object.keys(numberDictionaryItems);
     }
 
     constructor(name, outputMode) {
-        const numberDefinition = numberDefinitions[name];
+        const numberDefinition = numberDictionaryItems[name];
 
         this.name = name;
         this.label = numberDefinition.label;
         this.language = numberDefinition.language;
-        this.characters = numberDefinition.character;
+        this.shapes = numberDefinition.shapes;
 
         this.outputMode = outputMode;
     }

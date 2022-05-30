@@ -20,9 +20,9 @@ export class SelectionItem extends Component {
                 key={quizSelectionIndex}
                 className={`${styles.quizSelectionItem} ${classNameForBiggestNumber}`}
             >
-                <div className={styles.correctNumber}>{quizSelection.numberValue}</div>
-                <div className={styles.numberCharacter}>{quizSelection.numberCharacter}</div>
-                <div className={styles.label}>{quizSelection.label}</div>
+                <div className={styles.numberValue}>{quizSelection.value}</div>
+                <div className={styles.numberShape}>{quizSelection.shape}</div>
+                <div className={styles.label}>{quizSelection.dictionary.label}</div>
             </div>
         );
     }
@@ -36,12 +36,12 @@ export class SelectionItem extends Component {
                 className={styles.quizSelectionItem}
             >
                 <div
-                    className={styles.numberCharacter}
+                    className={styles.numberShape}
                     onClick={() => answerBiggestNumber(isBiggestNumber)}
                 >
-                    {quizSelection.numberCharacter}
+                    {quizSelection.shape}
                 </div>
-                <div className={styles.label}>{doesViewHint ? quizSelection.label : null}</div>
+                <div className={styles.label}>{doesViewHint ? quizSelection.dictionary.label : null}</div>
             </div>
         );
     }
