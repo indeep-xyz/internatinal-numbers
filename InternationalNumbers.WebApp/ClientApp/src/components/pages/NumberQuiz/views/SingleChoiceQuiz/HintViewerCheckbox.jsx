@@ -6,7 +6,11 @@ export class HintViewerCheckbox extends Component {
     static displayName = HintViewerCheckbox.name;
 
     render() {
-        const { doesViewHint } = this.props;
+        const { doesViewHint, isAnswered } = this.props;
+
+        if (isAnswered) {
+            return <React.Fragment />;
+        }
 
         return (
             <div className={styles.wrapper}>

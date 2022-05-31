@@ -30,6 +30,7 @@ export class SingleChoiceQuizArea extends Component {
                 <div className={styles.hintOperatorArea}>
                     <HintViewerCheckbox
                         doesViewHint={quiz.doesViewHint}
+                        isAnswered={quiz.isAnswered}
                         updateHintMode={this.props.updateHintMode}
                     />
                 </div>
