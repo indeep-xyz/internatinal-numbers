@@ -36,12 +36,21 @@ export class Expression {
     }
 
     /**
+     * 計算式に引き算を含むか否か。
+     * @returns {boolean} 計算式に引き算を含む場合true
+     */
+    hasSubtraction() {
+        return this.expressionParts.includes("-");
+    }
+
+    /**
      * 計算式の初期化を行う。
      * 
      */
     createCalculationFormula() {
         let expressionParts = [this.getRandomNumber()];
 
+        // 計算式の組み立て (桁数は maxResultDigits 未満)
         while (true) {
             const operator = this.createOperator();
             const value = Math.floor(Math.random() * 10);

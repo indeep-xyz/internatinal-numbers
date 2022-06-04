@@ -80,6 +80,12 @@ export class CalculationResultChoiceQuiz {
             const quizSelection = NumberShape.reduce(this.numberItems);
 
             if (numberItems.find(ni => ni.equals(quizSelection)) === undefined) {
+                if (this.expression.hasSubtraction()
+                    && Math.floor(Math.random() * 2) === 0) {
+                    // 演算子に引き算が含まれる場合、ランダムで負数化
+                    quizSelection.invertNumberValue();
+                }
+
                 numberItems.push(quizSelection);
                 i++;
             }

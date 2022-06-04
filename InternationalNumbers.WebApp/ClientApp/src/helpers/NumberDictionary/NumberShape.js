@@ -41,6 +41,14 @@ export default class NumberShape {
     }
 
     /**
+     * 数が表す値をネガポジ変換する。
+     * @returns {void}
+     */
+    invertNumberValue() {
+        return this.value = -this.value;
+    }
+
+    /**
      * コンストラクタ。
      * @param {Array<NumberDictionary>} sourceDictionaries 辞書データ。言語等の縛りがある場合は事前に取り除いておく
      * @returns {NumberShape}

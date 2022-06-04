@@ -12,8 +12,6 @@ export class CalculationResultChoiceQuizArea extends Component {
     render() {
         const { quiz } = this.props;
 
-
-        //return <div />;
         return (
             <div className={styles.wrapper}>
                 <div className={styles.quizQuestionArea}>
@@ -50,7 +48,7 @@ export class CalculationResultChoiceQuizArea extends Component {
                         ))}
                     </div>
                     <div className={styles.notification}>
-                        ※負数は赤色になります。
+                        ※負数は白黒反転になります。
                     </div>
                 </div>
 
