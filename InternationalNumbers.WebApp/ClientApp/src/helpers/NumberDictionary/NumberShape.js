@@ -46,11 +46,20 @@ export default class NumberShape {
      * @returns {NumberShape}
      */
     static reduce(sourceDictionaries) {
-        const dictionaryKeys = Object.keys(sourceDictionaries);
-
         const value = Math.floor(Math.random() * 10);
+        return NumberShape.reduceWithNumber(sourceDictionaries, value);
+    }
+
+    /**
+     * コンストラクタ。
+     * @param {Array<NumberDictionary>} sourceDictionaries 辞書データ。言語等の縛りがある場合は事前に取り除いておく
+     * @param {number} value 数の値
+     * @returns {NumberShape}
+     */
+    static reduceWithNumber(sourceDictionaries, value) {
+        const dictionaryKeys = Object.keys(sourceDictionaries);
         const dictionary = sourceDictionaries[dictionaryKeys[Math.floor(Math.random() * dictionaryKeys.length)]];
-        const dictionaryShapes = dictionary.shapes[String(value)];
+        const dictionaryShapes = dictionary.shapes[String(Math.abs(value))];
 
         const shape = Array.isArray(dictionaryShapes)
             ? dictionaryShapes[Math.floor(Math.random() * dictionaryShapes.length)]

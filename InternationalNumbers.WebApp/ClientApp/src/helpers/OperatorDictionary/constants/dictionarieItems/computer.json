@@ -1,0 +1,12 @@
+﻿{
+  "name": "computer",
+  "label": "コンピュータ",
+  "language": "Computer",
+  "isWord":  false,
+  "shapes": {
+    "+": [ "+" ],
+    "-": [ "-" ],
+    "*": [ "*" ],
+    "/": [ "/" ]
+  }
+}

@@ -1,4 +1,5 @@
-﻿import { SingleChoiceQuiz } from './SingleChoiceQuiz';
+﻿import { SingleChoiceQuiz } from './SingleChoiceQuiz/SingleChoiceQuiz';
+import { CalculationResultChoiceQuiz } from './CalculationResultChoiceQuiz/CalculationResultChoiceQuiz';
 
 /**
  * クイズゲームの経過情報を保持する。
@@ -53,7 +54,15 @@ export class GameState {
      * 出題中のクイズを更新する。
      */
     nextQuiz = () => {
-        this.quiz = new SingleChoiceQuiz(this.score);
+        switch (Math.floor(Math.random() * 2)) {
+            case 0:
+                this.quiz = new SingleChoiceQuiz(this.score);
+                break;
+
+            case 1:
+                this.quiz = new CalculationResultChoiceQuiz(this.score);
+                break;
+        }
     }
 
     /**
@@ -82,6 +91,31 @@ export class GameState {
     }
 
     /**
+     * 標準的な回答の判定。
+     * @param {boolean} isCorrect 回答が正解か否か
+     * @returns {void}
+     */
+    answerGenerally = (isCorrect) => {
+        let { score } = this;
+        let isLastAnswerCorrect = false;
+        let isLastAnswerIncorrect = false;
+
+        if (isCorrect) {
+            score += this.quiz.getScoreGenerally();
+            isLastAnswerCorrect = true;
+        } else {
+            score = 0;
+            isLastAnswerIncorrect = true;
+        }
+
+        this.quiz.isAnswered = true;
+        this.answerdCount++;
+        this.score = score;
+        this.isLastAnswerCorrect = isLastAnswerCorrect;
+        this.isLastAnswerIncorrect = isLastAnswerIncorrect;
+    }
+
+    /**
      * すべての値が同じであるとする形での回答を行う。
      * @returns {void}
      */
@@ -92,6 +126,31 @@ export class GameState {
 
         if (this.quiz.isSameNumbersAll()) {
             score += this.quiz.getScoreWhenAnsweredSameNumbers();
+            isLastAnswerCorrect = true;
+        } else {
+            score = 0;
+            isLastAnswerIncorrect = true;
+        }
+
+        this.quiz.isAnswered = true;
+        this.answerdCount++;
+        this.score = score;
+        this.isLastAnswerCorrect = isLastAnswerCorrect;
+        this.isLastAnswerIncorrect = isLastAnswerIncorrect;
+    }
+
+    /**
+     * 特別な回答の判定。
+     * @param {boolean} isCorrect 回答が正解か否か
+     * @returns {void}
+     */
+    answerSpecially = (isCorrect) => {
+        let { score } = this;
+        let isLastAnswerCorrect = false;
+        let isLastAnswerIncorrect = false;
+
+        if (isCorrect) {
+            score += this.quiz.getScoreSpecially();
             isLastAnswerCorrect = true;
         } else {
             score = 0;

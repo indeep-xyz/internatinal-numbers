@@ -4,7 +4,9 @@ import * as styles from './NumberQuiz.module.scss';
 import { NextQuizButton } from './NextQuizButton';
 import { GameState } from '../models/GameState';
 import { SingleChoiceQuizArea } from './SingleChoiceQuiz/SingleChoiceQuizArea';
-import { SingleChoiceQuiz } from '../models/SingleChoiceQuiz';
+import { SingleChoiceQuiz } from '../models/SingleChoiceQuiz/SingleChoiceQuiz';
+import { CalculationResultChoiceQuiz } from '../models/CalculationResultChoiceQuiz/CalculationResultChoiceQuiz';
+import { CalculationResultChoiceQuizArea } from './CalculationResultChoiceQuiz/CalculationResultChoiceQuizArea';
 
 export class NumberQuiz extends Component {
     static displayName = NumberQuiz.name;
@@ -51,6 +53,15 @@ export class NumberQuiz extends Component {
                 answerSameNumbers={this.answerSameNumbers}
             />;
         }
+
+        if (gameState.quiz instanceof CalculationResultChoiceQuiz) {
+            return <CalculationResultChoiceQuizArea
+                quiz={gameState.quiz}
+                updateHintMode={this.updateHintMode}
+                answerGenerally={this.answerGenerally}
+                answerSpecially={this.answerSpecially}
+            />;
+        }
     }
 
     initializeQuiz = () => {
@@ -63,9 +74,19 @@ export class NumberQuiz extends Component {
         this.setState({ ...this.state });
     }
 
+    answerGenerally = (isCorrect) => {
+        this.state.game.answerGenerally(isCorrect);
+        this.setState({ ...this.state });
+    }
+
 
     answerSameNumbers = (isBiggestNumber) => {
         this.state.game.answerSameNumbers(isBiggestNumber);
+        this.setState({ ...this.state });
+    }
+
+    answerSpecially = (isCorrect) => {
+        this.state.game.answerSpecially(isCorrect);
         this.setState({ ...this.state });
     }
 

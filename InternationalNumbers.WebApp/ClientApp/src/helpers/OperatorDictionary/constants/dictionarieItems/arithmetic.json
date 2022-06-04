@@ -1,0 +1,12 @@
+﻿{
+  "name": "arithmetic",
+  "label": "算術",
+  "language": "Arithmetic",
+  "isWord": false,
+  "shapes": {
+    "+": [ "＋" ],
+    "-": [ "－" ],
+    "*": [ "×" ],
+    "/": [ "÷", "／" ]
+  }
+}

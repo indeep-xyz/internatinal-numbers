@@ -1,0 +1,58 @@
+﻿.container {
+    /* 配置 */
+    position: relative;
+    display: inline-block;
+    /* 外装 */
+    height: 100%;
+    user-select: none;
+    /* 内装 */
+    text-align: center;
+
+    .readableShape {
+        /* 配置 */
+        position: absolute;
+        left: 1em;
+        top: 15%;
+        /* 外装 */
+        padding: 4px;
+        background-color: #fff0f0;
+        /* 内装 */
+        font-size: 16px;
+    }
+
+    .internationalShape {
+        /* 配置 */
+        margin-bottom: -30px;
+        /* 外装 */
+        letter-spacing: -0.1em;
+        /* 内装 */
+        font-size: 130px;
+    }
+
+    .label {
+        /* 配置 */
+        position: absolute;
+        /* 外装 */
+        bottom: 0;
+        background-color: #e8e8e8;
+        padding: 2px;
+        word-break: keep-all;
+        /* 内装 */
+        font-size: 8px;
+    }
+
+    .binaryOperatorShape {
+        /* 配置 */
+        margin-left: 8px;
+        /* 外装 */
+        /* 内装 */
+        font-size: 130px;
+    }
+
+    .calculationOperatorShape {
+        /* 外装 */
+        /* 内装 */
+        font-size: 130px;
+        color: #ff0000;
+    }
+}

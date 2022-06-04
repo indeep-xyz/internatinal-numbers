@@ -1,9 +1,9 @@
-﻿import NumberDictionaryFactory from '../../../../helpers/NumberDictionary/NumberDictionaryFactory';
-import { NumberQuizMode } from '../../../../helpers/NumberDictionary/constants/generals';
-import NumberShape from '../../../../helpers/NumberDictionary/NumberShape';
+﻿import NumberDictionaryFactory from '../../../../../helpers/NumberDictionary/NumberDictionaryFactory';
+import { NumberQuizMode } from '../../../../../helpers/NumberDictionary/constants/generals';
+import NumberShape from '../../../../../helpers/NumberDictionary/NumberShape';
 
 /**
- * 択一型のクイズを表すオブジェクト。
+ * 何らかの条件を満たす値を択一選択させるクイズを表すオブジェクト。
  * 
  * @class
  */

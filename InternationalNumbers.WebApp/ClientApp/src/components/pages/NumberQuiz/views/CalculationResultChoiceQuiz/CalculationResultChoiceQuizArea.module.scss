@@ -1,0 +1,27 @@
+﻿.wrapper{
+
+}
+
+.quizQuestionArea {
+    align-items: center;
+    border: 1px solid grey;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 0 32px;
+}
+
+.quizSelectionAreaWrapper {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.quizSelectionArea {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+}
+
+.wrapper {
+}
