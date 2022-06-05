@@ -65,15 +65,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\abjad.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_eastern_presian.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_eastern_urdu.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_mideast.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_western.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\armenian.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\bengali.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\burmese.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\cyrillic.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\devanagari.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\ge_ez.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\glagolitic.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\greek_modern.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\gujarati.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\gurmukhi.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\hangul_native.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\hangul_sino.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\hebrew.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\kanji_japanese_complex.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\kanji_simple.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\kannada.ts" />
@@ -85,11 +94,16 @@
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\odia.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\osmanya.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\persian.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\roman.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\sinhala_archaic.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\sinhala_astrological.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\suzhou.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\tai_new_lue.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\tamil.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\telugu.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\thai.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\tibetan.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\vietnamese.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\arithmetic.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\computer.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\deutsch.ts" />
@@ -113,6 +127,27 @@
   <ItemGroup>
     <None Update="ClientApp\src\components\pages\NumberQuiz\views\CalculationResultChoiceQuiz\QuestionItem.module.scss">
       <DependentUpon>QuestionItem.jsx</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\hangul_sino.js.map">
+      <DependentUpon>hangul_sino.js</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\vietnamese.js">
+      <DependentUpon>vietnamese.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\suzhou.js.map">
+      <DependentUpon>suzhou.js</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\cyrillic.js">
+      <DependentUpon>cyrillic.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\greek_modern.js.map">
+      <DependentUpon>greek_modern.js</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\glagolitic.js">
+      <DependentUpon>glagolitic.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\roman.js.map">
+      <DependentUpon>roman.js</DependentUpon>
     </None>
     <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberSymbolFaceFactory.js.map">
       <DependentUpon>NumberSymbolFaceFactory.js</DependentUpon>

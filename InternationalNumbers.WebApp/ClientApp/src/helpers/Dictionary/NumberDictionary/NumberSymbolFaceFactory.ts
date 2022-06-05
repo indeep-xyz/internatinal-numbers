@@ -35,8 +35,17 @@ export class NumberSymbolFaceFactory {
         sourceDictionaries: NumberDictionaryType.SymbolDictionarySourceMap,
         value: number
     ): NumberSymbolFace {
-        const dictionary = ObjectMapExtractHelper.takeOne<NumberDictionaryType.SymbolDictionarySource>(sourceDictionaries);
-        const dictionaryShapes = dictionary.shapeMap[String(Math.abs(value))];
+        let dictionary: NumberDictionaryType.SymbolDictionarySource;
+        let dictionaryShapes : string[];
+
+        while (true) {
+            dictionary = ObjectMapExtractHelper.takeOne<NumberDictionaryType.SymbolDictionarySource>(sourceDictionaries);
+            dictionaryShapes = dictionary.shapeMap[String(Math.abs(value))];
+
+            if (dictionaryShapes.length > 0) {
+                break;
+            }
+        }
 
         return new NumberSymbolFace(
             dictionary,

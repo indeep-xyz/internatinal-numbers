@@ -29,8 +29,15 @@ var NumberSymbolFaceFactory = /** @class */ (function () {
      * @returns
      */
     NumberSymbolFaceFactory.randomShape = function (sourceDictionaries, value) {
-        var dictionary = ObjectMapExtractHelper_1.ObjectMapExtractHelper.takeOne(sourceDictionaries);
-        var dictionaryShapes = dictionary.shapeMap[String(Math.abs(value))];
+        var dictionary;
+        var dictionaryShapes;
+        while (true) {
+            dictionary = ObjectMapExtractHelper_1.ObjectMapExtractHelper.takeOne(sourceDictionaries);
+            dictionaryShapes = dictionary.shapeMap[String(Math.abs(value))];
+            if (dictionaryShapes.length > 0) {
+                break;
+            }
+        }
         return new NumberSymbolFace_1.NumberSymbolFace(dictionary, value, ArrayExtractHelper_1.ArrayExtractHelper.takeOne(dictionaryShapes));
     };
     return NumberSymbolFaceFactory;

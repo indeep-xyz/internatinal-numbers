@@ -22,6 +22,8 @@ export class NumberSymbolDictionary {
     ) {
         const ds: NumberDictionaryType.SymbolDictionarySource = DictionarySourceMap[name];
 
+        console.log(ds, name, DictionarySourceMap);
+
         this.name = name;
         this.label = ds.label;
         this.language = ds.language;
