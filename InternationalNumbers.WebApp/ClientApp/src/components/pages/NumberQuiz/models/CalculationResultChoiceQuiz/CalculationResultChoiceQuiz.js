@@ -1,10 +1,10 @@
-﻿import NumberDictionaryFactory from '../../../../../helpers/NumberDictionary/NumberDictionaryFactory';
+﻿import { NumberDictionaryFactory } from '../../../../../helpers/NumberDictionary/NumberDictionaryFactory';
 import { NumberQuizMode } from '../../../../../helpers/NumberDictionary/constants/generals';
-import NumberShape from '../../../../../helpers/NumberDictionary/NumberShape';
+import { NumberShape } from '../../../../../helpers/NumberDictionary/NumberShape';
 import { Expression } from './Expression';
-import OperatorShape from '../../../../../helpers/OperatorDictionary/OperatorShape';
-import OperatorDictionaryFactory from '../../../../../helpers/OperatorDictionary/OperatorDictionaryFactory';
-import ArraySortHelper from '../../../../../helpers/Array/ArraySortHelper';
+import { OperatorShape } from '../../../../../helpers/OperatorDictionary/OperatorShape';
+import { OperatorDictionaryFactory } from '../../../../../helpers/OperatorDictionary/OperatorDictionaryFactory';
+import { ArraySortHelper } from '../../../../../helpers/Array/ArraySortHelper.ts';
 
 /**
  * 計算結果を択一選択させるクイズを表すオブジェクト。

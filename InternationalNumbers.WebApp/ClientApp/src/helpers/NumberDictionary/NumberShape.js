@@ -1,78 +1,58 @@
-﻿/**
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NumberShape = void 0;
+var ObjectMapExtractHelper_1 = require("../Object/ObjectMapExtractHelper");
+var ArrayExtractHelper_1 = require("../Array/ArrayExtractHelper");
+/**
  * 単一の文字形ベースの情報に絞った数字データ。
  */
-export default class NumberShape {
-
-    /**
-     * 数が表す値。
-     * @member {Array<string>}
-     */
-    value;
-
-    /**
-     * 文字形。
-     * @member {string}
-     */
-    shape;
-
+var NumberShape = /** @class */ (function () {
     /**
      * コンストラクタ。
-     * @param {NumberDictionary} sourceDictionary 辞書データ
-     * @param {number} value 数の値
-     * @param {string} shape 文字形
+     * @param sourceDictionary 辞書データ
+     * @param value 数の値
+     * @param shape 文字形
      */
-    constructor(
-        sourceDictionary,
-        value,
-        shape,
-    ) {
+    function NumberShape(sourceDictionary, value, shape) {
         this.dictionary = sourceDictionary;
         this.value = value;
         this.shape = shape;
     }
-
     /**
      * 同値比較。
-     * @param {NumberShape} another 判定対象データ
-     * @returns {boolean} 同値ならtrue
+     * @param another 判定対象データ
+     * @returns 同値ならtrue
      */
-    equals(another) {
+    NumberShape.prototype.equals = function (another) {
         return this.shape === another.shape;
-    }
-
+    };
     /**
      * 数が表す値をネガポジ変換する。
-     * @returns {void}
      */
-    invertNumberValue() {
+    NumberShape.prototype.invertNumberValue = function () {
         return this.value = -this.value;
-    }
-
+    };
     /**
      * コンストラクタ。
-     * @param {Array<NumberDictionary>} sourceDictionaries 辞書データ。言語等の縛りがある場合は事前に取り除いておく
-     * @returns {NumberShape}
+     * @param sourceDictionaries 辞書データ。言語等の縛りがある場合は事前に取り除いておく
+     * @returns
      */
-    static reduce(sourceDictionaries) {
-        const value = Math.floor(Math.random() * 10);
+    NumberShape.reduce = function (sourceDictionaries) {
+        var value = Math.floor(Math.random() * 10);
         return NumberShape.reduceWithNumber(sourceDictionaries, value);
-    }
-
+    };
     /**
      * コンストラクタ。
-     * @param {Array<NumberDictionary>} sourceDictionaries 辞書データ。言語等の縛りがある場合は事前に取り除いておく
-     * @param {number} value 数の値
-     * @returns {NumberShape}
+     * @param sourceDictionaries 辞書データ。言語等の縛りがある場合は事前に取り除いておく
+     * @param value 数の値
+     * @returns
      */
-    static reduceWithNumber(sourceDictionaries, value) {
-        const dictionaryKeys = Object.keys(sourceDictionaries);
-        const dictionary = sourceDictionaries[dictionaryKeys[Math.floor(Math.random() * dictionaryKeys.length)]];
-        const dictionaryShapes = dictionary.shapes[String(Math.abs(value))];
-
-        const shape = Array.isArray(dictionaryShapes)
-            ? dictionaryShapes[Math.floor(Math.random() * dictionaryShapes.length)]
-            : dictionaryShapes;
-
-        return new NumberShape(dictionary, value, shape);
-    }
-}
+    NumberShape.reduceWithNumber = function (sourceDictionaries, value) {
+        var dictionary = ObjectMapExtractHelper_1.ObjectMapExtractHelper.takeOne(sourceDictionaries);
+        var dictionaryShapes = dictionary.shapes[String(Math.abs(value))];
+        return new NumberShape(dictionary, value, ArrayExtractHelper_1.ArrayExtractHelper.takeOne(dictionaryShapes));
+    };
+    return NumberShape;
+}());
+exports.NumberShape = NumberShape;
+//# sourceMappingURL=NumberShape.js.map

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import * as styles from './NumberList.module.scss';
 import { NumberQuizMode } from '../../../../helpers/NumberDictionary/constants/generals';
-import NumberDictionaryFactory from '../../../../helpers/NumberDictionary/NumberDictionaryFactory';
+import { NumberDictionaryFactory } from '../../../../helpers/NumberDictionary/NumberDictionaryFactory';
 
 export class NumberList extends Component {
     static displayName = NumberList.name;

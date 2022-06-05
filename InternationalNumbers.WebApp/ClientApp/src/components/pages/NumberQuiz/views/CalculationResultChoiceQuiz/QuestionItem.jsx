@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 
 import * as styles from './QuestionItem.module.scss';
-import NumberShape from '../../../../../helpers/NumberDictionary/NumberShape';
+import { NumberShape } from '../../../../../helpers/NumberDictionary/NumberShape';
 
 export class QuestionItem extends Component {
     static displayName = QuestionItem.name;

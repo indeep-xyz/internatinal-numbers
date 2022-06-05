@@ -11,6 +11,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.5" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.7.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -29,12 +33,77 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\App.jsx" />
+    <None Remove="ClientApp\src\helpers\Array\ArrayExtractHelper.ts" />
+    <None Remove="ClientApp\src\helpers\Array\ArraySortHelper.ts" />
+    <None Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\index.d.ts" />
+    <None Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\index.ts" />
+    <None Remove="ClientApp\src\helpers\NumberDictionary\NumberDictionary.ts" />
+    <None Remove="ClientApp\src\helpers\NumberDictionary\NumberDictionaryFactory.ts" />
+    <None Remove="ClientApp\src\helpers\NumberDictionary\NumberShape.ts" />
+    <None Remove="ClientApp\src\helpers\NumberDictionary\types\NumberDictionaryType.ts" />
+    <None Remove="ClientApp\src\helpers\Object\ObjectMapExtractHelper.ts" />
+    <None Remove="ClientApp\src\helpers\OperatorDictionary\constants\dictionarieItems\index.d.ts" />
+    <None Remove="ClientApp\src\helpers\OperatorDictionary\constants\dictionarieItems\index.ts" />
+    <None Remove="ClientApp\src\helpers\OperatorDictionary\OperatorDictionary.ts" />
+    <None Remove="ClientApp\src\helpers\OperatorDictionary\OperatorDictionaryFactory.ts" />
+    <None Remove="ClientApp\src\helpers\OperatorDictionary\OperatorShape.ts" />
+    <None Remove="ClientApp\src\helpers\OperatorDictionary\types\OperatorDictionaryType.ts" />
+    <None Remove="ClientApp\src\types\ArithmeticType.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\arabic_eastern_presian.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\arabic_eastern_urdu.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\arabic_mideast.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\arabic_western.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\bengali.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\burmese.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\devanagari.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\gujarati.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\gurmukhi.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\kanji_japanese_complex.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\kanji_simple.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\kannada.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\khmer.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\lao.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\malayalam.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\mongolian.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\n_ko.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\odia.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\osmanya.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\persian.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\tai_new_lue.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\tamil.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\telugu.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\thai.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\tibetan.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\OperatorDictionary\constants\dictionarieItems\arithmetic.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\OperatorDictionary\constants\dictionarieItems\computer.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\OperatorDictionary\constants\dictionarieItems\deutsch.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\OperatorDictionary\constants\dictionarieItems\japanese.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ClientApp\src\assets\images\numbers\sanji\" />
     <Folder Include="ClientApp\src\assets\images\numbers\kanji_old\" />
     <Folder Include="ClientApp\src\assets\images\numbers\kanji\" />
     <Folder Include="ClientApp\src\components\atoms\" />
     <Folder Include="ClientApp\src\components\molecules\" />
-    <Folder Include="ClientApp\src\constants\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\App.jsx" />
+    <TypeScriptCompile Include="ClientApp\src\helpers\Array\ArraySortHelper.ts" />
+    <TypeScriptCompile Include="ClientApp\src\helpers\NumberDictionary\NumberDictionary.ts" />
+    <TypeScriptCompile Include="ClientApp\src\helpers\NumberDictionary\NumberDictionaryFactory.ts" />
+    <TypeScriptCompile Include="ClientApp\src\helpers\NumberDictionary\NumberShape.ts" />
+    <TypeScriptCompile Include="ClientApp\src\helpers\NumberDictionary\types\NumberDictionaryType.ts" />
+    <TypeScriptCompile Include="ClientApp\src\helpers\OperatorDictionary\types\OperatorDictionaryType.ts" />
+    <TypeScriptCompile Include="ClientApp\src\types\ArithmeticType.ts" />
+    <TypeScriptCompile Include="ClientApp\src\helpers\OperatorDictionary\OperatorDictionary.ts" />
+    <TypeScriptCompile Include="ClientApp\src\helpers\OperatorDictionary\OperatorDictionaryFactory.ts" />
+    <TypeScriptCompile Include="ClientApp\src\helpers\OperatorDictionary\OperatorShape.ts" />
   </ItemGroup>
 
   <ItemGroup>
