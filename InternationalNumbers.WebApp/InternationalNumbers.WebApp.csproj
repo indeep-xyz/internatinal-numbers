@@ -20,15 +20,15 @@
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Compile Remove="ClientApp\src\assets\images\numbers\arabia\**" />
-    <Compile Remove="ClientApp\src\helpers\NumberDictionary\constants\numbers\**" />
+    <Compile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\numbers\**" />
     <Content Remove="$(SpaRoot)**" />
     <Content Remove="ClientApp\src\assets\images\numbers\arabia\**" />
-    <Content Remove="ClientApp\src\helpers\NumberDictionary\constants\numbers\**" />
+    <Content Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\numbers\**" />
     <EmbeddedResource Remove="ClientApp\src\assets\images\numbers\arabia\**" />
-    <EmbeddedResource Remove="ClientApp\src\helpers\NumberDictionary\constants\numbers\**" />
+    <EmbeddedResource Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\numbers\**" />
     <None Remove="$(SpaRoot)**" />
     <None Remove="ClientApp\src\assets\images\numbers\arabia\**" />
-    <None Remove="ClientApp\src\helpers\NumberDictionary\constants\numbers\**" />
+    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\numbers\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
@@ -36,52 +36,64 @@
     <None Remove="ClientApp\src\App.jsx" />
     <None Remove="ClientApp\src\helpers\Array\ArrayExtractHelper.ts" />
     <None Remove="ClientApp\src\helpers\Array\ArraySortHelper.ts" />
-    <None Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\index.d.ts" />
-    <None Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\index.ts" />
-    <None Remove="ClientApp\src\helpers\NumberDictionary\NumberDictionary.ts" />
-    <None Remove="ClientApp\src\helpers\NumberDictionary\NumberDictionaryFactory.ts" />
-    <None Remove="ClientApp\src\helpers\NumberDictionary\NumberShape.ts" />
-    <None Remove="ClientApp\src\helpers\NumberDictionary\types\NumberDictionaryType.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\index.d.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\index.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\interfaces\NumberFaceInterface.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberDictionary.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberDictionaryFactory.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberShape.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberSymbolDictionary.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberSymbolDictionaryFactory.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberSymbolFace.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberSymbolFaceFactory.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\types\NumberDictionaryType.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\interfaces\OperatorFaceInterface.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolFaceFactory.ts" />
     <None Remove="ClientApp\src\helpers\Object\ObjectMapExtractHelper.ts" />
-    <None Remove="ClientApp\src\helpers\OperatorDictionary\constants\dictionarieItems\index.d.ts" />
-    <None Remove="ClientApp\src\helpers\OperatorDictionary\constants\dictionarieItems\index.ts" />
-    <None Remove="ClientApp\src\helpers\OperatorDictionary\OperatorDictionary.ts" />
-    <None Remove="ClientApp\src\helpers\OperatorDictionary\OperatorDictionaryFactory.ts" />
-    <None Remove="ClientApp\src\helpers\OperatorDictionary\OperatorShape.ts" />
-    <None Remove="ClientApp\src\helpers\OperatorDictionary\types\OperatorDictionaryType.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\index.d.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\index.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\words\index.d.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\words\index.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorDictionary.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorDictionaryFactory.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorShape.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolDictionary.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolDictionaryFactory.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolFace.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\types\OperatorDictionaryType.ts" />
     <None Remove="ClientApp\src\types\ArithmeticType.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\arabic_eastern_presian.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\arabic_eastern_urdu.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\arabic_mideast.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\arabic_western.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\bengali.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\burmese.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\devanagari.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\gujarati.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\gurmukhi.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\kanji_japanese_complex.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\kanji_simple.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\kannada.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\khmer.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\lao.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\malayalam.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\mongolian.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\n_ko.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\odia.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\osmanya.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\persian.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\tai_new_lue.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\tamil.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\telugu.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\thai.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\NumberDictionary\constants\dictionarieItems\tibetan.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\OperatorDictionary\constants\dictionarieItems\arithmetic.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\OperatorDictionary\constants\dictionarieItems\computer.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\OperatorDictionary\constants\dictionarieItems\deutsch.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\OperatorDictionary\constants\dictionarieItems\japanese.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_eastern_presian.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_eastern_urdu.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_mideast.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_western.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\bengali.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\burmese.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\devanagari.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\gujarati.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\gurmukhi.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\kanji_japanese_complex.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\kanji_simple.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\kannada.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\khmer.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\lao.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\malayalam.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\mongolian.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\n_ko.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\odia.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\osmanya.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\persian.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\tai_new_lue.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\tamil.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\telugu.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\thai.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\tibetan.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\arithmetic.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\computer.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\deutsch.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\words\japanese.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -95,20 +107,18 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\App.jsx" />
     <TypeScriptCompile Include="ClientApp\src\helpers\Array\ArraySortHelper.ts" />
-    <TypeScriptCompile Include="ClientApp\src\helpers\NumberDictionary\NumberDictionary.ts" />
-    <TypeScriptCompile Include="ClientApp\src\helpers\NumberDictionary\NumberDictionaryFactory.ts" />
-    <TypeScriptCompile Include="ClientApp\src\helpers\NumberDictionary\NumberShape.ts" />
-    <TypeScriptCompile Include="ClientApp\src\helpers\NumberDictionary\types\NumberDictionaryType.ts" />
-    <TypeScriptCompile Include="ClientApp\src\helpers\OperatorDictionary\types\OperatorDictionaryType.ts" />
     <TypeScriptCompile Include="ClientApp\src\types\ArithmeticType.ts" />
-    <TypeScriptCompile Include="ClientApp\src\helpers\OperatorDictionary\OperatorDictionary.ts" />
-    <TypeScriptCompile Include="ClientApp\src\helpers\OperatorDictionary\OperatorDictionaryFactory.ts" />
-    <TypeScriptCompile Include="ClientApp\src\helpers\OperatorDictionary\OperatorShape.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="ClientApp\src\components\pages\NumberQuiz\views\CalculationResultChoiceQuiz\QuestionItem.module.scss">
       <DependentUpon>QuestionItem.jsx</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberSymbolFaceFactory.js.map">
+      <DependentUpon>NumberSymbolFaceFactory.js</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolFaceFactory.js.map">
+      <DependentUpon>OperatorSymbolFaceFactory.js</DependentUpon>
     </None>
   </ItemGroup>
 

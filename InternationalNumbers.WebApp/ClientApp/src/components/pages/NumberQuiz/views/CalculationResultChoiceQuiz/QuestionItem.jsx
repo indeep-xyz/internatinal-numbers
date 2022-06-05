@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 
 import * as styles from './QuestionItem.module.scss';
-import { NumberShape } from '../../../../../helpers/NumberDictionary/NumberShape';
+import { NumberSymbolFace } from '../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolFace';
 
 export class QuestionItem extends Component {
     static displayName = QuestionItem.name;
@@ -25,7 +25,7 @@ export class QuestionItem extends Component {
 
     renderCalculationFormulaWhenAnswered() {
         const { quizQuestion } = this.props;
-        const answer = (quizQuestion instanceof NumberShape) ? quizQuestion.value : quizQuestion.operator;
+        const answer = (quizQuestion instanceof NumberSymbolFace) ? quizQuestion.value : quizQuestion.operator;
 
         return (
             <div className={`${styles.container} ${styles.calculationFormulaContainer}`}>
@@ -51,7 +51,7 @@ export class QuestionItem extends Component {
         const { quizQuestion } = this.props;
 
         if (isVisible
-            && quizQuestion instanceof NumberShape) {
+            && quizQuestion instanceof NumberSymbolFace) {
             return <div className={styles.label}>{quizQuestion.dictionary.label}</div>;
         }
 

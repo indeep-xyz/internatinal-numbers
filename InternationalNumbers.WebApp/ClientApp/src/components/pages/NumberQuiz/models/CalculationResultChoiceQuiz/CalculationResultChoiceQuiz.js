@@ -1,10 +1,10 @@
-﻿import { NumberDictionaryFactory } from '../../../../../helpers/NumberDictionary/NumberDictionaryFactory';
-import { NumberQuizMode } from '../../../../../helpers/NumberDictionary/constants/generals';
-import { NumberShape } from '../../../../../helpers/NumberDictionary/NumberShape';
+﻿import { NumberSymbolDictionaryFactory } from '../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionaryFactory';
+import { NumberQuizMode } from '../../../../../helpers/Dictionary/NumberDictionary/constants/generals';
 import { Expression } from './Expression';
-import { OperatorShape } from '../../../../../helpers/OperatorDictionary/OperatorShape';
-import { OperatorDictionaryFactory } from '../../../../../helpers/OperatorDictionary/OperatorDictionaryFactory';
+import { OperatorSymbolDictionaryFactory } from '../../../../../helpers/Dictionary/OperatorDictionary/OperatorSymbolDictionaryFactory';
 import { ArraySortHelper } from '../../../../../helpers/Array/ArraySortHelper.ts';
+import { NumberSymbolFaceFactory } from '../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolFaceFactory';
+import { OperatorSymbolFaceFactory } from '../../../../../helpers/Dictionary/OperatorDictionary/OperatorSymbolFaceFactory';
 
 /**
  * 計算結果を択一選択させるクイズを表すオブジェクト。
@@ -15,7 +15,7 @@ export class CalculationResultChoiceQuiz {
 
     /**
      * 計算結果の選択肢。
-     * @member {Array<NumberShape>}
+     * @member {Array<NumberSymbolFace>}
      */
     quizSelections;
 
@@ -42,8 +42,8 @@ export class CalculationResultChoiceQuiz {
      * @param {number} currentScore 現在スコア。この点数によってクイズの選択肢数が変化する
      */
     constructor(currentScore) {
-        this.numberItems = NumberDictionaryFactory.createAll(NumberQuizMode.Shape);
-        this.operatorItems = OperatorDictionaryFactory.createAll(NumberQuizMode.Shape);
+        this.numberDictionaries = NumberSymbolDictionaryFactory.createAll(NumberQuizMode.Shape);
+        this.operatorDictionaries = OperatorSymbolDictionaryFactory.createAll(NumberQuizMode.Shape);
 
         this.expression = new Expression();
 
@@ -71,27 +71,27 @@ export class CalculationResultChoiceQuiz {
      */
     createQuizSelections(currentScore) {
         const numberOfSelections = Math.max(2, Math.floor(currentScore / 2));
-        const numberItems = [
-            NumberShape.reduceWithNumber(this.numberItems, this.expression.calculationResult)
+        const numberDictionaries = [
+            NumberSymbolFaceFactory.randomShape(this.numberDictionaries, this.expression.calculationResult)
         ];
-
+        
         let i = 1;
         while (i < numberOfSelections) {
-            const quizSelection = NumberShape.reduce(this.numberItems);
+            const quizSelection = NumberSymbolFaceFactory.random(this.numberDictionaries);
 
-            if (numberItems.find(ni => ni.equals(quizSelection)) === undefined) {
+            if (numberDictionaries.find(ni => ni.equals(quizSelection)) === undefined) {
                 if (this.expression.hasSubtraction()
                     && Math.floor(Math.random() * 2) === 0) {
                     // 演算子に引き算が含まれる場合、ランダムで負数化
                     quizSelection.invertNumberValue();
                 }
 
-                numberItems.push(quizSelection);
+                numberDictionaries.push(quizSelection);
                 i++;
             }
         }
 
-        return ArraySortHelper.shuffle(numberItems);
+        return ArraySortHelper.shuffle(numberDictionaries);
     }
 
     /**
@@ -99,7 +99,7 @@ export class CalculationResultChoiceQuiz {
      * 
      */
     createCalculationResult() {
-        return NumberShape.reduceWithNumber(this.numberItems, this.expression.calculationResult);
+        return NumberSymbolFaceFactory.randomShape(this.numberDictionaries, this.expression.calculationResult);
     }
 
     /**
@@ -109,10 +109,10 @@ export class CalculationResultChoiceQuiz {
     createQuizQuestions() {
         return this.expression.expressionParts.map(ep => {
             if (typeof ep === "number") {
-                return NumberShape.reduceWithNumber(this.numberItems, ep);
+                return NumberSymbolFaceFactory.randomShape(this.numberDictionaries, ep);
             }
 
-            return OperatorShape.reduceWithOperator(this.operatorItems, ep);
+            return OperatorSymbolFaceFactory.randomShape(this.operatorDictionaries, ep);
         });
 
     }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import * as styles from './NumberList.module.scss';
-import { NumberQuizMode } from '../../../../helpers/NumberDictionary/constants/generals';
-import { NumberDictionaryFactory } from '../../../../helpers/NumberDictionary/NumberDictionaryFactory';
+import { NumberQuizMode } from '../../../../helpers/Dictionary/NumberDictionary/constants/generals';
+import { NumberSymbolDictionaryFactory } from '../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionaryFactory';
 
 export class NumberList extends Component {
     static displayName = NumberList.name;
@@ -13,7 +13,7 @@ export class NumberList extends Component {
     }
 
     render() {
-        const dictionaries = NumberDictionaryFactory.createAll(NumberQuizMode.Shape);
+        const dictionaries = NumberSymbolDictionaryFactory.createAll(NumberQuizMode.Shape);
 
         const numberValues = [];
         for (let i = 0; i < 10; i++) {
@@ -43,7 +43,7 @@ export class NumberList extends Component {
     renderRow(dictionary) {
         const numberShapes = [];
         for (let i = 0; i < 10; i++) {
-            const dictionaryShape = dictionary.shapes[String(i)];
+            const dictionaryShape = dictionary.shapeMap[String(i)];
 
             numberShapes.push(
                 dictionaryShape.map((ds, dsIndex) => <React.Fragment key={dsIndex}>{ds}<br /></React.Fragment>)

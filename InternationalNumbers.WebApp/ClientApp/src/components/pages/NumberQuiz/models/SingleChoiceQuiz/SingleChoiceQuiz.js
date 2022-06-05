@@ -1,6 +1,6 @@
-﻿import { NumberDictionaryFactory } from '../../../../../helpers/NumberDictionary/NumberDictionaryFactory';
-import { NumberQuizMode } from '../../../../../helpers/NumberDictionary/constants/generals';
-import { NumberShape } from '../../../../../helpers/NumberDictionary/NumberShape';
+﻿import { NumberSymbolDictionaryFactory } from '../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionaryFactory';
+import { NumberQuizMode } from '../../../../../helpers/Dictionary/NumberDictionary/constants/generals';
+import { NumberSymbolFaceFactory } from '../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolFaceFactory';
 
 /**
  * 何らかの条件を満たす値を択一選択させるクイズを表すオブジェクト。
@@ -32,7 +32,7 @@ export class SingleChoiceQuiz {
      * @param {number} currentScore 現在スコア。この点数によってクイズの選択肢数が変化する
      */
     constructor(currentScore) {
-        this.numberItems = NumberDictionaryFactory.createAll(NumberQuizMode.Shape);
+        this.numberDictionaries = NumberSymbolDictionaryFactory.createAll(NumberQuizMode.Shape);
 
         this.quizSelections = this.createQuizSelections(currentScore);
         this.isAnswered = false;
@@ -56,19 +56,19 @@ export class SingleChoiceQuiz {
      */
     createQuizSelections(currentScore) {
         const numberOfSelections = Math.max(2, Math.floor(currentScore / 2));
-        const numberItems = [];
+        const numberDictionaries = [];
 
         let i = 0;
         while (i < numberOfSelections) {
-            const quizSelection = NumberShape.reduce(this.numberItems);
+            const quizSelection = NumberSymbolFaceFactory.random(this.numberDictionaries);
 
-            if (numberItems.find(ni => ni.equals(quizSelection)) === undefined) {
-                numberItems.push(quizSelection);
+            if (numberDictionaries.find(ni => ni.equals(quizSelection)) === undefined) {
+                numberDictionaries.push(quizSelection);
                 i++;
             }
         }
 
-        return numberItems;
+        return numberDictionaries;
     }
 
     /**
