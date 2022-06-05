@@ -40,7 +40,8 @@
             ".styl"
           ],
           ".module.scss": [
-            ".jsx"
+            ".jsx",
+            ".tsx"
           ],
           ".html": [
             ".md",
@@ -61,6 +62,9 @@
           ],
           ".cs.d.ts": [
             ".cs"
+          ],
+          ".d.ts": [
+            ".js"
           ]
         }
       },
