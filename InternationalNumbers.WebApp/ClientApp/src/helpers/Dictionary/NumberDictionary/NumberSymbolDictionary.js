@@ -8,7 +8,6 @@ var symbols_1 = require("./constants/symbols");
 var NumberSymbolDictionary = /** @class */ (function () {
     function NumberSymbolDictionary(name, outputMode) {
         var ds = symbols_1.DictionarySourceMap[name];
-        console.log(ds, name, symbols_1.DictionarySourceMap);
         this.name = name;
         this.label = ds.label;
         this.language = ds.language;

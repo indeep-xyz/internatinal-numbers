@@ -16,17 +16,17 @@ export class OperatorSymbolFace
     /**
      * 演算子の値 (+, -, *, /)。
      */
-    operator: ArithmeticType.FourArithmeticOperator;
+    readonly operator: ArithmeticType.FourArithmeticOperator;
 
     /**
      * 文字形。
      */
-    shape: string;
+    readonly shape: string;
 
     /**
      * 辞書データ。
      */
-    dictionary: OperatorDictionaryType.SymbolDictionarySource;
+    readonly dictionary: OperatorDictionaryType.SymbolDictionarySource;
 
     /**
      * コンストラクタ。

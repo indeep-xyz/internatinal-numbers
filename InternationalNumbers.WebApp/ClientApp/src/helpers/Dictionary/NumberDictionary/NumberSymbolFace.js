@@ -13,9 +13,15 @@ var NumberSymbolFace = /** @class */ (function () {
      */
     function NumberSymbolFace(sourceDictionary, value, shape) {
         this.dictionary = sourceDictionary;
-        this.value = value;
         this.shape = shape;
+        this._value = value;
     }
+    Object.defineProperty(NumberSymbolFace.prototype, "value", {
+        get: function () { return this._value; },
+        enumerable: false,
+        configurable: true
+    });
+    ;
     /**
      * 同値比較。
      * @param another 判定対象データ
@@ -28,7 +34,7 @@ var NumberSymbolFace = /** @class */ (function () {
      * 数が表す値をネガポジ変換する。
      */
     NumberSymbolFace.prototype.invertNumberValue = function () {
-        return this.value = -this.value;
+        return this._value = -this._value;
     };
     return NumberSymbolFace;
 }());

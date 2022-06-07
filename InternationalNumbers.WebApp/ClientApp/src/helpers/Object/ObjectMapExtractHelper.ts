@@ -4,7 +4,7 @@
      * @param array
      */
     static takeOne<T>(
-        objectMap: any
+        objectMap: Readonly<any>
     ): T {
         const keys = Object.keys(objectMap);
         const key = keys[Math.floor(Math.random() * keys.length)];

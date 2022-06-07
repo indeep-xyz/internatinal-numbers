@@ -4,7 +4,7 @@
      * @param array
      */
     static takeOne<T>(
-        array: any[]
+        array: Readonly<any[]>
     ): T {
         const index = Math.floor(Math.random() * array.length)
         return array[index];

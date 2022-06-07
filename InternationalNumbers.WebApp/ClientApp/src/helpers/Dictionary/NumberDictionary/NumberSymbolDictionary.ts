@@ -10,19 +10,17 @@ export class NumberSymbolDictionary {
         return Object.keys(DictionarySourceMap);
     }
 
-    name: string;
-    label: string;
-    language: string;
-    shapeMap: NumberDictionaryType.SymbolDictionaryShapeMap;
-    outputMode: number;
+    readonly name: string;
+    readonly label: string;
+    readonly language: string;
+    readonly shapeMap: NumberDictionaryType.SymbolDictionaryShapeMap;
+    readonly outputMode: number;
 
     constructor(
         name: string,
         outputMode: number
     ) {
         const ds: NumberDictionaryType.SymbolDictionarySource = DictionarySourceMap[name];
-
-        console.log(ds, name, DictionarySourceMap);
 
         this.name = name;
         this.label = ds.label;

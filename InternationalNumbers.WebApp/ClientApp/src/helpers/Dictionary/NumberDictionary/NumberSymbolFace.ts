@@ -11,17 +11,18 @@ export class NumberSymbolFace
     /**
      * 数が表す値。
      */
-    value: number;
+    private _value: number;
+    public get value(): number { return this._value };
 
     /**
      * 文字形。
      */
-    shape: string;
+    readonly shape: string;
 
     /**
      * 辞書データ。
      */
-    dictionary: NumberDictionaryType.SymbolDictionarySource;
+    readonly dictionary: NumberDictionaryType.SymbolDictionarySource;
 
     /**
      * コンストラクタ。
@@ -35,8 +36,8 @@ export class NumberSymbolFace
         shape: string,
     ) {
         this.dictionary = sourceDictionary;
-        this.value = value;
         this.shape = shape;
+        this._value = value;
     }
 
     /**
@@ -54,6 +55,6 @@ export class NumberSymbolFace
      * 数が表す値をネガポジ変換する。
      */
     invertNumberValue(): number {
-        return this.value = -this.value;
+        return this._value = -this._value;
     }
 }

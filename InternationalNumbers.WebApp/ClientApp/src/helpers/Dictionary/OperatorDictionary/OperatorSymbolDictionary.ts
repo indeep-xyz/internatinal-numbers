@@ -12,11 +12,11 @@ export class OperatorSymbolDictionary {
         return Object.keys(DictionarySourceMap);
     }
 
-    name: string;
-    label: string;
-    language: string;
-    shapeMap: OperatorDictionaryType.SymbolDictionaryShapeMap;
-    outputMode: number;
+    readonly name: string;
+    readonly label: string;
+    readonly language: string;
+    readonly shapeMap: OperatorDictionaryType.SymbolDictionaryShapeMap;
+    readonly outputMode: number;
 
     constructor(
         name: string,

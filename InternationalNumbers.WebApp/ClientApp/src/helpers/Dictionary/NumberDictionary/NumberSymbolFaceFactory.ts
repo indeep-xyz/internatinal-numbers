@@ -40,7 +40,7 @@ export class NumberSymbolFaceFactory {
 
         while (true) {
             dictionary = ObjectMapExtractHelper.takeOne<NumberDictionaryType.SymbolDictionarySource>(sourceDictionaries);
-            dictionaryShapes = dictionary.shapeMap[String(Math.abs(value))];
+            dictionaryShapes = dictionary.shapeMap[String(Math.abs(value))] as string[];
 
             if (dictionaryShapes.length > 0) {
                 break;
