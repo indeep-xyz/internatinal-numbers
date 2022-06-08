@@ -1,4 +1,5 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -19,6 +20,7 @@
     "noEmit": true,
     "jsx": "react",
     "rootDir": "./src",
+    "outDir": "./dist",
     "baseUrl": "src"
   },
   "include": [

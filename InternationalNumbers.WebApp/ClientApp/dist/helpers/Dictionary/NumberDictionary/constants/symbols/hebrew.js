@@ -1,6 +1,7 @@
-﻿import type * as NumberDictionaryType from '../../types/NumberDictionaryType';
-
-export const hebrew: NumberDictionaryType.SymbolDictionarySource = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.hebrew = void 0;
+exports.hebrew = {
     "name": "hebrew",
     "label": "ヘブライ数字",
     "language": "Hebrew",
@@ -17,3 +18,4 @@ export const hebrew: NumberDictionaryType.SymbolDictionarySource = {
         "9": ["ט",],
     },
 };
+//# sourceMappingURL=hebrew.js.map
