@@ -3,13 +3,17 @@
 }
 
 .quizSelectionArea {
+    /* 配置 */
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 16px;
+    /* 外装 */
     border: 1px solid grey;
     width: 100%;
-    margin-bottom: 16px;
+    /* 内装 */
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .wrapper {

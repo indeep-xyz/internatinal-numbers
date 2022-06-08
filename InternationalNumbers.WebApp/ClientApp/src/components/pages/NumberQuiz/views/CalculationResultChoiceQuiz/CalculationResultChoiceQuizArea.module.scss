@@ -16,11 +16,15 @@
 }
 
 .quizSelectionArea {
+    /* 配置 */
     display: flex;
+    /* 外装 */
+    border: 1px solid grey;
+    /* 内装 */
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    border: 1px solid grey;
 }
 
 .wrapper {
