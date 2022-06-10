@@ -2,7 +2,7 @@
 
 export const arabic_eastern_presian: NumberDictionaryType.SymbolDictionarySource = {
     "name": "arabic_eastern_presian",
-    "label": "アラビア・インド数字",
+    "label": "アラビア東部（ペルシア）",
     "language": "Arabic Eastern (Presian)",
     "shapeMap": {
         "0": ["۰"],

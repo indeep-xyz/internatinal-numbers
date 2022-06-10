@@ -8,6 +8,7 @@ import { arabic_mideast } from "./arabic_mideast";
 import { arabic_western } from "./arabic_western";
 import { armenian } from "./armenian";
 import { bengali } from "./bengali";
+import { brahmi } from "./brahmi";
 import { burmese } from "./burmese";
 import { cyrillic } from "./cyrillic";
 import { devanagari } from "./devanagari";
@@ -19,6 +20,7 @@ import { gurmukhi } from "./gurmukhi";
 import { hangul_native } from "./hangul_native";
 import { hangul_sino } from "./hangul_sino";
 import { hebrew } from "./hebrew";
+import { javanese } from "./javanese";
 import { kanji_japanese_complex } from "./kanji_japanese_complex";
 import { kanji_simple } from "./kanji_simple";
 import { kannada } from "./kannada";
@@ -38,10 +40,10 @@ import { telugu } from "./telugu";
 import { tibetan } from "./tibetan";
 import { sinhala_archaic } from "./sinhala_archaic";
 import { sinhala_astrological } from "./sinhala_astrological";
+import { sora_sompeng } from "./sora_sompeng";
 import { suzhou } from "./suzhou";
+import { vai } from "./vai";
 import { vietnamese } from "./vietnamese";
-
-console.log(abjad);
 
 // map
 export const DictionarySourceMap: NumberDictionaryType.SymbolDictionarySourceMap = {
@@ -52,6 +54,7 @@ export const DictionarySourceMap: NumberDictionaryType.SymbolDictionarySourceMap
     arabic_western,
     armenian,
     bengali,
+    brahmi,
     burmese,
     cyrillic,
     devanagari,
@@ -63,6 +66,7 @@ export const DictionarySourceMap: NumberDictionaryType.SymbolDictionarySourceMap
     hangul_native,
     hangul_sino,
     hebrew,
+    javanese,
     kanji_japanese_complex,
     kanji_simple,
     kannada,
@@ -82,6 +86,8 @@ export const DictionarySourceMap: NumberDictionaryType.SymbolDictionarySourceMap
     tibetan,
     sinhala_archaic,
     sinhala_astrological,
+    sora_sompeng,
     suzhou,
+    vai,
     vietnamese,
 };

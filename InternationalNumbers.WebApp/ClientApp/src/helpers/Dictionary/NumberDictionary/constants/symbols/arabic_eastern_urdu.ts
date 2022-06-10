@@ -2,7 +2,7 @@
 
 export const arabic_eastern_urdu: NumberDictionaryType.SymbolDictionarySource = {
     "name": "arabic_eastern_urdu",
-    "label": "アラビア・インド数字",
+    "label": "アラビア東部（ウルドゥー）",
     "language": "Arabic Eastern (Urdu)",
     "shapeMap": {
         "0": ["۰"],

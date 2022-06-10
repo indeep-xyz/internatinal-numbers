@@ -82,6 +82,7 @@
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_western.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\armenian.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\bengali.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\brahmi.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\burmese.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\cyrillic.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\devanagari.ts" />
@@ -93,6 +94,7 @@
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\hangul_native.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\hangul_sino.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\hebrew.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\javanese.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\kanji_japanese_complex.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\kanji_simple.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\kannada.ts" />
@@ -107,12 +109,14 @@
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\roman.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\sinhala_archaic.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\sinhala_astrological.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\sora_sompeng.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\suzhou.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\tai_new_lue.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\tamil.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\telugu.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\thai.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\tibetan.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\vai.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\vietnamese.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\arithmetic.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\computer.ts" />

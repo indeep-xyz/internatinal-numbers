@@ -2,7 +2,7 @@
 
 export const arabic_mideast: NumberDictionaryType.SymbolDictionarySource = {
     "name": "arabic_mideast",
-    "label": "アラビア・インド数字",
+    "label": "アラビア中東",
     "language": "Arabic Mideast (Central)",
     "shapeMap": {
         "0": ["٠"],
