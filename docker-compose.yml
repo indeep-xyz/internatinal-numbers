@@ -4,5 +4,5 @@ services:
   internationalnumbers.webapp:
     image: ${DOCKER_REGISTRY-}internationalnumbers_webapp
     build:
-      context: .
-      dockerfile: InternationalNumbers.WebApp/Dockerfile
+      context: ./InternationalNumbers.WebApp
+      dockerfile: Dockerfile
