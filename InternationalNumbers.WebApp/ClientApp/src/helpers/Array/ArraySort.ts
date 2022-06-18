@@ -1,15 +1,4 @@
-﻿export class ArraySortHelper {
-    /**
-     * 配列要素から無作為に１つ取得する。
-     * @param array
-     */
-    static pickOne<T>(
-        array: any[]
-    ): T {
-        const index = Math.floor(Math.random() * array.length)
-        return array[index];
-    }
-
+﻿export class ArraySort {
     /**
      * 配列要素のシャッフルを行う。 (Fisher–Yates shuffle)
      * @param array

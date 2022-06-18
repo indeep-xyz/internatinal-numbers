@@ -2,7 +2,7 @@
 import { NumberQuizMode } from '../../../../../helpers/Dictionary/NumberDictionary/constants/generals';
 import { Expression } from './Expression';
 import { OperatorSymbolDictionaryFactory } from '../../../../../helpers/Dictionary/OperatorDictionary/OperatorSymbolDictionaryFactory';
-import { ArraySortHelper } from '../../../../../helpers/Array/ArraySortHelper.ts';
+import { ArraySort } from '../../../../../helpers/Array/ArraySort.ts';
 import { NumberSymbolFaceFactory } from '../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolFaceFactory';
 import { OperatorSymbolFaceFactory } from '../../../../../helpers/Dictionary/OperatorDictionary/OperatorSymbolFaceFactory';
 
@@ -91,7 +91,7 @@ export class CalculationResultChoiceQuiz {
             }
         }
 
-        return ArraySortHelper.shuffle(numberDictionaries);
+        return ArraySort.shuffle(numberDictionaries);
     }
 
     /**

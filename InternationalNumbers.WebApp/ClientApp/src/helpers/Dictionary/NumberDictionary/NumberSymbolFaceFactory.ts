@@ -1,6 +1,6 @@
 ﻿// PJ共通
-import { ArrayExtractHelper } from '../../Array/ArrayExtractHelper';
-import { ObjectMapExtractHelper } from '../../Object/ObjectMapExtractHelper';
+import { ArrayExtraction } from '../../Array/ArrayExtraction';
+import { ObjectMapExtraction } from '../../Object/ObjectMapExtraction';
 
 // 辞書「数」系のヘルパー共通
 import type * as NumberDictionaryType from './types/NumberDictionaryType';
@@ -39,7 +39,7 @@ export class NumberSymbolFaceFactory {
         let dictionaryShapes : string[];
 
         while (true) {
-            dictionary = ObjectMapExtractHelper.takeOne<NumberDictionaryType.SymbolDictionarySource>(sourceDictionaries);
+            dictionary = ObjectMapExtraction.atRandom<NumberDictionaryType.SymbolDictionarySource>(sourceDictionaries);
             dictionaryShapes = dictionary.shapeMap[String(Math.abs(value))] as string[];
 
             if (dictionaryShapes.length > 0) {
@@ -50,7 +50,7 @@ export class NumberSymbolFaceFactory {
         return new NumberSymbolFace(
             dictionary,
             value,
-            ArrayExtractHelper.takeOne<string>(dictionaryShapes),
+            ArrayExtraction.atRandom<string>(dictionaryShapes),
         );
     }
 }

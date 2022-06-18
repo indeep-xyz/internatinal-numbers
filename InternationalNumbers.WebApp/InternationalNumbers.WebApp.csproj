@@ -49,8 +49,9 @@
     <None Remove="ClientApp\dist\helpers\Dictionary\OperatorDictionary\OperatorSymbolDictionaryFactory.js" />
     <None Remove="ClientApp\dist\helpers\Dictionary\OperatorDictionary\OperatorSymbolDictionaryFactory.js.map" />
     <None Remove="ClientApp\src\App.jsx" />
-    <None Remove="ClientApp\src\helpers\Array\ArrayExtractHelper.ts" />
+    <None Remove="ClientApp\src\helpers\Array\ArrayExtraction.ts" />
     <None Remove="ClientApp\src\helpers\Array\ArrayFactory.ts" />
+    <None Remove="ClientApp\src\helpers\Array\ArraySort.ts" />
     <None Remove="ClientApp\src\helpers\Array\ArraySortHelper.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\index.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\interfaces\NumberFaceInterface.ts" />
@@ -64,7 +65,6 @@
     <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\types\NumberDictionaryType.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\interfaces\OperatorFaceInterface.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolFaceFactory.ts" />
-    <None Remove="ClientApp\src\helpers\Object\ObjectMapExtractHelper.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\index.d.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\index.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\words\index.d.ts" />
@@ -76,6 +76,7 @@
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolDictionaryFactory.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolFace.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\types\OperatorDictionaryType.ts" />
+    <None Remove="ClientApp\src\helpers\Object\ObjectMapExtraction.ts" />
     <None Remove="ClientApp\src\types\ArithmeticType.ts" />
   </ItemGroup>
 
@@ -143,7 +144,6 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\App.jsx" />
-    <TypeScriptCompile Include="ClientApp\src\helpers\Array\ArraySortHelper.ts" />
     <TypeScriptCompile Include="ClientApp\src\types\ArithmeticType.ts" />
   </ItemGroup>
 
