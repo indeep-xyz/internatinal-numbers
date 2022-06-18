@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import * as styles from './NumberQuiz.module.scss';
+import * as styles from './NumberQuizPage.module.scss';
 import { NextQuizButton } from './NextQuizButton';
 import { GameState } from '../models/GameState';
 import { SingleChoiceQuizArea } from './SingleChoiceQuiz/SingleChoiceQuizArea';
@@ -8,8 +8,8 @@ import { SingleChoiceQuiz } from '../models/SingleChoiceQuiz/SingleChoiceQuiz';
 import { CalculationResultChoiceQuiz } from '../models/CalculationResultChoiceQuiz/CalculationResultChoiceQuiz';
 import { CalculationResultChoiceQuizArea } from './CalculationResultChoiceQuiz/CalculationResultChoiceQuizArea';
 
-export class NumberQuiz extends Component {
-    static displayName = NumberQuiz.name;
+export class NumberQuizPage extends Component {
+    static displayName = NumberQuizPage.name;
 
     constructor(props) {
         super(props);

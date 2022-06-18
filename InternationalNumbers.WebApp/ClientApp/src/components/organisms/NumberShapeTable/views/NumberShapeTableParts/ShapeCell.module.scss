@@ -1,0 +1,6 @@
+﻿@import '../NumberShapeTable.module.scss';
+
+/* 数値に対し「数字の形」がないデータのセル */
+.missingCell {
+    background-color: #000000;
+}

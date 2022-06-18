@@ -50,6 +50,7 @@
     <None Remove="ClientApp\dist\helpers\Dictionary\OperatorDictionary\OperatorSymbolDictionaryFactory.js.map" />
     <None Remove="ClientApp\src\App.jsx" />
     <None Remove="ClientApp\src\helpers\Array\ArrayExtractHelper.ts" />
+    <None Remove="ClientApp\src\helpers\Array\ArrayFactory.ts" />
     <None Remove="ClientApp\src\helpers\Array\ArraySortHelper.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\index.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\interfaces\NumberFaceInterface.ts" />
@@ -79,6 +80,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListHeader.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListPage.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListRow.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListShapeCell.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\abjad.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_eastern_presian.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_eastern_urdu.ts" />
@@ -143,6 +148,36 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー %282%29 - コピー.module.scss">
+      <DependentUpon>NumberList - コピー (2).module.scss</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー %282%29.module.scss">
+      <DependentUpon>NumberList.module.scss</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー - コピー %282%29 - コピー.module.scss">
+      <DependentUpon>NumberList - コピー - コピー (2).module.scss</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー - コピー %282%29.module.scss">
+      <DependentUpon>NumberList - コピー.module.scss</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー - コピー %283%29.module.scss">
+      <DependentUpon>NumberList - コピー.module.scss</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー - コピー - コピー %282%29.module.scss">
+      <DependentUpon>NumberList - コピー - コピー.module.scss</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー - コピー - コピー - コピー.module.scss">
+      <DependentUpon>NumberList - コピー - コピー - コピー.module.scss</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー - コピー - コピー.module.scss">
+      <DependentUpon>NumberList - コピー - コピー.module.scss</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー - コピー.module.scss">
+      <DependentUpon>NumberList - コピー.module.scss</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー.module.scss">
+      <DependentUpon>NumberList.module.scss</DependentUpon>
+    </None>
     <None Update="ClientApp\src\components\pages\NumberQuiz\views\CalculationResultChoiceQuiz\QuestionItem.module.scss">
       <DependentUpon>QuestionItem.jsx</DependentUpon>
     </None>

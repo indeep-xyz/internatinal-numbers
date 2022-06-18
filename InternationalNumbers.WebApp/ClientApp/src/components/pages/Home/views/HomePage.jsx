@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-export class Home extends Component {
-  static displayName = Home.name;
+export class HomePage extends Component {
+  static displayName = HomePage.name;
 
   render () {
     return (
