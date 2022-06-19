@@ -5,7 +5,7 @@ import { HomePage } from './components/pages/Home/views/HomePage';
 import { NumberListPage } from './components/pages/NumberList/views/NumberListPage';
 import { NumberQuizPage } from './components/pages/NumberQuiz/views/NumberQuizPage';
 
-import './globals/css/global.css'
+import './globals/styles/global.css'
 
 export default class App extends Component {
   static displayName = App.name;

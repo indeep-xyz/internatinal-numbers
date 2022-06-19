@@ -8,7 +8,7 @@
     /* 配置 */
     margin-bottom: 16px;
     /* 外装 */
-    border: 1px solid grey;
+    border: 2px solid var(--color-border);
     width: 100%;
     /* 内装 */
     align-items: center;
@@ -26,7 +26,7 @@
     /* 配置 */
     display: flex;
     /* 外装 */
-    border: 1px solid grey;
+    border: 1px solid var(--color-border);
     /* 内装 */
     flex-direction: row;
     flex-wrap: wrap;

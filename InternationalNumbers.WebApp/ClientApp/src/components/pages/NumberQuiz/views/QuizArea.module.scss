@@ -1,7 +1,7 @@
 ﻿/* 不正解時のアニメーション*/
 .isLastAnswerIncorrect {
     animation: flashing 0.1s ease;
-    background-color: #ffffff;
+    background-color: var(--color-background-general);
 
     @keyframes flashing {
         0% {

@@ -3,7 +3,7 @@
     flex-grow: 1;
     display: grid;
     /* 外装 */
-    border: 1px solid grey;
+    border: 1px solid var(--color-border);
     max-width: 100%;
     /* 内装 */
     grid-template-rows: 48px 1fr 20px;
@@ -30,8 +30,8 @@
 
         &.negativeNumberShape {
             /* 内装 */
-            color: #ffffff;
-            background-color: #202020;
+            color: var(--color-background-general);
+            background-color: var(--color-text);
         }
     }
 

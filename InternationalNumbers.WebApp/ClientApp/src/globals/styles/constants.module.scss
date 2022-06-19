@@ -1,0 +1,15 @@
+﻿:root {
+    /* 色（色名基準） */
+    --color-black: #202020;
+    --color-gray: #808080;
+    --color-light_gray: #f2f2f2;
+    --color-white: #ffffff;
+    --color-red: #f12529;
+    /* */
+    /* 色（用途基準） */
+    --color-text: var(--color-black);
+    --color-border: var(--color-gray);
+    --color-background-disabled: var(--color-light_gray);
+    --color-background-header: var(--color-light_gray);
+    --color-background-general: var(--color-white);
+}

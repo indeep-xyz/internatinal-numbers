@@ -1,15 +1,13 @@
 ﻿.wrapper {
     text-align: right;
 
-
     .currentScore {
         /* 外装 */
         display: inline-block;
-        border: 1px solid #202020;
+        border: 1px solid var(--color-border);
         border-radius: 4px;
         /* 内装 */
-        color: #202020;
-        padding: 2px 4px 2px 8px;
+        padding: 0 4px 0 6px;
         font-size: 24px;
         text-align: center;
     }
@@ -18,7 +16,6 @@
         /* 外装 */
         display: inline-block;
         /* 内装 */
-        color: #202020;
         font-size: 12px;
         cursor: pointer;
     }
