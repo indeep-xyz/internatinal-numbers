@@ -4,6 +4,7 @@ import { QuizInterface } from '../Interfaces/QuizInterface';
 // 画面固有（各ゲームモード）
 import { SingleChoiceQuiz } from './Quiz/SingleChoiceQuiz/SingleChoiceQuiz';
 import { CalculationResultChoiceQuiz } from './Quiz/CalculationResultChoiceQuiz/CalculationResultChoiceQuiz';
+import { QuizActionHistory } from './QuizAction/QuizActionHistory';
 
 /**
  * クイズゲームの進行状況を保持する。
@@ -13,30 +14,25 @@ export class GameState {
     /** 出題中のクイズ */
     quiz!: QuizInterface;
 
+    /** 現在のゲーム中の行動履歴 */
+    private quizActionHistory: QuizActionHistory;
+
     /** 現在のゲーム中で獲得した点数 */
-    score: number;
+    get score(): number { return this.quizActionHistory.score; }
 
-    /** 回答回数 */
-    answerdCount: number;
-
-    /** 問題回数 */
-    questionCount: number;
+    /** 現在のゲーム中で獲得した最高点数 */
+    get highestScore(): number { return this.quizActionHistory.highestScore; }
 
     /** 直前の回答が正解だったか否か */
-    isLastAnswerCorrect: boolean;
+    get isLastAnswerCorrect(): boolean { return this.quizActionHistory.isLastAnswerCorrect; }
 
     /** 直前の回答が不正解だったか否か */
-    isLastAnswerIncorrect: boolean;
+    get isLastAnswerIncorrect(): boolean { return this.quizActionHistory.isLastAnswerIncorrect; }
 
     /** コンストラクタ */
     constructor(
     ) {
-        this.score = 0;
-        this.answerdCount = 0;
-        this.questionCount = 0;
-        this.isLastAnswerCorrect = false;
-        this.isLastAnswerIncorrect = false;
-
+        this.quizActionHistory = new QuizActionHistory();
         this.nextQuiz();
     }
 
@@ -47,11 +43,7 @@ export class GameState {
     ): GameState {
         const newer = new GameState();
 
-        newer.score = this.score;
-        newer.answerdCount = this.answerdCount;
-        newer.questionCount = this.questionCount;
-        newer.isLastAnswerCorrect = this.isLastAnswerCorrect;
-        newer.isLastAnswerIncorrect = this.isLastAnswerIncorrect;
+        newer.quizActionHistory = this.quizActionHistory.clone();
         newer.quiz = this.quiz;
 
         return newer;
@@ -65,7 +57,7 @@ export class GameState {
     nextQuiz = (
     ): void => {
         this.quiz = this.createQuiz();
-        this.questionCount++;
+        this.quizActionHistory.addQuestionCount();
     }
 
     /**
@@ -73,9 +65,11 @@ export class GameState {
      */
     private createQuiz = (
     ): QuizInterface => {
+        const { score } = this.quizActionHistory;
+
         switch (Math.floor(Math.random() * 2)) {
-            case 0: return new SingleChoiceQuiz(this.score);
-            case 1: return new CalculationResultChoiceQuiz(this.score);
+            case 0: return new SingleChoiceQuiz(score);
+            case 1: return new CalculationResultChoiceQuiz(score);
         }
 
         throw new Error("対応するクイズオブジェクトがありません");
@@ -88,23 +82,13 @@ export class GameState {
     answerGenerally = (
         isCorrect: boolean
     ): void => {
-        let { score } = this;
-        let isLastAnswerCorrect = false;
-        let isLastAnswerIncorrect = false;
+        this.quiz.isAnswered = true;
 
         if (isCorrect) {
-            score += this.quiz.getScoreGenerally();
-            isLastAnswerCorrect = true;
+            this.quizActionHistory.answerCorrect(this.quiz.getScoreGenerally());
         } else {
-            score = 0;
-            isLastAnswerIncorrect = true;
+            this.quizActionHistory.answerIncorrect();
         }
-
-        this.quiz.isAnswered = true;
-        this.answerdCount++;
-        this.score = score;
-        this.isLastAnswerCorrect = isLastAnswerCorrect;
-        this.isLastAnswerIncorrect = isLastAnswerIncorrect;
     }
 
     /**
@@ -114,22 +98,20 @@ export class GameState {
     answerSpecially = (
         isCorrect: boolean
     ): void => {
-        let { score } = this;
-        let isLastAnswerCorrect = false;
-        let isLastAnswerIncorrect = false;
+        this.quiz.isAnswered = true;
 
         if (isCorrect) {
-            score += this.quiz.getScoreSpecially();
-            isLastAnswerCorrect = true;
+            this.quizActionHistory.answerCorrect(this.quiz.getScoreSpecially());
         } else {
-            score = 0;
-            isLastAnswerIncorrect = true;
+            this.quizActionHistory.answerIncorrect();
         }
+    }
 
-        this.quiz.isAnswered = true;
-        this.answerdCount++;
-        this.score = score;
-        this.isLastAnswerCorrect = isLastAnswerCorrect;
-        this.isLastAnswerIncorrect = isLastAnswerIncorrect;
+    /**
+     * 最高スコアの記録削除。
+     */
+    removeHighestScore = (
+    ): void => {
+        this.quizActionHistory.removeHighestScore();
     }
 }

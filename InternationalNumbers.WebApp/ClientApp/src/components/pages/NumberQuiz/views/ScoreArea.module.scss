@@ -1,0 +1,39 @@
+﻿.wrapper {
+    text-align: right;
+
+
+    .currentScore {
+        /* 外装 */
+        display: inline-block;
+        border: 1px solid #202020;
+        border-radius: 4px;
+        /* 内装 */
+        color: #202020;
+        padding: 2px 4px 2px 8px;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .highestScore {
+        /* 外装 */
+        display: inline-block;
+        /* 内装 */
+        color: #202020;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    /* 現在のゲームで最高得点を更新中のとき */
+    &.overHighestScore {
+        .currentScore {
+            /* 内装 */
+            color: #f00000;
+            animation: flashing 0.5s ease;
+
+            @keyframes flashing {
+                0% {
+                    background-color: #ffa0a0;
+                }
+            }
+        }
+    }
+}

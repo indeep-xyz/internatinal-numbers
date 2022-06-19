@@ -7,6 +7,7 @@ import { NextQuizButton } from './NextQuizButton';
 // 部品固有
 import styles from './NumberQuizPage.module.scss';
 import { QuizArea } from './QuizArea';
+import { ScoreArea } from './ScoreArea';
 
 type propsType = {
 };
@@ -19,7 +20,7 @@ export const NumberQuizPage: React.VFC<propsType> = ({
     const [state, setState] = React.useState({ game: new GameState() });
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    // 補助処理
+    // 補助処理（ステート管理）
 
     /**
      * 次のクイズを初期化する。
@@ -41,16 +42,34 @@ export const NumberQuizPage: React.VFC<propsType> = ({
     }
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // 補助処理（表示）
+
+    /**
+     * コンポーネントを包括する要素のHTMLクラス属性値の作成。
+     */
+    const createWrapperClassName = (
+    ): string => {
+        const classNameArray = [styles.wrapper];
+
+        if (state.game.isLastAnswerIncorrect) {
+            classNameArray.push(styles.isLastAnswerIncorrect);
+        }
+
+        return classNameArray.join(" ");
+    }
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // main
 
-    const classNameIsLastAnswerIncorrect = state.game.isLastAnswerIncorrect ? styles.isLastAnswerIncorrect : "";
-
     return (
-        <div className={classNameIsLastAnswerIncorrect}>
+        <div className={createWrapperClassName()}>
             <h1>Quiz</h1>
 
-            <div className={styles.score}>
-                {state.game.score}点
+            <div className={styles.scoreAreaWrapper} >
+                <ScoreArea
+                    gameState={state.game}
+                    updateGameState={updateGameState}
+                />
             </div>
 
             <QuizArea

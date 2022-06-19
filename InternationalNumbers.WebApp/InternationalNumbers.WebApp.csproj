@@ -85,6 +85,9 @@
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListPage.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListRow.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListShapeCell.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\QuizAction\ActionHistoryRepository.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\QuizAction\QuizAction.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\QuizAction\QuizActionHistory.ts" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\GameState.ts" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\CalculationResultChoiceQuiz\CalculationResultChoiceQuiz.ts" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\CalculationResultChoiceQuiz\Expression.ts" />
@@ -103,6 +106,7 @@
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\HintViewerCheckbox.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\SelectionItem.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\SingleChoiceQuizArea.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\ScoreArea.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\abjad.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_eastern_presian.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_eastern_urdu.ts" />
@@ -195,6 +199,9 @@
     </None>
     <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー.module.scss">
       <DependentUpon>NumberList.module.scss</DependentUpon>
+    </None>
+    <None Update="ClientApp\src\components\pages\NumberQuiz\views\NumberQuizPage - コピー.module.scss">
+      <DependentUpon>NumberQuizPage.module.scss</DependentUpon>
     </None>
     <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\hangul_sino.js.map">
       <DependentUpon>hangul_sino.js</DependentUpon>

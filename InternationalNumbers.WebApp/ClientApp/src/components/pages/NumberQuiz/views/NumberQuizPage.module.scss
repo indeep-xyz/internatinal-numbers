@@ -10,7 +10,14 @@
     }
 }
 
-.scoreArea {
-    /* 内装 */
-    text-align: right;
+.wrapper {
+    /* 外装 */
+    position: relative;
+}
+
+.scoreAreaWrapper {
+    /* 外装 */
+    position: absolute;
+    top: 8px;
+    right: 0;
 }
