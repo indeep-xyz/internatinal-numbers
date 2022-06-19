@@ -16,7 +16,7 @@ export class OperatorSymbolFace
     /**
      * 演算子の値 (+, -, *, /)。
      */
-    readonly operator: ArithmeticType.FourArithmeticOperator;
+    readonly operator: ArithmeticType.FourArithmeticOperatorType;
 
     /**
      * 文字形。
@@ -36,7 +36,7 @@ export class OperatorSymbolFace
      */
     constructor(
         sourceDictionary: OperatorDictionaryType.SymbolDictionarySource,
-        operator: ArithmeticType.FourArithmeticOperator,
+        operator: ArithmeticType.FourArithmeticOperatorType,
         shape: string,
     ) {
         this.dictionary = sourceDictionary;

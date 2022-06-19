@@ -5,6 +5,7 @@ import { ArrayExtraction } from '../../Array/ArrayExtraction';
 // 辞書「演算子」系のヘルパー共通
 import type * as OperatorDictionaryType from './types/OperatorDictionaryType';
 import { ObjectMapExtraction } from '../../Object/ObjectMapExtraction';
+import { OperatorSymbolDictionary } from './OperatorSymbolDictionary';
 import { OperatorSymbolFace } from './OperatorSymbolFace';
 
 /**
@@ -20,8 +21,8 @@ export class OperatorSymbolFaceFactory {
      * @returns
      */
     static randomShape(
-        sourceDictionaries: OperatorDictionaryType.SymbolDictionarySourceMap,
-        operator: ArithmeticType.FourArithmeticOperator,
+        sourceDictionaries: OperatorSymbolDictionary[],
+        operator: ArithmeticType.FourArithmeticOperatorType,
     ): OperatorSymbolFace {
         const dictionary = ObjectMapExtraction.atRandom<OperatorDictionaryType.SymbolDictionarySource>(sourceDictionaries);
         const dictionaryShapes = dictionary.shapeMap[operator];

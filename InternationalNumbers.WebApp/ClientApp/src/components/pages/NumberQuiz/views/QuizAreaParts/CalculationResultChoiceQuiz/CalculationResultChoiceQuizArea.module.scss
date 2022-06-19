@@ -1,18 +1,22 @@
 ﻿.wrapper{
-
 }
 
-.quizQuestionArea {
-    align-items: center;
+.quizExpressionArea {
+    /* 配置 */
+    margin-bottom: 16px;
+    /* 外装 */
     border: 1px solid grey;
     width: 100%;
-    margin-bottom: 16px;
+    /* 内装 */
+    align-items: center;
     padding: 0 32px;
 }
 
 .quizSelectionAreaWrapper {
-    width: 100%;
+    /* 配置 */
     margin-bottom: 16px;
+    /* 外装 */
+    width: 100%;
 }
 
 .quizSelectionArea {
@@ -25,7 +29,4 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-}
-
-.wrapper {
 }

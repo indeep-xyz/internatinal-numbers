@@ -85,6 +85,23 @@
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListPage.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListRow.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListShapeCell.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\GameState.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\CalculationResultChoiceQuiz\CalculationResultChoiceQuiz.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\CalculationResultChoiceQuiz\Expression.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\GameState.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\SingleChoiceQuiz\SingleChoiceQuiz.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\NextQuizButton.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\NumberQuizPage.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizArea.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\AnswerCorrectNumbersAllButton.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\CalculationResultChoiceQuizArea.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\ExpressionItem.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\HintViewerCheckbox.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\SelectionItem.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\AnswerSameNumberButton.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\HintViewerCheckbox.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\SelectionItem.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\SingleChoiceQuizArea.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\abjad.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_eastern_presian.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_eastern_urdu.ts" />
@@ -178,9 +195,6 @@
     <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー.module.scss">
       <DependentUpon>NumberList.module.scss</DependentUpon>
     </None>
-    <None Update="ClientApp\src\components\pages\NumberQuiz\views\CalculationResultChoiceQuiz\QuestionItem.module.scss">
-      <DependentUpon>QuestionItem.jsx</DependentUpon>
-    </None>
     <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\hangul_sino.js.map">
       <DependentUpon>hangul_sino.js</DependentUpon>
     </None>
@@ -237,9 +251,9 @@
   </Target>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
-    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptTarget>ES2018</TypeScriptTarget>
     <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
-    <TypeScriptModuleKind />
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
     <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
     <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
     <TypeScriptRemoveComments>False</TypeScriptRemoveComments>

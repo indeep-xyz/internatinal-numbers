@@ -8,38 +8,47 @@
     /* 内装 */
     grid-template-rows: 48px 1fr 20px;
     text-align: center;
-    /* その他 */
     user-select: none;
 
     .numberValue {
+        /* 配置 */
         grid-row: 1 / 2;
-        font-size: 32px;
+        /* 外装 */
         height: 48px;
+        /* 内装 */
         background-color: #fff8f8;
+        font-size: 32px;
         padding-bottom: 8px;
     }
 
     .numberShape {
+        /* 配置 */
         grid-row: 2 / 3;
+        /* 内装 */
         cursor: pointer;
         font-size: 150px;
 
         &.negativeNumberShape {
+            /* 内装 */
             color: #ffffff;
             background-color: #202020;
         }
     }
 
     .label {
+        /* 配置 */
         grid-row: 3 / 4;
+        /* 外装 */
+        height: 20px;
+        /* 内装 */
         font-size: 12px;
         background-color: #e8e8e8;
-        height: 20px;
     }
 
     &.isCorrectNumber {
         /* 一番大きい数字 */
         .numberValue {
+            /* 内装 */
             background-color: #ffea88;
         }
     }

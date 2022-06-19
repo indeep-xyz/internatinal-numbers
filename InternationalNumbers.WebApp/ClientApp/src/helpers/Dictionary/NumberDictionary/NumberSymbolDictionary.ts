@@ -1,5 +1,5 @@
 ﻿import type * as NumberDictionaryType from './types/NumberDictionaryType';
-import { DictionarySourceMap } from './constants/symbols';
+import { DictionarySourceMap } from './constants/symbols/index';
 
 /**
  * 記号形式の「数」の情報を扱うクラス。

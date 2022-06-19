@@ -1,0 +1,16 @@
+﻿/* 不正解時のアニメーション*/
+.isLastAnswerIncorrect {
+    animation: flashing 0.1s ease;
+    background-color: #ffffff;
+
+    @keyframes flashing {
+        0% {
+            background-color: #ffa0a0;
+        }
+    }
+}
+
+.scoreArea {
+    /* 内装 */
+    text-align: right;
+}

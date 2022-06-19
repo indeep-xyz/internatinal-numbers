@@ -4,6 +4,7 @@ import { ObjectMapExtraction } from '../../Object/ObjectMapExtraction';
 
 // 辞書「数」系のヘルパー共通
 import type * as NumberDictionaryType from './types/NumberDictionaryType';
+import { NumberSymbolDictionary } from './NumberSymbolDictionary';
 import { NumberSymbolFace } from './NumberSymbolFace';
 
 /**
@@ -18,7 +19,7 @@ export class NumberSymbolFaceFactory {
      * @returns
      */
     static random(
-        sourceDictionaries: NumberDictionaryType.SymbolDictionarySourceMap,
+        sourceDictionaries: NumberSymbolDictionary[],
     ): NumberSymbolFace {
         const value = Math.floor(Math.random() * 10);
         return NumberSymbolFaceFactory.randomShape(sourceDictionaries, value);
@@ -32,7 +33,7 @@ export class NumberSymbolFaceFactory {
      * @returns
      */
     static randomShape(
-        sourceDictionaries: NumberDictionaryType.SymbolDictionarySourceMap,
+        sourceDictionaries: NumberSymbolDictionary[],
         value: number
     ): NumberSymbolFace {
         let dictionary: NumberDictionaryType.SymbolDictionarySource;

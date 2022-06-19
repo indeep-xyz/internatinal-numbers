@@ -17,6 +17,7 @@
     "sass": "^1.52.1"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-methods": "^7.17.12",
     "@types/react": "^18.0.14",
     "ajv": "^6.9.1",
     "cross-env": "^5.2.0",

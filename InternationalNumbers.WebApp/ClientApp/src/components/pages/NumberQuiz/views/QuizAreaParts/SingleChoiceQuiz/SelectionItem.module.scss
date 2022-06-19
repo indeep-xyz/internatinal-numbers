@@ -12,29 +12,38 @@
     user-select: none;
 
     .numberValue {
+        /* 配置 */
         grid-row: 1 / 2;
-        font-size: 32px;
+        /* 外装 */
         height: 48px;
+        /* 内装 */
+        font-size: 32px;
         background-color: #fff8f8;
         padding-bottom: 8px;
     }
 
     .numberShape {
+        /* 配置 */
         grid-row: 2 / 3;
+        /* 内装 */
         cursor: pointer;
         font-size: 150px;
     }
 
     .label {
+        /* 配置 */
         grid-row: 3 / 4;
+        /* 外装 */
+        height: 24px;
+        /* 内装 */
         font-size: 16px;
         background-color: #e8e8e8;
-        height: 24px;
     }
 
     &.isBiggestNumber {
         /* 一番大きい数字 */
         .numberValue {
+            /* 内装 */
             background-color: #ffea88;
         }
     }

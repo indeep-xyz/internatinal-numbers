@@ -1,5 +1,5 @@
-﻿import { DictionarySourceMap } from './constants/symbols';
-import type * as OperatorDictionaryType from './types/OperatorDictionaryType';
+﻿import type * as OperatorDictionaryType from './types/OperatorDictionaryType';
+import { DictionarySourceMap } from './constants/symbols/index';
 
 /**
  * 記号形式の「演算子」の情報を扱うクラス。
