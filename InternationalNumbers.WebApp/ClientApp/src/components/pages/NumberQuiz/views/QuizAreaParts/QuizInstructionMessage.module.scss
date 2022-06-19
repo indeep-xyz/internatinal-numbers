@@ -1,0 +1,20 @@
+﻿.messageWrapper {
+    /* 配置 */
+    display: inline-block;
+    /* 外装 */
+    border: 1px solid #202020;
+    border-bottom: none;
+    /* 内装 */
+    text-align: center;
+    padding: 4px 16px;
+}
+
+.sideMessage {
+    /* 配置 */
+    display: inline-block;
+    /* 内装 */
+    text-align: left;
+    margin-left: 16px;
+    font-size: 0.8em;
+    opacity: 0.8;
+}

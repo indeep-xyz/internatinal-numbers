@@ -41,6 +41,9 @@ export class CalculationResultChoiceQuiz
     /** 回答済みか否か */
     isAnswered: boolean;
 
+    /** クイズの回答方法メッセージ */
+    readonly instructionMessage: string = "四則演算";
+
     /** 数式 */
     private expression: Expression;
 

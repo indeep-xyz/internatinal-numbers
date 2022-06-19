@@ -1,30 +1,31 @@
-import * as React from 'react';
+ï»¿import * as React from 'react';
 
-// ‰æ–ÊŒÅ—Li–{ƒQ[ƒ€ƒ‚[ƒh—pj
+// ç”»é¢å›ºæœ‰ï¼ˆæœ¬ã‚²ãƒ¼ãƒ ãƒ¢ãƒ¼ãƒ‰ç”¨ï¼‰
 import { SingleChoiceQuiz } from '../../../models/Quiz/SingleChoiceQuiz/SingleChoiceQuiz';
 import { SelectionItem } from './SelectionItem';
 import { HintViewerCheckbox } from './HintViewerCheckbox';
 import { AnswerSameNumberButton } from './AnswerSameNumberButton';
 
-// •”•iŒÅ—L
+// éƒ¨å“å›ºæœ‰
 import styles from './SingleChoiceQuizArea.module.scss';
+import { QuizInstructionMessage } from '../QuizInstructionMessage';
 
 type propsType = {
-    /** Œ»İ‚Ì–â‘è */
+    /** ç¾åœ¨ã®å•é¡Œ */
     quiz: SingleChoiceQuiz;
 
-    /** ³“š‚Ìˆ—iˆê”Ê‰ñ“šj */
+    /** æ­£ç­”æ™‚ã®å‡¦ç†ï¼ˆä¸€èˆ¬å›ç­”ï¼‰ */
     answerGenerally(isCorrect: boolean): void;
 
-    /** ³“š‚Ìˆ—i“Áê‰ñ“šj */
+    /** æ­£ç­”æ™‚ã®å‡¦ç†ï¼ˆç‰¹æ®Šå›ç­”ï¼‰ */
     answerSpecially(isCorrect: boolean): void;
 
-    /** ƒqƒ“ƒg•\¦ƒ‚[ƒh‚ÌXVˆ— */
+    /** ãƒ’ãƒ³ãƒˆè¡¨ç¤ºãƒ¢ãƒ¼ãƒ‰ã®æ›´æ–°å‡¦ç† */
     updateHintMode(doesViewHint: boolean): void;
 };
 
 /**
- * ƒNƒCƒY‚Ì–â‘è‚¨‚æ‚Ñ‘I‘ğˆ‚ğ•ïŠ‡‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒgB
+ * ã‚¯ã‚¤ã‚ºã®å•é¡ŒãŠã‚ˆã³é¸æŠè‚¢ã‚’åŒ…æ‹¬ã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã€‚
  */
 export const SingleChoiceQuizArea: React.VFC<propsType> = ({
     quiz,
@@ -34,6 +35,10 @@ export const SingleChoiceQuizArea: React.VFC<propsType> = ({
 }) => {
     return (
         <div className={styles.wrapper}>
+            <div className={styles.quizInstructionMessageWrapper} >
+                <QuizInstructionMessage quiz={quiz} />
+            </div>
+
             <div className={styles.quizSelectionArea}>
                 {quiz.quizSelections.map((quizSelection, quizSelectionIndex) => (
                     <SelectionItem

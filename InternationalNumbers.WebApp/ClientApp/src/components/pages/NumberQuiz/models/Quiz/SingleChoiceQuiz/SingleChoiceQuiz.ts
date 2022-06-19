@@ -23,6 +23,9 @@ export class SingleChoiceQuiz
     /** ヒントが表示中か否か */
     doesViewHint: boolean;
 
+    /** クイズの回答方法メッセージ */
+    readonly instructionMessage: string = "最大値";
+
     /** クイズを作るための「数」の辞書データ */
     private numberDictionaries: NumberSymbolDictionary[];
 

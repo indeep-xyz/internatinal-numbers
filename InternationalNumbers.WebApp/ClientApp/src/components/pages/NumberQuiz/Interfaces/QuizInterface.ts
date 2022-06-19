@@ -16,4 +16,7 @@ export type QuizInterface = {
 
     /** 特殊な形の正答をした際の点数を返す */
     getScoreSpecially(): number;
+
+    /** クイズの回答方法メッセージ */
+    readonly instructionMessage: string;
 }

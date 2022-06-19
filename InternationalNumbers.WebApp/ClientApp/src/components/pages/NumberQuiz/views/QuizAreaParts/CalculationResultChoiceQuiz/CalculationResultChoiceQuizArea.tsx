@@ -9,6 +9,7 @@ import { CalculationResultChoiceQuiz } from '../../../models/Quiz/CalculationRes
 import { AnswerCorrectNumbersAllButton } from './AnswerCorrectNumbersAllButton';
 import { ExpressionItem } from './ExpressionItem';
 import { SelectionItem } from './SelectionItem';
+import { QuizInstructionMessage } from '../QuizInstructionMessage';
 
 type propsType = {
     /** 現在の問題 */
@@ -35,6 +36,10 @@ export const CalculationResultChoiceQuizArea: React.VFC<propsType> = ({
 }) => {
     return (
         <div className={styles.wrapper}>
+            <div className={styles.quizInstructionMessageWrapper} >
+                <QuizInstructionMessage quiz={quiz} sideMessage="※負数は白黒反転になります" />
+            </div>
+
             <div className={styles.quizExpressionArea}>
                 {quiz.quizExpressionSymbolFaces.map((expressionSymbolFace, expressionSymbolFaceIndex) => (
                     <ExpressionItem
@@ -63,9 +68,6 @@ export const CalculationResultChoiceQuizArea: React.VFC<propsType> = ({
                             quizSelection={quizSelection}
                         />
                     ))}
-                </div>
-                <div className={styles.notification}>
-                    ※負数は白黒反転になります。
                 </div>
             </div>
 

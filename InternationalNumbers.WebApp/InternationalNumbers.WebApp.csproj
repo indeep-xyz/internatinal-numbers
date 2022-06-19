@@ -98,6 +98,7 @@
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\ExpressionItem.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\HintViewerCheckbox.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\SelectionItem.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\QuizInstructionMessage.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\AnswerSameNumberButton.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\HintViewerCheckbox.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\SelectionItem.tsx" />
