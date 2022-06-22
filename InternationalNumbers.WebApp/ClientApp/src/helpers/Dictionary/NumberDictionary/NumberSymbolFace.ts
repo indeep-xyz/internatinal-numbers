@@ -1,28 +1,32 @@
-﻿// 辞書「数」系のヘルパー共通
+﻿// PJ共通
+import { ComparableInterface } from '../../../interfaces/ComparableInterface';
+
+// 辞書のヘルパー共通
+import { SymbolFaceValueInterface } from '../interfaces/SymbolFaceValueInterface';
+
+// 辞書「数」系のヘルパー共通
 import type * as NumberDictionaryType from './types/NumberDictionaryType';
-import { NumberFaceInterface } from './interfaces/NumberFaceInterface';
 
 /**
  * 記号形式の「数」の情報のうち「目に見える表現」に注目したデータ。
  */
 export class NumberSymbolFace
-    implements NumberFaceInterface<NumberSymbolFace, NumberDictionaryType.SymbolDictionarySource> {
+    implements SymbolFaceValueInterface, ComparableInterface<NumberSymbolFace> {
 
-    /**
-     * 数が表す値。
-     */
-    private _value: number;
-    public get value(): number { return this._value };
-
-    /**
-     * 文字形。
-     */
-    readonly shape: string;
-
-    /**
-     * 辞書データ。
-     */
+    /** 辞書データ */
     readonly dictionary: NumberDictionaryType.SymbolDictionarySource;
+
+    /** 文字の「値」 */
+    private _value: number;
+
+    /** 文字の「値」の数値表現 */
+    public get valueAsNumber(): number { return this._value };
+
+    /** 文字の「値」の文字列表現。（常に英数字 or 一般的な記号） */
+    public get valueAsString(): string { return String(this._value) };
+
+    /** 文字の「形」を表す文字列 */
+    readonly shape: string;
 
     /**
      * コンストラクタ。

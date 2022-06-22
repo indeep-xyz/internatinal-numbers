@@ -3,13 +3,13 @@
 // 画面固有
 import styles from './CalculationResultChoiceQuizArea.module.scss';
 import { HintViewerCheckbox } from './HintViewerCheckbox';
+import { QuizInstructionMessage } from '../QuizInstructionMessage';
 
 // 画面固有（本クイズモード用）
 import { CalculationResultChoiceQuiz } from '../../../models/Quiz/CalculationResultChoiceQuiz/CalculationResultChoiceQuiz';
 import { AnswerCorrectNumbersAllButton } from './AnswerCorrectNumbersAllButton';
 import { ExpressionItem } from './ExpressionItem';
 import { SelectionItem } from './SelectionItem';
-import { QuizInstructionMessage } from '../QuizInstructionMessage';
 
 type propsType = {
     /** 現在の問題 */
@@ -45,7 +45,7 @@ export const CalculationResultChoiceQuizArea: React.VFC<propsType> = ({
                     <ExpressionItem
                         key={expressionSymbolFaceIndex}
                         quiz={quiz}
-                        expressionSymbolFace={expressionSymbolFace}
+                        symbolPresenter={expressionSymbolFace}
                     />
                 ))}
                 <ExpressionItem

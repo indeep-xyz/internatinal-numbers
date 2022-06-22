@@ -1,10 +1,15 @@
-﻿import type * as NumberDictionaryType from './types/NumberDictionaryType';
+﻿// 辞書系のヘルパー共通
+import { SymbolDictionaryPresentationInterface } from '../interfaces/SymbolDictionaryPresentationInterface';
+
+// 辞書「演算子」系のヘルパー共通
+import type * as NumberDictionaryType from './types/NumberDictionaryType';
 import { DictionarySourceMap } from './constants/symbols/index';
 
 /**
  * 記号形式の「数」の情報を扱うクラス。
  */
-export class NumberSymbolDictionary {
+export class NumberSymbolDictionary
+    implements SymbolDictionaryPresentationInterface {
 
     static getDictionaryNames() {
         return Object.keys(DictionarySourceMap);

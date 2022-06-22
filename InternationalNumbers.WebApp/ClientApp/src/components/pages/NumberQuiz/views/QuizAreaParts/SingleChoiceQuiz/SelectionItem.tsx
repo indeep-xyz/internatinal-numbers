@@ -1,28 +1,28 @@
-import * as React from 'react';
+ï»¿import * as React from 'react';
 
-// «‘u”vŒn‚Ìƒwƒ‹ƒp[‹¤’Ê
-import { NumberSymbolFace } from '../../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolFace';
+// ç”»é¢å›ºæœ‰
+import { SymbolView } from '../SymbolView/SymbolView';
 
-// ‰æ–ÊŒÅ—Li–{ƒQ[ƒ€ƒ‚[ƒh—pj
+// ç”»é¢å›ºæœ‰ï¼ˆæœ¬ã‚²ãƒ¼ãƒ ãƒ¢ãƒ¼ãƒ‰ç”¨ï¼‰
 import { SingleChoiceQuiz } from '../../../models/Quiz/SingleChoiceQuiz/SingleChoiceQuiz';
 
-// •”•iŒÅ—L
+// éƒ¨å“å›ºæœ‰
 import styles from './SelectionItem.module.scss';
+import { SymbolPresenter } from '../../../models/Quiz/SymbolPresenter';
 
 type propsType = {
-    /** Œ»İ‚Ì–â‘è */
+    /** ç¾åœ¨ã®å•é¡Œ */
     quiz: SingleChoiceQuiz;
 
-    /** Œ»İ‚Ì–â‘è’†‚Ì‘I‘ğˆ */
-    quizSelection: NumberSymbolFace;
+    /** ç¾åœ¨ã®å•é¡Œä¸­ã®é¸æŠè‚¢ */
+    quizSelection: SymbolPresenter;
 
-
-    /** ³“š‚Ìˆ— */
+    /** æ­£ç­”æ™‚ã®å‡¦ç† */
     answerGenerally(isCorrect: boolean): void;
 };
 
 /**
- * ƒNƒCƒY‚Ì–â‘è‚Ì‘I‘ğˆ‚ğ•\‚·ƒRƒ“ƒ|[ƒlƒ“ƒgB
+ * ã‚¯ã‚¤ã‚ºã®å•é¡Œã®é¸æŠè‚¢ã‚’è¡¨ã™ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã€‚
  */
 export const SelectionItem: React.VFC<propsType> = ({
     quiz,
@@ -30,16 +30,16 @@ export const SelectionItem: React.VFC<propsType> = ({
     answerGenerally,
 }) => {
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    // •â•ˆ—
+    // è£œåŠ©å‡¦ç†
 
     /**
-     * ³“š‚©”Û‚©‚Ì”»’èˆ—B
+     * æ­£ç­”ã‹å¦ã‹ã®åˆ¤å®šå‡¦ç†ã€‚
      */
     const isCorrect = (
     ): boolean => quiz.isBiggestNumber(quizSelection);
 
     /**
-     * ‰ñ“šuŒãv‚Ì•`‰æB
+     * å›ç­”ã€Œå¾Œã€æ™‚ã®æç”»ã€‚
      */
     const renderWhenAnswered = (
     ): JSX.Element => {
@@ -49,15 +49,19 @@ export const SelectionItem: React.VFC<propsType> = ({
             <div
                 className={`${styles.quizSelectionItem} ${classNameForBiggestNumber}`}
             >
-                <div className={styles.numberValue}>{quizSelection.value}</div>
-                <div className={styles.numberShape}>{quizSelection.shape}</div>
+                <div className={styles.numberValue}>{quizSelection.valueAsString}</div>
+                <div className={styles.numberShape}>
+                    <SymbolView
+                        symbolPresenter={quizSelection}
+                    />
+                </div>
                 <div className={styles.label}>{quizSelection.dictionary.label}</div>
             </div>
         );
     }
 
     /**
-     * ‰ñ“šu‘Ov‚Ì•`‰æB
+     * å›ç­”ã€Œå‰ã€æ™‚ã®æç”»ã€‚
      */
     const renderWhenNotAnswered = (
     ): JSX.Element => {
@@ -71,7 +75,9 @@ export const SelectionItem: React.VFC<propsType> = ({
                     className={styles.numberShape}
                     onClick={() => answerGenerally(isCorrect())}
                 >
-                    {quizSelection.shape}
+                    <SymbolView
+                        symbolPresenter={quizSelection}
+                    />
                 </div>
                 <div className={styles.label}>{label}</div>
             </div>

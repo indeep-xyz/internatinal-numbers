@@ -1,8 +1,11 @@
 ﻿import * as React from 'react';
 
 // 辞書系のヘルパー共通
-import { FourArithmeticExpressionSymbolFaceType } from '../../../../../../types/ArithmeticType';
 import { NumberSymbolFace } from '../../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolFace';
+
+// 画面固有
+import { SymbolPresenter } from '../../../models/Quiz/SymbolPresenter';
+import { SymbolView } from '../SymbolView/SymbolView';
 
 // 画面固有（本クイズモード用）
 import { CalculationResultChoiceQuiz } from '../../../models/Quiz/CalculationResultChoiceQuiz/CalculationResultChoiceQuiz';
@@ -13,7 +16,7 @@ import styles from './ExpressionItem.module.scss';
 
 type propsType = {
     /** 現在の問題中の計算式 */
-    expressionSymbolFace?: FourArithmeticExpressionSymbolFaceType;
+    symbolPresenter?: SymbolPresenter;
 
     /** 現在の問題 */
     quiz: CalculationResultChoiceQuiz;
@@ -29,7 +32,7 @@ type propsType = {
  * クイズの問題（計算式）を包括するコンポーネント。
  */
 export const ExpressionItem: React.VFC<propsType> = ({
-    expressionSymbolFace,
+    symbolPresenter,
     quiz,
     isCalculationResult = false,
     isBinaryOperator = false,
@@ -40,12 +43,14 @@ export const ExpressionItem: React.VFC<propsType> = ({
 
     const renderCalculationFormulaWhenAnswered = (
     ): JSX.Element => {
-        const answer = (expressionSymbolFace instanceof NumberSymbolFace) ? expressionSymbolFace.value : expressionSymbolFace!.operator;
-
         return (
             <div className={`${styles.container} ${styles.calculationFormulaContainer}`}>
-                <div className={styles.readableShape}>{answer}</div>
-                <div className={styles.internationalShape}>{expressionSymbolFace!.shape}</div>
+                <div className={styles.readableShape}>{symbolPresenter.valueAsString}</div>
+                <div className={styles.internationalShape}>
+                    <SymbolView
+                        symbolPresenter={symbolPresenter}
+                    />
+                </div>
                 {renderLabel(true)}
             </div>
         );
@@ -55,7 +60,11 @@ export const ExpressionItem: React.VFC<propsType> = ({
     ): JSX.Element => {
         return (
             <div className={`${styles.container} ${styles.calculationFormulaContainer}`}>
-                <div className={styles.internationalShape}>{expressionSymbolFace!.shape}</div>
+                <div className={styles.internationalShape}>
+                    <SymbolView
+                        symbolPresenter={symbolPresenter}
+                    />
+                </div>
                 {renderLabel(quiz.doesViewHint)}
             </div>
         );
@@ -65,8 +74,8 @@ export const ExpressionItem: React.VFC<propsType> = ({
         isVisible: boolean
     ): JSX.Element => {
         if (isVisible
-            && expressionSymbolFace instanceof NumberSymbolFace) {
-            return <div className={styles.label}>{expressionSymbolFace.dictionary.label}</div>;
+            && symbolPresenter instanceof NumberSymbolFace) {
+            return <div className={styles.label}>{symbolPresenter.dictionary.label}</div>;
         }
 
         return <React.Fragment />;

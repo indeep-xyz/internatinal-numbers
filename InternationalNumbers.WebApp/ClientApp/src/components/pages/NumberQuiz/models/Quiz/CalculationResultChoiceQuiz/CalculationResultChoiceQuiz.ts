@@ -20,6 +20,7 @@ import { OperatorSymbolDictionaryFactory } from '../../../../../../helpers/Dicti
 // 画面固有
 import { QuizInterface } from '../../../Interfaces/QuizInterface';
 import { Expression } from './Expression';
+import { SymbolPresenter } from '../SymbolPresenter';
 
 /**
  * 計算結果を択一選択させるクイズを表すオブジェクト。
@@ -30,10 +31,10 @@ export class CalculationResultChoiceQuiz
     implements QuizInterface {
 
     /** 計算結果の選択肢 */
-    quizSelections: NumberSymbolFace[];
+    quizSelections: SymbolPresenter[];
     
     /** 計算式の部品 */
-    quizExpressionSymbolFaces: Array<FourArithmeticExpressionSymbolFaceType>;
+    quizExpressionSymbolFaces: SymbolPresenter[];
 
     /** ヒントが表示中か否か */
     doesViewHint: boolean;
@@ -75,9 +76,9 @@ export class CalculationResultChoiceQuiz
      * @param answeredNumberItem 回答した選択肢
      */
     isCorrect(
-        answeredNumberItem: NumberSymbolFace
+        answeredNumberItem: SymbolPresenter
     ): boolean {
-        return this.expression.isCorrect(answeredNumberItem.value);
+        return this.expression.isCorrect(answeredNumberItem.valueAsNumber);
     }
 
     /**
@@ -86,7 +87,7 @@ export class CalculationResultChoiceQuiz
      */
     createQuizSelections(
         currentScore: number
-    ): NumberSymbolFace[] {
+    ): SymbolPresenter[] {
         const numberOfSelections = Math.max(2, Math.floor(currentScore / 2));
         const symbolFaces: NumberSymbolFace[] = [
             NumberSymbolFaceFactory.randomShape(this.numberDictionaries, this.expression.calculationResult)
@@ -108,7 +109,9 @@ export class CalculationResultChoiceQuiz
             }
         }
 
-        return ArraySort.shuffle(symbolFaces);
+        return ArraySort
+            .shuffle(symbolFaces)
+            .map(sf => new SymbolPresenter(sf));
     }
 
     /**
@@ -123,13 +126,18 @@ export class CalculationResultChoiceQuiz
      * 表示用の計算式を作成する。
      */
     createQuizExpressionSymbolFaces(
-    ): Array<FourArithmeticExpressionSymbolFaceType> {
+    ): SymbolPresenter[] {
         return this.expression.expressionParts.map(ep => {
+            let symbolFace = null;
+
             if (typeof ep === "number") {
-                return NumberSymbolFaceFactory.randomShape(this.numberDictionaries, ep);
+                symbolFace = NumberSymbolFaceFactory.randomShape(this.numberDictionaries, ep);
+            }
+            else {
+                symbolFace = OperatorSymbolFaceFactory.randomShape(this.operatorDictionaries, ep);
             }
 
-            return OperatorSymbolFaceFactory.randomShape(this.operatorDictionaries, ep);
+            return new SymbolPresenter(symbolFace);
         });
     }
 
@@ -140,7 +148,7 @@ export class CalculationResultChoiceQuiz
     ): boolean {
         return this
             .quizSelections
-            .every(ni => ni.value === this.quizSelections[0].value)
+            .every(ni => ni.valueAsString === this.quizSelections[0].valueAsString)
             && this.isCorrect(this.quizSelections[0]);
     }
 

@@ -1,8 +1,9 @@
 ﻿// PJ共通
+import { ComparableInterface } from '../../../interfaces/ComparableInterface';
 import type * as ArithmeticType from '../../../types/ArithmeticType';
 
 // 辞書系のヘルパー共通
-import { OperatorFaceInterface } from './interfaces/OperatorFaceInterface';
+import { SymbolFaceValueInterface } from '../interfaces/SymbolFaceValueInterface';
 
 // 辞書「演算子」系のヘルパー共通
 import type * as OperatorDictionaryType from './types/OperatorDictionaryType';
@@ -11,37 +12,34 @@ import type * as OperatorDictionaryType from './types/OperatorDictionaryType';
  * 記号形式の「演算子」の情報のうち「目に見える表現」に注目したデータ。
  */
 export class OperatorSymbolFace
-    implements OperatorFaceInterface<OperatorSymbolFace, OperatorDictionaryType.SymbolDictionarySource> {
+    implements SymbolFaceValueInterface, ComparableInterface<OperatorSymbolFace> {
 
-    /**
-     * 演算子の値 (+, -, *, /)。
-     */
-    readonly operator: ArithmeticType.FourArithmeticOperatorType;
-
-    /**
-     * 文字形。
-     */
-    readonly shape: string;
-
-    /**
-     * 辞書データ。
-     */
+    /** 辞書データ */
     readonly dictionary: OperatorDictionaryType.SymbolDictionarySource;
+
+    /** 文字の「値」 (+, -, *, /) */
+    readonly _value: ArithmeticType.FourArithmeticOperatorType;
+
+    /** 文字の「値」の文字列表現（常に英数字 or 一般的な記号） */
+    public get valueAsString(): string { return String(this._value) };
+
+    /** 文字の「形」を表す文字列 */
+    readonly shape: string;
 
     /**
      * コンストラクタ。
      * @param sourceDictionary 辞書データ
-     * @param operator 演算子の値 (+, -, *, /)
+     * @param value 演算子の値 (+, -, *, /)
      * @param shape 文字形
      */
     constructor(
         sourceDictionary: OperatorDictionaryType.SymbolDictionarySource,
-        operator: ArithmeticType.FourArithmeticOperatorType,
+        value: ArithmeticType.FourArithmeticOperatorType,
         shape: string,
     ) {
-        this.dictionary = sourceDictionary;
-        this.operator = operator;
         this.shape = shape;
+        this._value = value;
+        this.dictionary = sourceDictionary;
     }
 
     /**

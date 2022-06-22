@@ -7,6 +7,7 @@ import { NumberQuizMode } from '../../../../../../helpers/Dictionary/NumberDicti
 
 // 画面固有
 import { QuizInterface } from '../../../Interfaces/QuizInterface';
+import { SymbolPresenter } from '../SymbolPresenter';
 
 /**
  * 何らかの条件を満たす値を択一選択させるクイズを表すオブジェクト。
@@ -15,7 +16,7 @@ export class SingleChoiceQuiz
     implements QuizInterface
 {
     /** クイズの選択肢 */
-    quizSelections: NumberSymbolFace[];
+    quizSelections: SymbolPresenter[];
 
     /** 回答済みか否か */
     isAnswered: boolean;
@@ -48,9 +49,9 @@ export class SingleChoiceQuiz
      * @param answeredNumberItem 回答した選択肢
      */
     isBiggestNumber(
-        answeredNumberItem: NumberSymbolFace
+        answeredNumberItem: SymbolPresenter
     ): boolean {
-        return this.quizSelections.every(qni => qni.value <= answeredNumberItem.value);
+        return this.quizSelections.every(qni => qni.valueAsString <= answeredNumberItem.valueAsString);
     }
 
     /**
@@ -60,7 +61,7 @@ export class SingleChoiceQuiz
      */
     private createQuizSelections(
         currentScore: number
-    ): NumberSymbolFace[] {
+    ): SymbolPresenter[] {
         const numberOfSelections: number = Math.max(2, Math.floor(currentScore / 2));
         const symbolFaces: NumberSymbolFace[] = [];
 
@@ -74,7 +75,7 @@ export class SingleChoiceQuiz
             }
         }
 
-        return symbolFaces;
+        return symbolFaces.map(sf => new SymbolPresenter(sf));
     }
 
     /**
@@ -84,7 +85,7 @@ export class SingleChoiceQuiz
     ): boolean {
         return this
             .quizSelections
-            .every(ni => ni.value === this.quizSelections[0].value);
+            .every(ni => ni.valueAsString === this.quizSelections[0].valueAsString);
     }
 
     /**
