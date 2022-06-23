@@ -37,6 +37,8 @@ export class SymbolPresenter {
         if (this.symbolFaceValue instanceof OperatorSymbolFace) {
             throw new Error("OperatorSymbolFace does not suppot valueAsNumber().");
         }
+
+        return NaN;
     }
 
     /** 文字の「値」の文字列表現（常に英数字 or 一般的な記号） */
@@ -64,7 +66,7 @@ export class SymbolPresenter {
      * @param symbolFace 現在スコア。この点数によってクイズの選択肢数が変化する
      */
     constructor(
-        symbolFace: NumberSymbolFace,
+        symbolFace: SymbolFaceValueInterface,
     ) {
         this.symbolFaceValue = symbolFace;
         this.fontWeight = this.createFontWeight();

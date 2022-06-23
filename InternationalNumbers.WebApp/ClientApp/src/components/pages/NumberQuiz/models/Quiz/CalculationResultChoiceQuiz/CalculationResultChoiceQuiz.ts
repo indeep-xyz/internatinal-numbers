@@ -21,6 +21,7 @@ import { OperatorSymbolDictionaryFactory } from '../../../../../../helpers/Dicti
 import { QuizInterface } from '../../../Interfaces/QuizInterface';
 import { Expression } from './Expression';
 import { SymbolPresenter } from '../SymbolPresenter';
+import { SymbolFaceValueInterface } from '../../../../../../helpers/Dictionary/interfaces/SymbolFaceValueInterface';
 
 /**
  * 計算結果を択一選択させるクイズを表すオブジェクト。
@@ -128,7 +129,7 @@ export class CalculationResultChoiceQuiz
     createQuizExpressionSymbolFaces(
     ): SymbolPresenter[] {
         return this.expression.expressionParts.map(ep => {
-            let symbolFace = null;
+            let symbolFace: SymbolFaceValueInterface;
 
             if (typeof ep === "number") {
                 symbolFace = NumberSymbolFaceFactory.randomShape(this.numberDictionaries, ep);
@@ -137,7 +138,7 @@ export class CalculationResultChoiceQuiz
                 symbolFace = OperatorSymbolFaceFactory.randomShape(this.operatorDictionaries, ep);
             }
 
-            return new SymbolPresenter(symbolFace);
+            return new SymbolPresenter(symbolFace!);
         });
     }
 

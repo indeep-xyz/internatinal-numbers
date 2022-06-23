@@ -45,10 +45,10 @@ export const ExpressionItem: React.VFC<propsType> = ({
     ): JSX.Element => {
         return (
             <div className={`${styles.container} ${styles.calculationFormulaContainer}`}>
-                <div className={styles.readableShape}>{symbolPresenter.valueAsString}</div>
+                <div className={styles.readableShape}>{symbolPresenter!.valueAsString}</div>
                 <div className={styles.internationalShape}>
                     <SymbolView
-                        symbolPresenter={symbolPresenter}
+                        symbolPresenter={symbolPresenter!}
                     />
                 </div>
                 {renderLabel(true)}
@@ -62,7 +62,7 @@ export const ExpressionItem: React.VFC<propsType> = ({
             <div className={`${styles.container} ${styles.calculationFormulaContainer}`}>
                 <div className={styles.internationalShape}>
                     <SymbolView
-                        symbolPresenter={symbolPresenter}
+                        symbolPresenter={symbolPresenter!}
                     />
                 </div>
                 {renderLabel(quiz.doesViewHint)}
@@ -75,7 +75,7 @@ export const ExpressionItem: React.VFC<propsType> = ({
     ): JSX.Element => {
         if (isVisible
             && symbolPresenter instanceof NumberSymbolFace) {
-            return <div className={styles.label}>{symbolPresenter.dictionary.label}</div>;
+            return <div className={styles.label}>{symbolPresenter!.dictionary.label}</div>;
         }
 
         return <React.Fragment />;
