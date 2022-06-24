@@ -79,13 +79,16 @@ export class SingleChoiceQuiz
     }
 
     /**
-     * 選択肢内の数値がすべて同じか否かを判定する。
+     * 選択肢内に最大値の数値が複数あるかを判定する。
      */
-    isSameNumbersAll(
+    isBiggestNumbersSeveral(
     ): boolean {
+        const maxNumber = Math.max(...this.quizSelections.map(qs => qs.valueAsNumber));
+
         return this
             .quizSelections
-            .every(ni => ni.valueAsString === this.quizSelections[0].valueAsString);
+            .filter(qs => qs.valueAsNumber === maxNumber)
+            .length > 1;
     }
 
     /**

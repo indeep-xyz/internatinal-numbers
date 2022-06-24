@@ -101,7 +101,7 @@
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\NextQuizButton.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\NumberQuizPage.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizArea.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\AnswerCorrectNumbersAllButton.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\AnswerCorrectNumbersSeveralButton.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\CalculationResultChoiceQuizArea.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\ExpressionItem.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\HintViewerCheckbox.tsx" />

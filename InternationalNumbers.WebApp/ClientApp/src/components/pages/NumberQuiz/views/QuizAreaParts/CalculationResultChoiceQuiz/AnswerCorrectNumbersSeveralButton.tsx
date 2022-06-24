@@ -4,7 +4,7 @@
 import { CalculationResultChoiceQuiz } from '../../../models/Quiz/CalculationResultChoiceQuiz/CalculationResultChoiceQuiz';
 
 // 部品固有
-import styles from './AnswerCorrectNumbersAllButton.module.scss';
+import styles from './AnswerCorrectNumbersSeveralButton.module.scss';
 
 type propsType = {
     /** 現在の問題 */
@@ -17,7 +17,7 @@ type propsType = {
 /**
  * クイズの問題がすべて正答であることを回答するためのコンポーネント。
  */
-export const AnswerCorrectNumbersAllButton: React.VFC<propsType> = ({
+export const AnswerCorrectNumbersSeveralButton: React.VFC<propsType> = ({
     quiz,
     answerSpecially,
 }) => {
@@ -25,12 +25,17 @@ export const AnswerCorrectNumbersAllButton: React.VFC<propsType> = ({
         return <React.Fragment />;
     }
 
+    // ボタンに表示する文字。実質同じ
+    const buttonLabel = quiz.quizSelections.length < 3
+        ? "すべて同じ数字"
+        : "正解の選択肢が２つ以上ある";
+
     return (
         <button
             className={styles.button}
-            onClick={() => answerSpecially(quiz.isCorrectNumbersAll())}
+            onClick={() => answerSpecially(quiz.isCorrectNumbersSeveral())}
         >
-            すべて同じ数字
+            {buttonLabel}
         </button>
     );
 }

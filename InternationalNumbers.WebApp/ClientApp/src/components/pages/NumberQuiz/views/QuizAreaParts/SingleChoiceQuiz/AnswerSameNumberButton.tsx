@@ -25,12 +25,17 @@ export const AnswerSameNumberButton: React.VFC<propsType> = ({
         return <React.Fragment />;
     }
 
+    // ボタンに表示する文字。実質同じ
+    const buttonLabel = quiz.quizSelections.length < 3
+        ? "すべて同じ数字"
+        : "最大値の選択肢が２つ以上ある";
+
     return (
         <button
             className={styles.button}
-            onClick={() => answerSpecially(quiz.isSameNumbersAll())}
+            onClick={() => answerSpecially(quiz.isBiggestNumbersSeveral())}
         >
-            すべて同じ数字
+            {buttonLabel}
         </button>
     );
 }

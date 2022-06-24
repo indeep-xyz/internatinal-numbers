@@ -33,7 +33,7 @@ export class CalculationResultChoiceQuiz
 
     /** 計算結果の選択肢 */
     quizSelections: SymbolPresenter[];
-    
+
     /** 計算式の部品 */
     quizExpressionSymbolFaces: SymbolPresenter[];
 
@@ -60,7 +60,7 @@ export class CalculationResultChoiceQuiz
      * @param currentScore 現在スコア。この点数によってクイズの選択肢数が変化する
      */
     constructor(
-        currentScore:number
+        currentScore: number
     ) {
         this.numberDictionaries = NumberSymbolDictionaryFactory.createAll(NumberQuizMode.SingleChoiceShape);
         this.operatorDictionaries = OperatorSymbolDictionaryFactory.createAll(NumberQuizMode.SingleChoiceShape);
@@ -143,14 +143,14 @@ export class CalculationResultChoiceQuiz
     }
 
     /**
-     * 選択肢内の数値がすべて正解か否かを判定する。
+     * 選択肢内に正解が複数あるか否かを判定する。
      */
-    isCorrectNumbersAll(
+    isCorrectNumbersSeveral(
     ): boolean {
         return this
             .quizSelections
-            .every(ni => ni.valueAsString === this.quizSelections[0].valueAsString)
-            && this.isCorrect(this.quizSelections[0]);
+            .filter(qs => this.isCorrect(qs))
+            .length > 1;
     }
 
     /**

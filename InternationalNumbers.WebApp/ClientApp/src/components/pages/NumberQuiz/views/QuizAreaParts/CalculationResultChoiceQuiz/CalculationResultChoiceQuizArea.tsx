@@ -7,7 +7,7 @@ import { QuizInstructionMessage } from '../QuizInstructionMessage';
 
 // 画面固有（本クイズモード用）
 import { CalculationResultChoiceQuiz } from '../../../models/Quiz/CalculationResultChoiceQuiz/CalculationResultChoiceQuiz';
-import { AnswerCorrectNumbersAllButton } from './AnswerCorrectNumbersAllButton';
+import { AnswerCorrectNumbersSeveralButton } from './AnswerCorrectNumbersSeveralButton';
 import { ExpressionItem } from './ExpressionItem';
 import { SelectionItem } from './SelectionItem';
 
@@ -79,7 +79,7 @@ export const CalculationResultChoiceQuizArea: React.VFC<propsType> = ({
             </div>
 
             <div className={styles.specialAnswerArea}>
-                <AnswerCorrectNumbersAllButton
+                <AnswerCorrectNumbersSeveralButton
                     quiz={quiz}
                     answerSpecially={answerSpecially}
                 />
