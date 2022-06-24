@@ -51,6 +51,7 @@
     <None Remove="ClientApp\src\App.jsx" />
     <None Remove="ClientApp\src\helpers\Array\ArrayExtraction.ts" />
     <None Remove="ClientApp\src\helpers\Array\ArrayFactory.ts" />
+    <None Remove="ClientApp\src\helpers\Array\ArrayJudge.ts" />
     <None Remove="ClientApp\src\helpers\Array\ArraySort.ts" />
     <None Remove="ClientApp\src\helpers\Array\ArraySortHelper.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\interfaces\SymbolDictionaryPresentationInterface.ts" />
@@ -93,6 +94,7 @@
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\GameState.ts" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\CalculationResultChoiceQuiz\CalculationResultChoiceQuiz.ts" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\CalculationResultChoiceQuiz\Expression.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\CalculationResultChoiceQuiz\ExpressionLevelJudge.ts" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\GameState.ts" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\SingleChoiceQuiz\SingleChoiceQuiz.ts" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\SymbolPresenter.ts" />

@@ -1,6 +1,8 @@
 ﻿// PJ共通
 import { FourArithmeticOperatorType } from "../../../../../../types/ArithmeticType";
 import { ArrayExtraction } from "../../../../../../helpers/Array/ArrayExtraction";
+import { BooleanFactory } from "../../../../../../helpers/Boolean/BooleanFactory";
+import { ExpressionLevelJudge } from "./ExpressionLevelJudge";
 
 // 計算式を構成する部品の型
 type expressionPartType = number | FourArithmeticOperatorType;
@@ -66,6 +68,12 @@ export class Expression {
 
             if (result === null) {
                 // 計算不能値の場合、次の候補へ
+                continue;
+            }
+
+            if (new ExpressionLevelJudge(tempolaryExpressionParts).isTooEasy()
+                && BooleanFactory.atRandom(50, 49)) {
+                // 簡単すぎる問題の場合、確率で次の候補へ
                 continue;
             }
 
