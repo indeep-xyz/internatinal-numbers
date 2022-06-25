@@ -109,4 +109,7 @@
   * react-scriptsおよびwebpackあたりにネックあり
 * ディレクトリ構成資料を作成したい
 * Dockerで起動するようにしたい（まだ途中）
+* 辞書ファイル素材をExcelで、プログラムファイル出力をNPoiで扱うようにしたい
+  * 別プロジェクトで作成 (InternationalNumbers.CodeGeneration)
+  * マクロで扱うのはVBScriptでも他言語でも、開発と管理がかなり面倒
 
