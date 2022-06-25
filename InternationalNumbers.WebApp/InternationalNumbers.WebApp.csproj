@@ -66,7 +66,6 @@
     <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberSymbolFace.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberSymbolFaceFactory.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\types\NumberDictionaryType.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\interfaces\OperatorFaceInterface.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolFaceFactory.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\index.d.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\index.ts" />
@@ -79,11 +78,23 @@
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolDictionaryFactory.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolFace.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\types\OperatorDictionaryType.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\constants\symbols\index.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\SolomonDemonSymbolDictionary.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\SolomonDemonSymbolDictionaryFactory.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\SolomonDemonSymbolFace.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\SolomonDemonSymbolFaceFactory.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\types\SolomonDemonDictionaryType.ts" />
     <None Remove="ClientApp\src\helpers\Object\ObjectMapExtraction.ts" />
     <None Remove="ClientApp\src\types\ArithmeticType.ts" />
+    <None Remove="ClientApp\src\types\PublicFileType.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Remove="ClientApp\src\components\atoms\ImageView\views\ImageView.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\organisms\SolomonDemonShapeTable\views\SolomonDemonShapeTable.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\organisms\SolomonDemonShapeTable\views\SolomonDemonShapeTableParts\HeaderRow.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\organisms\SolomonDemonShapeTable\views\SolomonDemonShapeTableParts\Row.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\organisms\SolomonDemonShapeTable\views\SolomonDemonShapeTableParts\SymbolShapeCell.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListHeader.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListPage.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListRow.tsx" />
@@ -112,6 +123,7 @@
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\SelectionItem.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\SingleChoiceQuizArea.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\ScoreArea.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\SolomonDemonList\views\SolomonDemonListPage.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\abjad.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_eastern_presian.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_eastern_urdu.ts" />
@@ -159,13 +171,15 @@
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\computer.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\deutsch.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\words\japanese.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\constants\generals.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\constants\symbols\01-Bael.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\constants\symbols\02-Agares.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="ClientApp\src\assets\images\numbers\sanji\" />
     <Folder Include="ClientApp\src\assets\images\numbers\kanji_old\" />
     <Folder Include="ClientApp\src\assets\images\numbers\kanji\" />
-    <Folder Include="ClientApp\src\components\atoms\" />
     <Folder Include="ClientApp\src\components\molecules\" />
   </ItemGroup>
 
@@ -277,6 +291,7 @@
     <TypeScriptSourceMap>True</TypeScriptSourceMap>
     <TypeScriptSkipLibCheck>True</TypeScriptSkipLibCheck>
     <TypeScriptMapRoot></TypeScriptMapRoot>
+    <TypeScriptAlwaysStrict>True</TypeScriptAlwaysStrict>
     <TypeScriptSourceRoot />
   </PropertyGroup>
 

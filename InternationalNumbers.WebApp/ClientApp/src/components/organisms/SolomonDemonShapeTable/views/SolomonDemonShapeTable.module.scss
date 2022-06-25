@@ -1,0 +1,28 @@
+﻿.table {
+    border: 1px solid var(--color-border);
+}
+
+.cell {
+    border: 1px solid var(--color-border);
+
+    &.cellOrderNumber {
+        width: 3em;
+    }
+
+    &.cellLabel {
+        width: 10em;
+    }
+
+    &.cellPosition {
+        width: 10em;
+    }
+
+    &cellNumberOfdemonLegions {
+        width: 3em;
+    }
+
+    &.cellSymbolShape {
+        width: auto;
+        text-align: center;
+    }
+}
