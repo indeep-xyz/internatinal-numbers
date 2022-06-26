@@ -1,7 +1,7 @@
 ﻿import * as React from 'react';
 
 // 辞書系のヘルパー共通
-import { NumberSymbolFace } from '../../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolFace';
+import { NumberSymbolDictionary } from '../../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionary';
 
 // 画面固有
 import { SymbolPresenter } from '../../../models/Quiz/SymbolPresenter';
@@ -74,7 +74,7 @@ export const ExpressionItem: React.VFC<propsType> = ({
         isVisible: boolean
     ): JSX.Element => {
         if (isVisible
-            && symbolPresenter instanceof NumberSymbolFace) {
+            && symbolPresenter?.dictionary instanceof NumberSymbolDictionary) {
             return <div className={styles.label}>{symbolPresenter!.dictionary.label}</div>;
         }
 
