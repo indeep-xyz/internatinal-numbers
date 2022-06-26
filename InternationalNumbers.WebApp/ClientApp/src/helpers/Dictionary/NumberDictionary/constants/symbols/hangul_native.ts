@@ -2,7 +2,7 @@
 
 export const hangul_native: NumberDictionaryType.SymbolDictionarySource = {
     "name": "hangul_native",
-    "label": "ハングル数字 (朝鮮語)",
+    "label": "ハングル (朝鮮語)",
     "language": "Hangul (Native-Korean)",
     "shapeMap": {
         "0": [],

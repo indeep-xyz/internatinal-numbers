@@ -2,7 +2,7 @@
 
 export const hangul_sino: NumberDictionaryType.SymbolDictionarySource = {
     "name": "hangul_sino",
-    "label": "ハングル数字 (漢字語)",
+    "label": "ハングル (漢字語)",
     "language": "Hangul (Sino-Korean)",
     "shapeMap": {
         "0": ["영", "령", "공"],
