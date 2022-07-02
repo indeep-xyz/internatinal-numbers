@@ -13,12 +13,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.26" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.5" />
     <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.7.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="NPOI" Version="2.5.6" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +49,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Api\Repositories\InternationalNumberSource\Files\InternationalNumberSource.xlsx" />
     <None Remove="ClientApp\dist\helpers\Dictionary\OperatorDictionary\OperatorSymbolDictionaryFactory.js" />
     <None Remove="ClientApp\dist\helpers\Dictionary\OperatorDictionary\OperatorSymbolDictionaryFactory.js.map" />
     <None Remove="ClientApp\src\App.jsx" />
@@ -177,6 +181,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Api\Repositories\InternationalNumberSource\Files\InternationalNumberSource.xlsx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ClientApp\src\assets\images\numbers\sanji\" />
     <Folder Include="ClientApp\src\assets\images\numbers\kanji_old\" />
     <Folder Include="ClientApp\src\assets\images\numbers\kanji\" />
@@ -293,6 +301,11 @@
     <TypeScriptMapRoot></TypeScriptMapRoot>
     <TypeScriptAlwaysStrict>True</TypeScriptAlwaysStrict>
     <TypeScriptSourceRoot />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
 </Project>
