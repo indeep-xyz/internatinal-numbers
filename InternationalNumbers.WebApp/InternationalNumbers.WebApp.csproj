@@ -96,6 +96,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Remove="ClientApp\src\components\atoms\ImageView\views\ImageView.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\atoms\LoadingIndicator\views\LoadingIndicator.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\organisms\SolomonDemonShapeTable\views\SolomonDemonShapeTable.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\organisms\SolomonDemonShapeTable\views\SolomonDemonShapeTableParts\HeaderRow.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\organisms\SolomonDemonShapeTable\views\SolomonDemonShapeTableParts\Row.tsx" />

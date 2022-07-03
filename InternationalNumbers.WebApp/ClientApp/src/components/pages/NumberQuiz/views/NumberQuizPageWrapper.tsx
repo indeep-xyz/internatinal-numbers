@@ -1,5 +1,8 @@
 import * as React from 'react';
 
+// システム共通
+import { LoadingIndicator } from '../../../atoms/LoadingIndicator/views/LoadingIndicator';
+
 // システム共通－辞書「数」
 import { NumberSymbolDictionary } from '../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionary';
 import { NumberSymbolDictionaryFactory } from '../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionaryFactory';
@@ -43,7 +46,7 @@ export const NumberQuizPageWrapper: React.VFC<propsType> = ({
     // main
 
     if (numberDictionaries.length < 1) {
-        return <React.Fragment />;
+        return <LoadingIndicator baseWidth={80} />;
     }
 
     return (
