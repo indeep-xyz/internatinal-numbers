@@ -2,8 +2,6 @@
 import { NumberSymbolFace } from '../../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolFace';
 import { NumberSymbolFaceFactory } from '../../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolFaceFactory';
 import { NumberSymbolDictionary } from '../../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionary';
-import { NumberSymbolDictionaryFactory } from '../../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionaryFactory';
-import { NumberQuizMode } from '../../../../../../helpers/Dictionary/NumberDictionary/constants/generals';
 
 // 画面固有
 import { QuizInterface } from '../../../Interfaces/QuizInterface';
@@ -35,9 +33,10 @@ export class SingleChoiceQuiz
      * @param currentScore 現在スコア。この点数によってクイズの選択肢数が変化する
      */
     constructor(
-        currentScore: number
+        numberDictionaries: NumberSymbolDictionary[],
+        currentScore: number,
     ) {
-        this.numberDictionaries = NumberSymbolDictionaryFactory.createAll(NumberQuizMode.SingleChoiceShape);
+        this.numberDictionaries = numberDictionaries;
 
         this.quizSelections = this.createQuizSelections(currentScore);
         this.isAnswered = false;

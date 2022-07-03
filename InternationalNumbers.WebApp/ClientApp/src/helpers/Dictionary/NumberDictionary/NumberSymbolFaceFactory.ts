@@ -15,33 +15,33 @@ export class NumberSymbolFaceFactory {
     /**
      * ランダムにインスタンスを生成する。
      * 
-     * @param sourceDictionaries 辞書データ。言語等の縛りがある場合は事前に取り除いておく
+     * @param numberDictionaries 辞書データ。言語等の縛りがある場合は事前に取り除いておく
      * @returns
      */
     static random(
-        sourceDictionaries: NumberSymbolDictionary[],
+        numberDictionaries: NumberSymbolDictionary[],
     ): NumberSymbolFace {
         const value = Math.floor(Math.random() * 10);
-        return NumberSymbolFaceFactory.randomShape(sourceDictionaries, value);
+        return NumberSymbolFaceFactory.randomShape(numberDictionaries, value);
     }
 
     /**
      * 数の「値」から、ランダムに「形」を選んだインスタンスを生成する。
      * 
-     * @param sourceDictionaries 辞書データ。言語等の縛りがある場合は事前に取り除いておく
+     * @param numberDictionaries 辞書データ。言語等の縛りがある場合は事前に取り除いておく
      * @param value 数の値
      * @returns
      */
     static randomShape(
-        sourceDictionaries: NumberSymbolDictionary[],
+        numberDictionaries: NumberSymbolDictionary[],
         value: number
     ): NumberSymbolFace {
-        let dictionary: NumberDictionaryType.SymbolDictionarySource;
-        let dictionaryShapes : string[];
+        let dictionary: NumberSymbolDictionary;
+        let dictionaryShapes: NumberDictionaryType.SymbolDictionaryShapeSource[];
 
         while (true) {
-            dictionary = ObjectMapExtraction.atRandom<NumberDictionaryType.SymbolDictionarySource>(sourceDictionaries);
-            dictionaryShapes = dictionary.shapeMap[String(Math.abs(value))] as string[];
+            dictionary = ObjectMapExtraction.atRandom<NumberSymbolDictionary>(numberDictionaries);
+            dictionaryShapes = dictionary.extractShapes(value);
 
             if (dictionaryShapes.length > 0) {
                 break;
@@ -51,7 +51,7 @@ export class NumberSymbolFaceFactory {
         return new NumberSymbolFace(
             dictionary,
             value,
-            ArrayExtraction.atRandom<string>(dictionaryShapes),
+            ArrayExtraction.atRandom<NumberDictionaryType.SymbolDictionaryShapeSource>(dictionaryShapes),
         );
     }
 }

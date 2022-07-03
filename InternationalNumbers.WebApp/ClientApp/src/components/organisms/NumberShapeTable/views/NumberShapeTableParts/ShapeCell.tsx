@@ -1,7 +1,10 @@
 ﻿import * as React from 'react';
 
-import styles from './ShapeCell.module.scss';
+// システム共通－辞書「数」
 import { NumberSymbolDictionary } from '../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionary';
+
+// 部品固有
+import styles from './ShapeCell.module.scss';
 
 type propsType = {
     /** 数字の辞書データ */
@@ -19,10 +22,9 @@ export const ShapeCell: React.VFC<propsType> = ({
     dictionary,
     numberValue,
 }) => {
+    const dictionaryShapes = dictionary.extractShapes(numberValue);
 
-    const dictionaryShape = dictionary.shapeMap[String(numberValue)];
-
-    const shapeElements = dictionaryShape.map((ds, dsIndex) => <React.Fragment key={dsIndex}>{ds}<br /></React.Fragment>);
+    const shapeElements = dictionaryShapes.map((ds, dsIndex) => <React.Fragment key={dsIndex}>{ds.string}<br /></React.Fragment>);
 
     const createClassName = () => {
         const classNameArray = [styles.cell, styles.cellNumber];

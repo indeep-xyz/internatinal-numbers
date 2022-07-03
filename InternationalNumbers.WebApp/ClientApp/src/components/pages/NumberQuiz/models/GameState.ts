@@ -1,10 +1,14 @@
-﻿// 画面固有
+﻿// 
+import type * as NumberDictionaryType from '../../../../helpers/Dictionary/NumberDictionary/types/NumberDictionaryType';
+
+// 画面固有
 import { QuizInterface } from '../Interfaces/QuizInterface';
 
 // 画面固有（各ゲームモード）
 import { SingleChoiceQuiz } from './Quiz/SingleChoiceQuiz/SingleChoiceQuiz';
 import { CalculationResultChoiceQuiz } from './Quiz/CalculationResultChoiceQuiz/CalculationResultChoiceQuiz';
 import { QuizActionHistory } from './QuizAction/QuizActionHistory';
+import { NumberSymbolDictionary } from '../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionary';
 
 /**
  * クイズゲームの進行状況を保持する。
@@ -13,6 +17,9 @@ export class GameState {
 
     /** 出題中のクイズ */
     quiz!: QuizInterface;
+
+    /** クイズで使用する辞書データ */
+    private numberDictionaries: NumberSymbolDictionary[];
 
     /** 現在のゲーム中の行動履歴 */
     private quizActionHistory: QuizActionHistory;
@@ -31,7 +38,10 @@ export class GameState {
 
     /** コンストラクタ */
     constructor(
+        numberDictionaries: NumberSymbolDictionary[],
     ) {
+        this.numberDictionaries = numberDictionaries;
+
         this.quizActionHistory = new QuizActionHistory();
         this.nextQuiz();
     }
@@ -41,7 +51,7 @@ export class GameState {
      */
     clone(
     ): GameState {
-        const newer = new GameState();
+        const newer = new GameState(this.numberDictionaries);
 
         newer.quizActionHistory = this.quizActionHistory.clone();
         newer.quiz = this.quiz;
@@ -68,8 +78,8 @@ export class GameState {
         const { score } = this.quizActionHistory;
 
         switch (Math.floor(Math.random() * 2)) {
-            case 0: return new SingleChoiceQuiz(score);
-            case 1: return new CalculationResultChoiceQuiz(score);
+            case 0: return new SingleChoiceQuiz(this.numberDictionaries, score);
+            case 1: return new CalculationResultChoiceQuiz(this.numberDictionaries, score);
         }
 
         throw new Error("対応するクイズオブジェクトがありません");

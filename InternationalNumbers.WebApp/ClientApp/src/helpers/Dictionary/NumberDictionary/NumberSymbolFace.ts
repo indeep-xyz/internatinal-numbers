@@ -5,6 +5,7 @@ import { ComparableInterface } from '../../../interfaces/ComparableInterface';
 import { SymbolFaceValueInterface } from '../interfaces/SymbolFaceValueInterface';
 
 // 辞書「数」系のヘルパー共通
+import { NumberSymbolDictionary } from './NumberSymbolDictionary';
 import type * as NumberDictionaryType from './types/NumberDictionaryType';
 
 /**
@@ -14,7 +15,7 @@ export class NumberSymbolFace
     implements SymbolFaceValueInterface, ComparableInterface<NumberSymbolFace> {
 
     /** 辞書データ */
-    readonly dictionary: NumberDictionaryType.SymbolDictionarySource;
+    readonly dictionary: NumberSymbolDictionary;
 
     /** 文字の「値」 */
     private _value: number;
@@ -35,12 +36,12 @@ export class NumberSymbolFace
      * @param shape 文字形
      */
     constructor(
-        sourceDictionary: NumberDictionaryType.SymbolDictionarySource,
+        sourceDictionary: NumberSymbolDictionary,
         value: number,
-        shape: string,
+        shape: NumberDictionaryType.SymbolDictionaryShapeSource,
     ) {
         this.dictionary = sourceDictionary;
-        this.shape = shape;
+        this.shape = shape.string;
         this._value = value;
     }
 

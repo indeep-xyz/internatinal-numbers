@@ -1,5 +1,8 @@
 import * as React from 'react';
 
+// システム共通－辞書「数」
+import { NumberSymbolDictionary } from '../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionary';
+
 // 画面固有
 import { GameState } from '../models/GameState';
 import { NextQuizButton } from './NextQuizButton';
@@ -10,14 +13,20 @@ import { QuizArea } from './QuizArea';
 import { ScoreArea } from './ScoreArea';
 
 type propsType = {
+    numberDictionaries: NumberSymbolDictionary[];
+};
+
+type mainStateType = {
+    game: GameState;
 };
 
 /**
  * 数字のクイズ画面。
  */
 export const NumberQuizPage: React.VFC<propsType> = ({
+    numberDictionaries,
 }) => {
-    const [state, setState] = React.useState({ game: new GameState() });
+    const [state, setState] = React.useState<mainStateType>({ game: new GameState(numberDictionaries) });
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // 補助処理（ステート管理）

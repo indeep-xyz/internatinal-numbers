@@ -4,18 +4,28 @@
 /**
  * 記号形式の「数」の値のうち「形」のマップ。
  */
-export type SymbolDictionaryShapeMap = Readonly<{
-    [key: string]: Readonly<string[]>;
+export type SymbolDictionaryShapeSource = Readonly<{
+    value: string;
+    string: string;
+    unicodes: number[];
+}>;
+
+/**
+ * 記号形式の「数」の値のうち「説明」のマップ。
+ */
+export type SymbolDictionaryDictionarySource = Readonly<{
+    categoryNameMap: Readonly<{
+        [key: string]: Readonly<string>;
+    }>;
 }>;
 
 /**
  * 記号形式の「数」の辞書データ素材値。
  */
 export type SymbolDictionarySource = Readonly<{
-    "name": string;
-    "label": string;
-    "language": string;
-    "shapeMap": SymbolDictionaryShapeMap;
+    key: string;
+    description: SymbolDictionaryDictionarySource;
+    shapes: SymbolDictionaryShapeSource[];
 }>;
 
 /**

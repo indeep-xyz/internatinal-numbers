@@ -1,9 +1,8 @@
 ﻿// 辞書系のヘルパー共通
 import { SymbolDictionaryPresentationInterface } from '../interfaces/SymbolDictionaryPresentationInterface';
 
-// 辞書「演算子」系のヘルパー共通
+// 辞書「数」系のヘルパー共通
 import type * as NumberDictionaryType from './types/NumberDictionaryType';
-import { DictionarySourceMap } from './constants/symbols/index';
 
 /**
  * 記号形式の「数」の情報を扱うクラス。
@@ -11,27 +10,37 @@ import { DictionarySourceMap } from './constants/symbols/index';
 export class NumberSymbolDictionary
     implements SymbolDictionaryPresentationInterface {
 
-    static getDictionaryNames() {
-        return Object.keys(DictionarySourceMap);
-    }
-
     readonly name: string;
     readonly label: string;
     readonly language: string;
-    readonly shapeMap: NumberDictionaryType.SymbolDictionaryShapeMap;
+    readonly description: NumberDictionaryType.SymbolDictionaryDictionarySource;
+    readonly shapes: NumberDictionaryType.SymbolDictionaryShapeSource[];
     readonly outputMode: number;
 
     constructor(
-        name: string,
+        ds: NumberDictionaryType.SymbolDictionarySource,
         outputMode: number
     ) {
-        const ds: NumberDictionaryType.SymbolDictionarySource = DictionarySourceMap[name];
-
-        this.name = name;
-        this.label = ds.label;
-        this.language = ds.language;
-        this.shapeMap = ds.shapeMap;
+        this.name = ds.key;
+        this.label = ds.description.categoryNameMap.ja;
+        this.language = ds.description.categoryNameMap.en;
+        this.description = ds.description;
+        this.shapes = ds.shapes;
 
         this.outputMode = outputMode;
+    }
+
+    /**
+     * 値に合致する「形」の情報を抽出する。
+     * 
+     * @param value 数の値
+     * @returns
+     */
+    extractShapes(
+        value: number,
+    ): NumberDictionaryType.SymbolDictionaryShapeSource[] {
+        return this
+            .shapes
+            .filter(s => s.value === String(Math.abs(value)));
     }
 }

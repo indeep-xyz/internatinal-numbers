@@ -1,18 +1,13 @@
 ﻿// PJ共通
 import { ArraySort } from '../../../../../../helpers/Array/ArraySort';
 
-// 辞書系のヘルパー共通
-import { FourArithmeticExpressionSymbolFaceType } from '../../../../../../types/ArithmeticType';
-
 // 辞書「数」系のヘルパー共通
 import { NumberSymbolFace } from '../../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolFace';
 import { NumberSymbolFaceFactory } from '../../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolFaceFactory';
 import { NumberSymbolDictionary } from '../../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionary';
-import { NumberSymbolDictionaryFactory } from '../../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionaryFactory';
 import { NumberQuizMode } from '../../../../../../helpers/Dictionary/NumberDictionary/constants/generals';
 
 // 辞書「演算子」系のヘルパー共通
-import { OperatorSymbolFace } from '../../../../../../helpers/Dictionary/OperatorDictionary/OperatorSymbolFace';
 import { OperatorSymbolDictionary } from '../../../../../../helpers/Dictionary/OperatorDictionary/OperatorSymbolDictionary';
 import { OperatorSymbolFaceFactory } from '../../../../../../helpers/Dictionary/OperatorDictionary/OperatorSymbolFaceFactory';
 import { OperatorSymbolDictionaryFactory } from '../../../../../../helpers/Dictionary/OperatorDictionary/OperatorSymbolDictionaryFactory';
@@ -60,9 +55,10 @@ export class CalculationResultChoiceQuiz
      * @param currentScore 現在スコア。この点数によってクイズの選択肢数が変化する
      */
     constructor(
-        currentScore: number
+        numberDictionaries: NumberSymbolDictionary[],
+        currentScore: number,
     ) {
-        this.numberDictionaries = NumberSymbolDictionaryFactory.createAll(NumberQuizMode.SingleChoiceShape);
+        this.numberDictionaries = numberDictionaries;
         this.operatorDictionaries = OperatorSymbolDictionaryFactory.createAll(NumberQuizMode.SingleChoiceShape);
         this.expression = new Expression();
 

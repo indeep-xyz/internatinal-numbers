@@ -1,9 +1,14 @@
 ﻿import * as React from 'react';
 
-import styles from './Row.module.scss';
-import { NumberSymbolDictionary } from '../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionary';
+// システム共通
 import { ArrayFactory } from '../../../../../helpers/Array/ArrayFactory';
+
+// システム共通－辞書「数」
+import { NumberSymbolDictionary } from '../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionary';
+
+// 部品固有
 import { ShapeCell } from './ShapeCell';
+import styles from './Row.module.scss';
 
 type propsType = {
     /** 数字の辞書データ */
@@ -25,7 +30,6 @@ export const Row: React.VFC<propsType> = ({
     min,
     max,
 }) => {
-
     const numberValues = ArrayFactory.createRange(min, max);
 
     return (

@@ -82,6 +82,7 @@
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolDictionaryFactory.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolFace.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\types\OperatorDictionaryType.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\repositories\NumberSymbolDictionaryRepository.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\constants\symbols\index.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\SolomonDemonSymbolDictionary.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\SolomonDemonSymbolDictionaryFactory.ts" />
@@ -101,6 +102,7 @@
     <TypeScriptCompile Remove="ClientApp\src\components\organisms\SolomonDemonShapeTable\views\SolomonDemonShapeTableParts\SymbolShapeCell.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListHeader.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListPage.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListPageWrapper.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListRow.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListShapeCell.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\QuizAction\ActionHistoryRepository.ts" />
@@ -115,6 +117,7 @@
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\SymbolPresenter.ts" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\NextQuizButton.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\NumberQuizPage.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\NumberQuizPageWrapper.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizArea.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\AnswerCorrectNumbersSeveralButton.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\CalculationResultChoiceQuizArea.tsx" />
@@ -301,6 +304,7 @@
     <TypeScriptMapRoot></TypeScriptMapRoot>
     <TypeScriptAlwaysStrict>True</TypeScriptAlwaysStrict>
     <TypeScriptSourceRoot />
+    <TypeScriptModuleResolution>node</TypeScriptModuleResolution>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
