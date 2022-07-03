@@ -4,7 +4,7 @@
 /**
  * 記号形式の「数」の値のうち「形」のマップ。
  */
-export type SymbolDictionaryShapeSource = Readonly<{
+export type NumberSymbolDictionaryShapeType = Readonly<{
     value: string;
     string: string;
     unicodes: number[];
@@ -13,7 +13,7 @@ export type SymbolDictionaryShapeSource = Readonly<{
 /**
  * 記号形式の「数」の値のうち「説明」のマップ。
  */
-export type SymbolDictionaryDictionarySource = Readonly<{
+export type NumberSymbolDictionaryDictionaryType = Readonly<{
     categoryNameMap: Readonly<{
         [key: string]: Readonly<string>;
     }>;
@@ -22,15 +22,9 @@ export type SymbolDictionaryDictionarySource = Readonly<{
 /**
  * 記号形式の「数」の辞書データ素材値。
  */
-export type SymbolDictionarySource = Readonly<{
+export type NumberSymbolDictionarySourceType = Readonly<{
     key: string;
-    description: SymbolDictionaryDictionarySource;
-    shapes: SymbolDictionaryShapeSource[];
+    description: NumberSymbolDictionaryDictionaryType;
+    shapes: NumberSymbolDictionaryShapeType[];
 }>;
 
-/**
- * 記号形式の「数」の辞書データ素材値のマップ。
- */
-export type SymbolDictionarySourceMap = Readonly<{
-    [key: string]: SymbolDictionarySource;
-}>;

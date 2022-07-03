@@ -2,7 +2,7 @@
 import { SymbolDictionaryPresentationInterface } from '../interfaces/SymbolDictionaryPresentationInterface';
 
 // 辞書「数」系のヘルパー共通
-import type * as NumberDictionaryType from './types/NumberDictionaryType';
+import { NumberSymbolDictionaryDictionaryType, NumberSymbolDictionaryShapeType, NumberSymbolDictionarySourceType } from './types/NumberDictionaryType';
 
 /**
  * 記号形式の「数」の情報を扱うクラス。
@@ -13,12 +13,12 @@ export class NumberSymbolDictionary
     readonly name: string;
     readonly label: string;
     readonly language: string;
-    readonly description: NumberDictionaryType.SymbolDictionaryDictionarySource;
-    readonly shapes: NumberDictionaryType.SymbolDictionaryShapeSource[];
+    readonly description: NumberSymbolDictionaryDictionaryType;
+    readonly shapes: NumberSymbolDictionaryShapeType[];
     readonly outputMode: number;
 
     constructor(
-        ds: NumberDictionaryType.SymbolDictionarySource,
+        ds: NumberSymbolDictionarySourceType,
         outputMode: number
     ) {
         this.name = ds.key;
@@ -38,7 +38,7 @@ export class NumberSymbolDictionary
      */
     extractShapes(
         value: number,
-    ): NumberDictionaryType.SymbolDictionaryShapeSource[] {
+    ): NumberSymbolDictionaryShapeType[] {
         return this
             .shapes
             .filter(s => s.value === String(Math.abs(value)));

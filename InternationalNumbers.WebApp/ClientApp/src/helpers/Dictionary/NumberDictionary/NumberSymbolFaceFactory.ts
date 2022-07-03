@@ -3,9 +3,9 @@ import { ArrayExtraction } from '../../Array/ArrayExtraction';
 import { ObjectMapExtraction } from '../../Object/ObjectMapExtraction';
 
 // 辞書「数」系のヘルパー共通
-import type * as NumberDictionaryType from './types/NumberDictionaryType';
 import { NumberSymbolDictionary } from './NumberSymbolDictionary';
 import { NumberSymbolFace } from './NumberSymbolFace';
+import { NumberSymbolDictionaryShapeType } from './types/NumberDictionaryType';
 
 /**
  * 記号形式の「数」の情報のうち「目に見える表現」に注目したデータの生成処理。
@@ -37,7 +37,7 @@ export class NumberSymbolFaceFactory {
         value: number
     ): NumberSymbolFace {
         let dictionary: NumberSymbolDictionary;
-        let dictionaryShapes: NumberDictionaryType.SymbolDictionaryShapeSource[];
+        let dictionaryShapes: NumberSymbolDictionaryShapeType[];
 
         while (true) {
             dictionary = ObjectMapExtraction.atRandom<NumberSymbolDictionary>(numberDictionaries);
@@ -51,7 +51,7 @@ export class NumberSymbolFaceFactory {
         return new NumberSymbolFace(
             dictionary,
             value,
-            ArrayExtraction.atRandom<NumberDictionaryType.SymbolDictionaryShapeSource>(dictionaryShapes),
+            ArrayExtraction.atRandom<NumberSymbolDictionaryShapeType>(dictionaryShapes),
         );
     }
 }

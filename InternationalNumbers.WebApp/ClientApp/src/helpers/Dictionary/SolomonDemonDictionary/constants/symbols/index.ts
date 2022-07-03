@@ -1,11 +1,11 @@
-import type * as SolomonDemonDictionaryType from '../../types/SolomonDemonDictionaryType';
+import { SolomonDemonSymbolDictionarySourceMapType } from '../../types/SolomonDemonDictionaryType';
 
 // symbol
 import { bael } from "./01-Bael";
 import { agares } from "./02-Agares";
 
 // symbol map
-export const DictionarySourceMap: SolomonDemonDictionaryType.SymbolDictionarySourceMap = {
+export const DictionarySourceMap: SolomonDemonSymbolDictionarySourceMapType = {
     bael,
     agares,
 };

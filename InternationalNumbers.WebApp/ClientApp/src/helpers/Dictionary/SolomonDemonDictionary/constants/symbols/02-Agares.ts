@@ -1,7 +1,7 @@
-﻿import type * as SolomonDemonDictionaryType from '../../types/SolomonDemonDictionaryType';
+﻿import { SolomonDemonSymbolDictionarySourceType } from '../../types/SolomonDemonDictionaryType';
 import { SolomonDemonSymbolImageDir, SolomonDemonSymbolImageWidthList } from '../generals';
 
-export const agares: SolomonDemonDictionaryType.SymbolDictionarySource = {
+export const agares: SolomonDemonSymbolDictionarySourceType = {
     'name': 'agares',
     'label': 'Agares',
     'labelJa': 'アガレス',

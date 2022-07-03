@@ -3,11 +3,6 @@
  */
 export class QuizActionHistoryRepository {
 
-    /** コンストラクタ */
-    constructor(
-    ) {
-    }
-
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // リポジトリ処理（最高得点）
 

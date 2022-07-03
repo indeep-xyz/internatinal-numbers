@@ -6,7 +6,7 @@ import { SymbolFaceValueInterface } from '../interfaces/SymbolFaceValueInterface
 
 // 辞書「数」系のヘルパー共通
 import { NumberSymbolDictionary } from './NumberSymbolDictionary';
-import type * as NumberDictionaryType from './types/NumberDictionaryType';
+import { NumberSymbolDictionaryShapeType } from './types/NumberDictionaryType';
 
 /**
  * 記号形式の「数」の情報のうち「目に見える表現」に注目したデータ。
@@ -38,7 +38,7 @@ export class NumberSymbolFace
     constructor(
         sourceDictionary: NumberSymbolDictionary,
         value: number,
-        shape: NumberDictionaryType.SymbolDictionaryShapeSource,
+        shape: NumberSymbolDictionaryShapeType,
     ) {
         this.dictionary = sourceDictionary;
         this.shape = shape.string;

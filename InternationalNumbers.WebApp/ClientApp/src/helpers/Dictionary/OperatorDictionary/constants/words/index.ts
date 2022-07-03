@@ -1,9 +1,9 @@
-import type * as OperatorDictionaryType from '../../types/OperatorDictionaryType';
+import { OperatorSymbolDictionarySourceMapType } from '../../types/OperatorDictionaryType';
 
 // word
 import { japanese } from "./japanese";
 
 // word map
-export const DictionarySourceMap: OperatorDictionaryType.SymbolDictionarySourceMap = {
+export const DictionarySourceMap: OperatorSymbolDictionarySourceMapType = {
     japanese,
 };

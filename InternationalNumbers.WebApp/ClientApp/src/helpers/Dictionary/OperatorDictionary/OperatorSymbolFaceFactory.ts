@@ -3,10 +3,10 @@ import type * as ArithmeticType from '../../../types/ArithmeticType';
 import { ArrayExtraction } from '../../Array/ArrayExtraction';
 
 // 辞書「演算子」系のヘルパー共通
-import type * as OperatorDictionaryType from './types/OperatorDictionaryType';
 import { ObjectMapExtraction } from '../../Object/ObjectMapExtraction';
 import { OperatorSymbolDictionary } from './OperatorSymbolDictionary';
 import { OperatorSymbolFace } from './OperatorSymbolFace';
+import { OperatorSymbolDictionarySourceType } from './types/OperatorDictionaryType';
 
 /**
  * 記号形式の「演算子」の情報のうち「目に見える表現」に注目したデータ。
@@ -24,7 +24,7 @@ export class OperatorSymbolFaceFactory {
         sourceDictionaries: OperatorSymbolDictionary[],
         operator: ArithmeticType.FourArithmeticOperatorType,
     ): OperatorSymbolFace {
-        const dictionary = ObjectMapExtraction.atRandom<OperatorDictionaryType.SymbolDictionarySource>(sourceDictionaries);
+        const dictionary = ObjectMapExtraction.atRandom<OperatorSymbolDictionarySourceType>(sourceDictionaries);
         const dictionaryShapes = dictionary.shapeMap[operator];
 
         return new OperatorSymbolFace(

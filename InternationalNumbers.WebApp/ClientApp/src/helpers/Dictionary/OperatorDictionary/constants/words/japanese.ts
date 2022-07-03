@@ -1,6 +1,6 @@
-﻿import type * as OperatorDictionaryType from '../../types/OperatorDictionaryType';
+﻿import { OperatorSymbolDictionarySourceType } from '../../types/OperatorDictionaryType';
 
-export const japanese: OperatorDictionaryType.SymbolDictionarySource = {
+export const japanese: OperatorSymbolDictionarySourceType = {
     "name": "japanese",
     "label": "日本",
     "language": "Japanese",

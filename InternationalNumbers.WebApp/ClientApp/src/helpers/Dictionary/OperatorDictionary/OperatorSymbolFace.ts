@@ -6,7 +6,7 @@ import type * as ArithmeticType from '../../../types/ArithmeticType';
 import { SymbolFaceValueInterface } from '../interfaces/SymbolFaceValueInterface';
 
 // 辞書「演算子」系のヘルパー共通
-import type * as OperatorDictionaryType from './types/OperatorDictionaryType';
+import { OperatorSymbolDictionarySourceType } from './types/OperatorDictionaryType';
 
 /**
  * 記号形式の「演算子」の情報のうち「目に見える表現」に注目したデータ。
@@ -15,7 +15,7 @@ export class OperatorSymbolFace
     implements SymbolFaceValueInterface, ComparableInterface<OperatorSymbolFace> {
 
     /** 辞書データ */
-    readonly dictionary: OperatorDictionaryType.SymbolDictionarySource;
+    readonly dictionary: OperatorSymbolDictionarySourceType;
 
     /** 文字の「値」 (+, -, *, /) */
     readonly _value: ArithmeticType.FourArithmeticOperatorType;
@@ -33,7 +33,7 @@ export class OperatorSymbolFace
      * @param shape 文字形
      */
     constructor(
-        sourceDictionary: OperatorDictionaryType.SymbolDictionarySource,
+        sourceDictionary: OperatorSymbolDictionarySourceType,
         value: ArithmeticType.FourArithmeticOperatorType,
         shape: string,
     ) {

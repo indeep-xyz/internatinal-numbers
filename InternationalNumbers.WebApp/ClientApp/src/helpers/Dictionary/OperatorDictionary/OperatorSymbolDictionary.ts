@@ -3,7 +3,7 @@ import { SymbolDictionaryPresentationInterface } from '../interfaces/SymbolDicti
 
 // 辞書「演算子」系のヘルパー共通
 import { DictionarySourceMap } from './constants/symbols/index';
-import type * as OperatorDictionaryType from './types/OperatorDictionaryType';
+import { OperatorSymbolDictionaryShapeMapType, OperatorSymbolDictionarySourceType } from './types/OperatorDictionaryType';
 
 
 /**
@@ -21,14 +21,14 @@ export class OperatorSymbolDictionary
     readonly name: string;
     readonly label: string;
     readonly language: string;
-    readonly shapeMap: OperatorDictionaryType.SymbolDictionaryShapeMap;
+    readonly shapeMap: OperatorSymbolDictionaryShapeMapType;
     readonly outputMode: number;
 
     constructor(
         name: string,
         outputMode: number,
     ) {
-        const ds: OperatorDictionaryType.SymbolDictionarySource = DictionarySourceMap[name];
+        const ds: OperatorSymbolDictionarySourceType = DictionarySourceMap[name];
 
         this.name = name;
         this.label = ds.label;

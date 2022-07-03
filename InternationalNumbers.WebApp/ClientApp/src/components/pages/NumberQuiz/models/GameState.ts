@@ -1,5 +1,5 @@
-﻿// 
-import type * as NumberDictionaryType from '../../../../helpers/Dictionary/NumberDictionary/types/NumberDictionaryType';
+﻿// 辞書「数」系のヘルパー共通
+import { NumberSymbolDictionary } from '../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionary';
 
 // 画面固有
 import { QuizInterface } from '../Interfaces/QuizInterface';
@@ -8,7 +8,6 @@ import { QuizInterface } from '../Interfaces/QuizInterface';
 import { SingleChoiceQuiz } from './Quiz/SingleChoiceQuiz/SingleChoiceQuiz';
 import { CalculationResultChoiceQuiz } from './Quiz/CalculationResultChoiceQuiz/CalculationResultChoiceQuiz';
 import { QuizActionHistory } from './QuizAction/QuizActionHistory';
-import { NumberSymbolDictionary } from '../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionary';
 
 /**
  * クイズゲームの進行状況を保持する。

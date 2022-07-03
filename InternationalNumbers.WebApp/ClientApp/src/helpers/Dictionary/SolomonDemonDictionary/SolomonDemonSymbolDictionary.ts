@@ -2,8 +2,8 @@
 import { PublicImageFile } from '../../../types/PublicFileType';
 
 // 辞書「ソロモンの悪魔」系のヘルパー共通
-import type * as SolomonDemonDictionaryType from './types/SolomonDemonDictionaryType';
 import { DictionarySourceMap } from './constants/symbols/index';
+import { SolomonDemonPositionJaType, SolomonDemonPositionType, SolomonDemonSymbolDictionarySourceType } from './types/SolomonDemonDictionaryType';
 
 
 /**
@@ -19,8 +19,8 @@ export class SolomonDemonSymbolDictionary {
     readonly name: string;
     readonly label: string;
     readonly labelJa: string;
-    readonly position: SolomonDemonDictionaryType.Position[];
-    readonly positionJa: SolomonDemonDictionaryType.PositionJa[];
+    readonly position: SolomonDemonPositionType[];
+    readonly positionJa: SolomonDemonPositionJaType[];
     readonly symbolShapes: PublicImageFile[];
     readonly orderNumber: number;
     readonly numberOfdemonLegions: string;
@@ -28,7 +28,7 @@ export class SolomonDemonSymbolDictionary {
     constructor(
         name: string,
     ) {
-        const ds: SolomonDemonDictionaryType.SymbolDictionarySource = DictionarySourceMap[name];
+        const ds: SolomonDemonSymbolDictionarySourceType = DictionarySourceMap[name];
 
         this.name = ds.name;
         this.label = ds.label;
