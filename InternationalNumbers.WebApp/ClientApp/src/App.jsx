@@ -4,7 +4,7 @@ import { BasicLayout } from './components/templates/BasicLayout/views/BasicLayou
 import { HomePage } from './components/pages/Home/views/HomePage';
 import { NumberListPageWrapper } from './components/pages/NumberList/views/NumberListPageWrapper';
 import { NumberQuizPageWrapper } from './components/pages/NumberQuiz/views/NumberQuizPageWrapper';
-import { SolomonDemonListPage } from './components/pages/SolomonDemonList/views/SolomonDemonListPage';
+import { SolomonDemonListPageWrapper } from './components/pages/SolomonDemonList/views/SolomonDemonListPageWrapper';
 import './globals/styles/global.css'
 
 
@@ -18,7 +18,7 @@ export default class App extends Component {
                 <Route path='/number_list' component={NumberListPageWrapper} />
                 <Route path='/number_quiz' component={NumberQuizPageWrapper} />
 
-                <Route path='/solomon_demon_list' component={SolomonDemonListPage} />
+                <Route path='/solomon_demon_list' component={SolomonDemonListPageWrapper} />
             </BasicLayout>
         );
     }

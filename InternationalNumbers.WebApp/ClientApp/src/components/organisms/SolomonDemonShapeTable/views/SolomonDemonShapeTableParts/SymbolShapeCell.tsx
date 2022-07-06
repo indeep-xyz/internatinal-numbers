@@ -3,10 +3,11 @@
 import styles from './SymbolShapeCell.module.scss';
 import { SolomonDemonSymbolDictionary } from '../../../../../helpers/Dictionary/SolomonDemonDictionary/SolomonDemonSymbolDictionary';
 import { ImageView } from '../../../../atoms/ImageView/views/ImageView';
+import { SolomonDemonSymbolFace } from '../../../../../helpers/Dictionary/SolomonDemonDictionary/SolomonDemonSymbolFace';
 
 type propsType = {
     /** ソロモンの悪魔の辞書データ */
-    dictionary: SolomonDemonSymbolDictionary;
+    symbolFaces: SolomonDemonSymbolFace[];
 };
 
 /**
@@ -14,16 +15,13 @@ type propsType = {
  * @param props
  */
 export const SymbolDemonShapeCell: React.VFC<propsType> = ({
-    dictionary,
+    symbolFaces,
 }) => {
-
-    const symbolShapes = dictionary.symbolShapes;
-
-    const shapeElements = symbolShapes.map((ss, ssIndex) => (
+    const shapeElements = symbolFaces.map((ss, ssIndex) => (
         <ImageView key={ssIndex}
-            publicImageFile={ss}
+            publicImageFile={ss.symbolShape}
             baseWidth={60}
-            alt={dictionary.label}
+            alt={ss.dictionary.name.ja}
         />
     ));
 

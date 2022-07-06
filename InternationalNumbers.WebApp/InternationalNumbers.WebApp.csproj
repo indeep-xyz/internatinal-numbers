@@ -50,6 +50,7 @@
 
   <ItemGroup>
     <None Remove="Api\Repositories\InternationalNumberSource\Files\InternationalNumberSource.xlsx" />
+    <None Remove="Api\Repositories\SolomonDemonSource\Files\SolomonDemonSource.xlsx" />
     <None Remove="ClientApp\dist\helpers\Dictionary\OperatorDictionary\OperatorSymbolDictionaryFactory.js" />
     <None Remove="ClientApp\dist\helpers\Dictionary\OperatorDictionary\OperatorSymbolDictionaryFactory.js.map" />
     <None Remove="ClientApp\src\App.jsx" />
@@ -83,7 +84,7 @@
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolFace.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\types\OperatorDictionaryType.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\repositories\NumberSymbolDictionaryRepository.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\constants\symbols\index.ts" />
+    <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\repositories\SolomonDemonSymbolDictionaryRepository.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\SolomonDemonSymbolDictionary.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\SolomonDemonSymbolDictionaryFactory.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\SolomonDemonSymbolFace.ts" />
@@ -91,6 +92,7 @@
     <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\types\SolomonDemonDictionaryType.ts" />
     <None Remove="ClientApp\src\helpers\Object\ObjectMapExtraction.ts" />
     <None Remove="ClientApp\src\types\ArithmeticType.ts" />
+    <None Remove="ClientApp\src\types\LanguageType.ts" />
     <None Remove="ClientApp\src\types\PublicFileType.ts" />
   </ItemGroup>
 
@@ -132,6 +134,7 @@
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\SingleChoiceQuizArea.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\ScoreArea.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\components\pages\SolomonDemonList\views\SolomonDemonListPage.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\components\pages\SolomonDemonList\views\SolomonDemonListPageWrapper.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\abjad.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_eastern_presian.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_eastern_urdu.ts" />
@@ -180,11 +183,10 @@
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\deutsch.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\words\japanese.ts" />
     <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\constants\generals.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\constants\symbols\01-Bael.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\constants\symbols\02-Agares.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Api\Repositories\SolomonDemonSource\Files\SolomonDemonSource.xlsx" />
     <EmbeddedResource Include="Api\Repositories\InternationalNumberSource\Files\InternationalNumberSource.xlsx" />
   </ItemGroup>
 

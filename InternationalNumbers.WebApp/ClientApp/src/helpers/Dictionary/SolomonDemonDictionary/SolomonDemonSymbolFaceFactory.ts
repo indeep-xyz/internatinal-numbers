@@ -6,7 +6,7 @@ import { PublicImageFile } from '../../../types/PublicFileType';
 // 辞書「ソロモンの悪魔」系のヘルパー共通
 import { SolomonDemonSymbolDictionary } from './SolomonDemonSymbolDictionary';
 import { SolomonDemonSymbolFace } from './SolomonDemonSymbolFace';
-import { SolomonDemonSymbolDictionarySourceType } from './types/SolomonDemonDictionaryType';
+import { SolomonDemonSymbolDictionaryShapeType, } from './types/SolomonDemonDictionaryType';
 
 /**
  * ソロモンの悪魔の情報のうち「目に見える表現」に注目したデータ。
@@ -23,12 +23,12 @@ export class SolomonSymbolFaceFactory {
     static randomSymbolShape(
         sourceDictionaries: SolomonDemonSymbolDictionary[],
     ): SolomonDemonSymbolFace {
-        const dictionary = ObjectMapExtraction.atRandom<SolomonDemonSymbolDictionarySourceType>(sourceDictionaries);
-        const dictionarySymbolShapes = dictionary.symbolShapes;
+        const dictionary = ObjectMapExtraction.atRandom<SolomonDemonSymbolDictionary>(sourceDictionaries);
+        const dictionarySymbolShapes = dictionary.shapes;
 
         return new SolomonDemonSymbolFace(
             dictionary,
-            ArrayExtraction.atRandom<PublicImageFile>(dictionarySymbolShapes),
+            ArrayExtraction.atRandom<SolomonDemonSymbolDictionaryShapeType>(dictionarySymbolShapes),
         );
     }
 }

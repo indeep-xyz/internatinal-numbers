@@ -1,9 +1,9 @@
 ﻿// PJ共通
+import { LanguageCodeMapType } from '../../../types/LanguageType';
 import { PublicImageFile } from '../../../types/PublicFileType';
 
 // 辞書「ソロモンの悪魔」系のヘルパー共通
-import { DictionarySourceMap } from './constants/symbols/index';
-import { SolomonDemonPositionJaType, SolomonDemonPositionType, SolomonDemonSymbolDictionarySourceType } from './types/SolomonDemonDictionaryType';
+import { SolomonDemonPositionJaType, SolomonDemonPositionType, SolomonDemonSymbolDictionaryShapeType, SolomonDemonSymbolDictionarySourceType } from './types/SolomonDemonDictionaryType';
 
 
 /**
@@ -11,33 +11,29 @@ import { SolomonDemonPositionJaType, SolomonDemonPositionType, SolomonDemonSymbo
  */
 export class SolomonDemonSymbolDictionary {
 
-    static getDictionaryNames()
-        : string[] {
-        return Object.keys(DictionarySourceMap);
-    }
-
-    readonly name: string;
-    readonly label: string;
-    readonly labelJa: string;
-    readonly position: SolomonDemonPositionType[];
-    readonly positionJa: SolomonDemonPositionJaType[];
-    readonly symbolShapes: PublicImageFile[];
+    readonly key: string;
+    readonly name: LanguageCodeMapType<string>;
+    readonly position: LanguageCodeMapType<Array<string>>;
+    readonly shapes: SolomonDemonSymbolDictionaryShapeType[];
     readonly orderNumber: number;
-    readonly numberOfdemonLegions: string;
 
     constructor(
-        name: string,
+        ds: SolomonDemonSymbolDictionarySourceType,
     ) {
-        const ds: SolomonDemonSymbolDictionarySourceType = DictionarySourceMap[name];
+        this.key = ds.key;
 
-        this.name = ds.name;
-        this.label = ds.label;
-        this.labelJa = ds.labelJa;
-        this.position = ds.position;
-        this.positionJa = ds.positionJa;
-        this.symbolShapes = ds.symbolShapes;
-        this.orderNumber = ds.orderNumber;
-        this.numberOfdemonLegions = ds.numberOfdemonLegions;
+        this.name = {
+            en: ds.description.nameMap.en,
+            ja: ds.description.nameMap.ja,
+        };
+        
+        this.position = {
+            en: ds.description.positionMap.en,
+            ja: ds.description.positionMap.ja,
+        };
+
+        this.shapes = ds.shapes;
+        this.orderNumber = ds.description.orderNo; // TODO: サーバー側含め Number にする
     }
 
 

@@ -13,17 +13,36 @@ export type SolomonDemonPositionType = Readonly<"count" | "duke" | "king" | "kni
 export type SolomonDemonPositionJaType = Readonly<"伯爵" | "公爵" | "王" | "騎士" | "侯爵" | "総裁" | "君主">;
 
 /**
- * ソロモンの悪魔を表す辞書データ素材値の型。
+ * ソロモンの悪魔のアイコン（シジル）の型。
+ */
+export type SolomonDemonSymbolDictionaryShapeType = Readonly<{
+    publicFileName: string;
+    sourceFilePath: string;
+}>;
+
+/**
+ * ソロモンの悪魔の「説明」のマップ。
+ */
+export type SolomonDemonSymbolDictionaryDictionaryType = Readonly<{
+    nameMap: Readonly<{
+        en: Readonly<string>;
+        ja: Readonly<string>;
+    }>;
+    positionMap: Readonly<{
+        en: SolomonDemonPositionType[];
+        ja: SolomonDemonPositionJaType[];
+    }>;
+
+    orderNo: number;
+}>;
+
+/**
+ * 記号形式の「数」の辞書データ素材値。
  */
 export type SolomonDemonSymbolDictionarySourceType = Readonly<{
-    "name": string;
-    "label": string;
-    "labelJa": string;
-    "position": SolomonDemonPositionType[];
-    "positionJa": SolomonDemonPositionJaType[];
-    "orderNumber": number;
-    "numberOfdemonLegions": string;
-    "symbolShapes": PublicImageFile[];
+    key: string;
+    description: SolomonDemonSymbolDictionaryDictionaryType;
+    shapes: SolomonDemonSymbolDictionaryShapeType[];
 }>;
 
 /**

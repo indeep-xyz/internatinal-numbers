@@ -82,7 +82,7 @@ namespace InternationalNumbers.WebApp.Api.Helpers.Excel.Models
         }
 
         /// <summary>
-        /// Excel ファイルの行データから情報を抽出し、変換結果クラスのインスタンスに設定する。（対フィールド）
+        /// 行データ内の各セルから情報を抽出し、変換結果クラスのインスタンスに設定する。（対フィールド）
         /// </summary>
         private void ExtractAndSetFromFiled(TClass instance)
         {
@@ -90,15 +90,23 @@ namespace InternationalNumbers.WebApp.Api.Helpers.Excel.Models
             {
                 if (HeaderRow.FieldMap.TryGetValue(columnNumber, out var fieldInfo))
                 {
+                    var cell = Row.GetCell(columnNumber);
+
+                    if (cell == null)
+                    {
+                        continue;
+                    }
+
+                    // フィールドに値を代入
                     fieldInfo.SetValue(
-                        instance, 
-                        ExtractCellValue(Row.GetCell(columnNumber)));
+                        instance,
+                        ExtractCellValue(cell));
                 }
             }
         }
 
         /// <summary>
-        /// Excel ファイルの行データから情報を抽出し、変換結果クラスのインスタンスに設定する。（対プロパティ）
+        /// 行データ内の各セルから情報を抽出し、変換結果クラスのインスタンスに設定する。（対プロパティ）
         /// </summary>
         private void ExtractAndSetFromProperty(TClass instance)
         {
@@ -106,9 +114,17 @@ namespace InternationalNumbers.WebApp.Api.Helpers.Excel.Models
             {
                 if (HeaderRow.PropertyMap.TryGetValue(columnNumber, out var propertyInfo))
                 {
+                    var cell = Row.GetCell(columnNumber);
+
+                    if (cell == null)
+                    {
+                        continue;
+                    }
+
+                    // セッターの実行
                     propertyInfo.SetMethod?.Invoke(
                         instance,
-                        new object[] { ExtractCellValue(Row.GetCell(columnNumber)) });
+                        new object[] { ExtractCellValue(cell) });
                 }
             }
         }

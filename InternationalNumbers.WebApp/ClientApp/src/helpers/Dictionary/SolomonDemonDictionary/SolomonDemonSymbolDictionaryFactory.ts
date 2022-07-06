@@ -1,4 +1,5 @@
 ﻿// 辞書「ソロモンの悪魔」系のヘルパー共通
+import { SolomonDemonSymbolDictionaryRepository } from './repositories/SolomonDemonSymbolDictionaryRepository';
 import { SolomonDemonSymbolDictionary } from './SolomonDemonSymbolDictionary';
 
 /**
@@ -10,9 +11,9 @@ export class SolomonDemonSymbolDictionaryFactory {
      * 存在する辞書データすべてのインスタンスを生成する。
      * @param outputMode
      */
-    static createAll(
-    ): SolomonDemonSymbolDictionary[] {
-        const solomonNames = SolomonDemonSymbolDictionary.getDictionaryNames();
-        return solomonNames.map(name => new SolomonDemonSymbolDictionary(name));
+    static async createAll(
+    ): Promise<SolomonDemonSymbolDictionary[]> {
+        const dictionarySources = await SolomonDemonSymbolDictionaryRepository.fetchAll();
+        return dictionarySources.map(ds => new SolomonDemonSymbolDictionary(ds));
     }
 }

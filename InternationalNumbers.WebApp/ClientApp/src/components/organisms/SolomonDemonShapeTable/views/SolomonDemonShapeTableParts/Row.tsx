@@ -3,6 +3,7 @@
 import styles from './Row.module.scss';
 import { SolomonDemonSymbolDictionary } from '../../../../../helpers/Dictionary/SolomonDemonDictionary/SolomonDemonSymbolDictionary';
 import { SymbolDemonShapeCell } from './SymbolShapeCell';
+import { SolomonDemonSymbolFace } from '../../../../../helpers/Dictionary/SolomonDemonDictionary/SolomonDemonSymbolFace';
 
 type propsType = {
     /** ソロモンの悪魔の辞書データ */
@@ -20,11 +21,16 @@ export const Row: React.VFC<propsType> = ({
     return (
         <tr>
             <td className={`${styles.cell} ${styles.cellOrderNumber}`}>{dictionary.orderNumber}</td>
-            <td className={`${styles.cell} ${styles.cellLabel}`}>{dictionary.labelJa} ({dictionary.label})</td>
-            <td className={`${styles.cell} ${styles.cellPosition}`}>{dictionary.positionJa} ({dictionary.position})</td>
-            <td className={`${styles.cell} ${styles.cellNumberOfdemonLegions}`}>{dictionary.numberOfdemonLegions}</td>
+            <td className={`${styles.cell} ${styles.cellLabel}`}>{dictionary.name.ja} ({dictionary.name.en})</td>
+            <td className={`${styles.cell} ${styles.cellPosition}`}>{
+                dictionary.position.ja.map((posJa, index) => {
+                    const posEn = dictionary.position.en[index];
+                    return <React.Fragment>{`${posJa} (${posEn})`}<br /></React.Fragment>;
+                })
+            }
+            </td>
             <SymbolDemonShapeCell
-                dictionary={dictionary}
+                symbolFaces={dictionary.shapes.map(shape => new SolomonDemonSymbolFace(dictionary, shape))}
             />
         </tr>
     );
