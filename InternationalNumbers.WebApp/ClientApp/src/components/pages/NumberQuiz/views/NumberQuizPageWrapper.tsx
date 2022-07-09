@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 // システム共通
+import { useEffectAsync } from '../../../../hooks/useEffectAsync';
 import { LoadingIndicator } from '../../../atoms/LoadingIndicator/views/LoadingIndicator';
 
 // システム共通－辞書「数」
@@ -19,27 +20,15 @@ type propsType = {
  */
 export const NumberQuizPageWrapper: React.VFC<propsType> = ({
 }) => {
-    const [isLive, setIsLive] = React.useState<boolean>(true);
     const [numberDictionaries, setNumberDictionaries] = React.useState<NumberSymbolDictionary[]>([]);
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // 初期化処理
 
-    React.useEffect(
-        () => {
-            const main = async () => {
-                setNumberDictionaries(await NumberSymbolDictionaryFactory.createAll(NumberQuizMode.SingleChoiceShape));
-            }
-
-            if (isLive) {
-                main();
-            }
-
-            return () => {
-                setIsLive(false);
-            }
-        },
-        [isLive]
+    // 辞書データの初期化
+    useEffectAsync(
+        async () => setNumberDictionaries(await NumberSymbolDictionaryFactory.createAll(NumberQuizMode.SingleChoiceShape)),
+        []
     );
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

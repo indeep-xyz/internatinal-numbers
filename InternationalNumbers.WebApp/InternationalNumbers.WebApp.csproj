@@ -91,6 +91,7 @@
     <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\SolomonDemonSymbolFaceFactory.ts" />
     <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\types\SolomonDemonDictionaryType.ts" />
     <None Remove="ClientApp\src\helpers\Object\ObjectMapExtraction.ts" />
+    <None Remove="ClientApp\src\hooks\useEffectAsync.ts" />
     <None Remove="ClientApp\src\types\ArithmeticType.ts" />
     <None Remove="ClientApp\src\types\LanguageType.ts" />
     <None Remove="ClientApp\src\types\PublicFileType.ts" />

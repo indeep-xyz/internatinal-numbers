@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 // システム共通
+import { useEffectAsync } from '../../../../hooks/useEffectAsync';
 import { LoadingIndicator } from '../../../atoms/LoadingIndicator/views/LoadingIndicator';
 
 // システム共通－辞書「ソロモンの悪魔」
@@ -20,27 +21,15 @@ type propsType = {
 export const SolomonDemonListPageWrapper: React.VFC<propsType> = (
     props: propsType,
 ) => {
-    const [isLive, setIsLive] = React.useState<boolean>(true);
-    const [solomonDemonDictionaries, setNumberDictionaries] = React.useState<SolomonDemonSymbolDictionary[]>([]);
+    const [solomonDemonDictionaries, setSolomonDemonDictionaries] = React.useState<SolomonDemonSymbolDictionary[]>([]);
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // 初期化処理
 
-    React.useEffect(
-        () => {
-            const main = async () => {
-                setNumberDictionaries(await SolomonDemonSymbolDictionaryFactory.createAll());
-            };
-
-            if (isLive) {
-                main();
-            }
-
-            return () => {
-                setIsLive(false);
-            }
-        },
-        [isLive]
+    // 辞書データの初期化
+    useEffectAsync(
+        async () => setSolomonDemonDictionaries(await SolomonDemonSymbolDictionaryFactory.createAll()),
+        []
     );
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
