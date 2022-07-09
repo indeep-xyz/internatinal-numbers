@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>3cb3c215-9659-4505-a6ac-593eb2290512</ProjectGuid>
+    <ProjectGuid>90c0472a-72f6-49a7-a8fa-8131dda2390b</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>internationalnumbers.webapp</DockerServiceName>

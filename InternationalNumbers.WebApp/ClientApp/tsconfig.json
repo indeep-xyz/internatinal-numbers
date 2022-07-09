@@ -20,14 +20,17 @@
     "noEmit": true,
     "jsx": "react",
     "rootDir": "./src",
-    "outDir": "./dist",
+    "outDir": "./build",
     "baseUrl": "src"
   },
-  "include": [
-    "src/**/*"
-  ],
+  "paths": {
+    "*": [
+      "node_modules/*",
+      "src/*"
+    ]
+  },
   "exclude": [
-    "dist/**/*",
-    "node_modules"
+    "build/**/*",
+    "node_modules/**/*"
   ]
 }

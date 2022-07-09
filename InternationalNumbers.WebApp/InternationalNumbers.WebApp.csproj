@@ -1,269 +1,97 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
     <SpaRoot>ClientApp\</SpaRoot>
-    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**;$(SpaRoot)dist\**</DefaultItemExcludes>
-    <UserSecretsId>8a23fc7f-4ac2-4d87-bf75-bfdef2a80623</UserSecretsId>
-    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+    <SpaProxyServerUrl>https://localhost:44431</SpaProxyServerUrl>
+    <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>09346d25-8b7b-49c8-ada7-ea90806cc4e6</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TypeScriptTarget>ES6</TypeScriptTarget>
+    <TypeScriptOutDir>ClientApp/build</TypeScriptOutDir>
+    <TypeScriptSourceRoot>ClientApp/src</TypeScriptSourceRoot>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES6</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptAllowSyntheticDefaultImports>True</TypeScriptAllowSyntheticDefaultImports>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir>$(SpaRoot)build</TypeScriptOutDir>
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptSkipLibCheck>True</TypeScriptSkipLibCheck>
+    <TypeScriptMapRoot></TypeScriptMapRoot>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptAlwaysStrict>True</TypeScriptAlwaysStrict>
+    <TypeScriptSourceRoot>$(SpaRoot)src</TypeScriptSourceRoot>
+    <TypeScriptBaseUrl>$(SpaRoot)src</TypeScriptBaseUrl>
+    <TypeScriptModuleResolution>node</TypeScriptModuleResolution>
+  </PropertyGroup>
+  
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.26" />
-    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.5" />
-    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.7.3">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="NPOI" Version="2.5.6" />
   </ItemGroup>
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
-    <Compile Remove="ClientApp\dist\**" />
-    <Compile Remove="ClientApp\src\assets\images\numbers\arabia\**" />
-    <Compile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\numbers\**" />
     <Content Remove="$(SpaRoot)**" />
-    <Content Remove="ClientApp\dist\**" />
-    <Content Remove="ClientApp\src\assets\images\numbers\arabia\**" />
-    <Content Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\numbers\**" />
-    <EmbeddedResource Remove="ClientApp\dist\**" />
-    <EmbeddedResource Remove="ClientApp\src\assets\images\numbers\arabia\**" />
-    <EmbeddedResource Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\numbers\**" />
     <None Remove="$(SpaRoot)**" />
-    <None Remove="ClientApp\dist\**" />
-    <None Remove="ClientApp\src\assets\images\numbers\arabia\**" />
-    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\numbers\**" />
-    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**;$(SpaRoot)dist\**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Remove="ClientApp\dist\**" />
-    <TypeScriptCompile Remove="ClientApp\node_modules\**" />
+    <TypeScriptCompile Remove="$(SpaRoot)build\**" />
+    <TypeScriptCompile Remove="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Api\Repositories\InternationalNumberSource\Files\InternationalNumberSource.xlsx" />
     <None Remove="Api\Repositories\SolomonDemonSource\Files\SolomonDemonSource.xlsx" />
-    <None Remove="ClientApp\dist\helpers\Dictionary\OperatorDictionary\OperatorSymbolDictionaryFactory.js" />
-    <None Remove="ClientApp\dist\helpers\Dictionary\OperatorDictionary\OperatorSymbolDictionaryFactory.js.map" />
-    <None Remove="ClientApp\src\App.jsx" />
-    <None Remove="ClientApp\src\helpers\Array\ArrayExtraction.ts" />
-    <None Remove="ClientApp\src\helpers\Array\ArrayFactory.ts" />
-    <None Remove="ClientApp\src\helpers\Array\ArrayJudge.ts" />
-    <None Remove="ClientApp\src\helpers\Array\ArraySort.ts" />
-    <None Remove="ClientApp\src\helpers\Array\ArraySortHelper.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\interfaces\SymbolDictionaryPresentationInterface.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\interfaces\SymbolFaceComparableInterface.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\interfaces\SymbolFaceValueInterface.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\index.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberDictionary.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberDictionaryFactory.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberShape.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberSymbolDictionary.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberSymbolDictionaryFactory.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberSymbolFace.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberSymbolFaceFactory.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\types\NumberDictionaryType.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolFaceFactory.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\index.d.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\index.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\words\index.d.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\words\index.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorDictionary.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorDictionaryFactory.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorShape.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolDictionary.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolDictionaryFactory.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolFace.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\types\OperatorDictionaryType.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\repositories\NumberSymbolDictionaryRepository.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\repositories\SolomonDemonSymbolDictionaryRepository.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\SolomonDemonSymbolDictionary.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\SolomonDemonSymbolDictionaryFactory.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\SolomonDemonSymbolFace.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\SolomonDemonSymbolFaceFactory.ts" />
-    <None Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\types\SolomonDemonDictionaryType.ts" />
-    <None Remove="ClientApp\src\helpers\Object\ObjectMapExtraction.ts" />
-    <None Remove="ClientApp\src\hooks\useEffectAsync.ts" />
-    <None Remove="ClientApp\src\types\ArithmeticType.ts" />
-    <None Remove="ClientApp\src\types\LanguageType.ts" />
-    <None Remove="ClientApp\src\types\PublicFileType.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Remove="ClientApp\src\components\atoms\ImageView\views\ImageView.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\atoms\LoadingIndicator\views\LoadingIndicator.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\organisms\SolomonDemonShapeTable\views\SolomonDemonShapeTable.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\organisms\SolomonDemonShapeTable\views\SolomonDemonShapeTableParts\HeaderRow.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\organisms\SolomonDemonShapeTable\views\SolomonDemonShapeTableParts\Row.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\organisms\SolomonDemonShapeTable\views\SolomonDemonShapeTableParts\SymbolShapeCell.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListHeader.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListPage.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListPageWrapper.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListRow.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberList\views\NumberListShapeCell.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\QuizAction\ActionHistoryRepository.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\QuizAction\QuizAction.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\QuizAction\QuizActionHistory.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\GameState.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\CalculationResultChoiceQuiz\CalculationResultChoiceQuiz.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\CalculationResultChoiceQuiz\Expression.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\CalculationResultChoiceQuiz\ExpressionLevelJudge.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\GameState.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\SingleChoiceQuiz\SingleChoiceQuiz.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\models\Quiz\SymbolPresenter.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\NextQuizButton.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\NumberQuizPage.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\NumberQuizPageWrapper.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizArea.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\AnswerCorrectNumbersSeveralButton.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\CalculationResultChoiceQuizArea.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\ExpressionItem.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\HintViewerCheckbox.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\CalculationResultChoiceQuiz\SelectionItem.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\QuizInstructionMessage.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\AnswerSameNumberButton.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\HintViewerCheckbox.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\SelectionItem.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\QuizAreaParts\SingleChoiceQuiz\SingleChoiceQuizArea.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\NumberQuiz\views\ScoreArea.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\SolomonDemonList\views\SolomonDemonListPage.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\components\pages\SolomonDemonList\views\SolomonDemonListPageWrapper.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\abjad.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_eastern_presian.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_eastern_urdu.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_mideast.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\arabic_western.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\armenian.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\bengali.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\brahmi.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\burmese.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\cyrillic.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\devanagari.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\ge_ez.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\glagolitic.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\greek_modern.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\gujarati.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\gurmukhi.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\hangul_native.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\hangul_sino.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\hebrew.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\javanese.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\kanji_japanese_complex.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\kanji_simple.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\kannada.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\khmer.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\lao.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\malayalam.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\mongolian.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\n_ko.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\odia.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\osmanya.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\persian.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\roman.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\sinhala_archaic.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\sinhala_astrological.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\sora_sompeng.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\suzhou.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\tai_new_lue.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\tamil.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\telugu.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\thai.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\tibetan.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\vai.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\vietnamese.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\arithmetic.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\computer.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\symbols\deutsch.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\OperatorDictionary\constants\words\japanese.ts" />
-    <TypeScriptCompile Remove="ClientApp\src\helpers\Dictionary\SolomonDemonDictionary\constants\generals.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Api\Repositories\SolomonDemonSource\Files\SolomonDemonSource.xlsx" />
     <EmbeddedResource Include="Api\Repositories\InternationalNumberSource\Files\InternationalNumberSource.xlsx" />
+    <EmbeddedResource Include="Api\Repositories\SolomonDemonSource\Files\SolomonDemonSource.xlsx" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\assets\images\numbers\sanji\" />
-    <Folder Include="ClientApp\src\assets\images\numbers\kanji_old\" />
-    <Folder Include="ClientApp\src\assets\images\numbers\kanji\" />
-    <Folder Include="ClientApp\src\components\molecules\" />
+    <Folder Include="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\App.jsx" />
-    <TypeScriptCompile Include="ClientApp\src\types\ArithmeticType.ts" />
+    <None Include="Api\Pages\Error.cshtml" />
+    <None Include="Api\Pages\_ViewImports.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー %282%29 - コピー.module.scss">
-      <DependentUpon>NumberList - コピー (2).module.scss</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー %282%29.module.scss">
-      <DependentUpon>NumberList.module.scss</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー - コピー %282%29 - コピー.module.scss">
-      <DependentUpon>NumberList - コピー - コピー (2).module.scss</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー - コピー %282%29.module.scss">
-      <DependentUpon>NumberList - コピー.module.scss</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー - コピー %283%29.module.scss">
-      <DependentUpon>NumberList - コピー.module.scss</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー - コピー - コピー %282%29.module.scss">
-      <DependentUpon>NumberList - コピー - コピー.module.scss</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー - コピー - コピー - コピー.module.scss">
-      <DependentUpon>NumberList - コピー - コピー - コピー.module.scss</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー - コピー - コピー.module.scss">
-      <DependentUpon>NumberList - コピー - コピー.module.scss</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー - コピー.module.scss">
-      <DependentUpon>NumberList - コピー.module.scss</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\components\pages\NumberList\views\NumberList - コピー.module.scss">
-      <DependentUpon>NumberList.module.scss</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\components\pages\NumberQuiz\views\NumberQuizPage - コピー.module.scss">
-      <DependentUpon>NumberQuizPage.module.scss</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\hangul_sino.js.map">
-      <DependentUpon>hangul_sino.js</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\vietnamese.js">
-      <DependentUpon>vietnamese.ts</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\suzhou.js.map">
-      <DependentUpon>suzhou.js</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\cyrillic.js">
-      <DependentUpon>cyrillic.ts</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\greek_modern.js.map">
-      <DependentUpon>greek_modern.js</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\glagolitic.js">
-      <DependentUpon>glagolitic.ts</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\roman.js.map">
-      <DependentUpon>roman.js</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\helpers\Dictionary\NumberDictionary\NumberSymbolFaceFactory.js.map">
-      <DependentUpon>NumberSymbolFaceFactory.js</DependentUpon>
-    </None>
-    <None Update="ClientApp\src\helpers\Dictionary\OperatorDictionary\OperatorSymbolFaceFactory.js.map">
-      <DependentUpon>OperatorSymbolFaceFactory.js</DependentUpon>
-    </None>
+    <Content Update="Api\Pages\Error.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Api\Pages\_ViewImports.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
@@ -285,35 +113,10 @@
     <ItemGroup>
       <DistFiles Include="$(SpaRoot)build\**" />
       <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
-        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <RelativePath>wwwroot\%(RecursiveDir)%(FileName)%(Extension)</RelativePath>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
         <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       </ResolvedFileToPublish>
     </ItemGroup>
   </Target>
-
-  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
-    <TypeScriptTarget>ES2018</TypeScriptTarget>
-    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
-    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
-    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
-    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
-    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
-    <TypeScriptOutFile />
-    <TypeScriptOutDir>ClientApp/dist</TypeScriptOutDir>
-    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
-    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
-    <TypeScriptSourceMap>True</TypeScriptSourceMap>
-    <TypeScriptSkipLibCheck>True</TypeScriptSkipLibCheck>
-    <TypeScriptMapRoot></TypeScriptMapRoot>
-    <TypeScriptAlwaysStrict>True</TypeScriptAlwaysStrict>
-    <TypeScriptSourceRoot />
-    <TypeScriptModuleResolution>node</TypeScriptModuleResolution>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
-
 </Project>
