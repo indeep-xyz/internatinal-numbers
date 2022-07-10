@@ -75,10 +75,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\helpers\Dictionary\NumberDictionary\constants\symbols\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="Api\Pages\Error.cshtml" />
     <None Include="Api\Pages\_ViewImports.cshtml" />
   </ItemGroup>
