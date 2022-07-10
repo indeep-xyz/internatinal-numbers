@@ -25,7 +25,7 @@ export const Row: React.VFC<propsType> = ({
             <td className={`${styles.cell} ${styles.cellPosition}`}>{
                 dictionary.position.ja.map((posJa, index) => {
                     const posEn = dictionary.position.en[index];
-                    return <React.Fragment>{`${posJa} (${posEn})`}<br /></React.Fragment>;
+                    return <React.Fragment key={index}>{`${posJa} (${posEn})`}<br /></React.Fragment>;
                 })
             }
             </td>

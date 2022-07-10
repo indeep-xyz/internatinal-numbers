@@ -15,6 +15,9 @@ type propsType = {
 
     /** imgタグのwidth属性値 */
     baseWidth?: number,
+
+    /** imgタグのheight属性値 */
+    height?: number,
 };
 
 /**
@@ -25,6 +28,7 @@ export const ImageView: React.VFC<propsType> = ({
     publicImageFile,
     alt = "",
     baseWidth,
+    height,
 }) => {
     /**
      * 横幅リストから、画像サイズ的に不要なものを除去したものを取得する。
@@ -78,6 +82,7 @@ export const ImageView: React.VFC<propsType> = ({
             alt={alt}
             srcSet={createSrcSet()}
             width={baseWidth}
+            height={height}
         />
     );
 }

@@ -21,6 +21,7 @@ export const SymbolDemonShapeCell: React.VFC<propsType> = ({
         <ImageView key={ssIndex}
             publicImageFile={ss.symbolShape}
             baseWidth={60}
+            height={60}
             alt={ss.dictionary.name.ja}
         />
     ));
