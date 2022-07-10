@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 namespace InternationalNumbers.WebApp.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class InternationalNumberSourceController : ControllerBase
     {
         private readonly ILogger<InternationalNumberSourceController> _logger;

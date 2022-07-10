@@ -1,12 +1,12 @@
-const { createProxyMiddleware } = require('http-proxy-middleware');
+﻿const { createProxyMiddleware } = require('http-proxy-middleware');
 const { env } = require('process');
 
 const target = env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${env.ASPNETCORE_HTTPS_PORT}` :
   env.ASPNETCORE_URLS ? env.ASPNETCORE_URLS.split(';')[0] : 'http://localhost:21404';
 
+// 差し替えURLの接頭辞
 const context =  [
-  "/internationalNumberSource",
-  "/solomonDemonSource",
+  "/api/",
 ];
 
 module.exports = function(app) {

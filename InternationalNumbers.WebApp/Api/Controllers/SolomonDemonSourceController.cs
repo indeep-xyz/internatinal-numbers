@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 namespace InternationalNumbers.WebApp.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class SolomonDemonSourceController : ControllerBase
     {
         private readonly ILogger<InternationalNumberSourceController> _logger;

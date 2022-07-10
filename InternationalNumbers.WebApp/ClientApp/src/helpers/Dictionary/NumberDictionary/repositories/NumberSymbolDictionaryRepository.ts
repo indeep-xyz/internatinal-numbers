@@ -14,7 +14,7 @@ export class NumberSymbolDictionaryRepository {
     static async fetchAll(
     ): Promise<NumberSymbolDictionarySourceType[]> {
         if (NumberSymbolDictionaryRepository.fetchAllCache === undefined) {
-            const response = await fetch("/internationalNumberSource");
+            const response = await fetch("/api/internationalNumberSource");
             NumberSymbolDictionaryRepository.fetchAllCache = await response.json();
         }
 

@@ -14,7 +14,7 @@ export class SolomonDemonSymbolDictionaryRepository {
     static async fetchAll(
     ): Promise<SolomonDemonSymbolDictionarySourceType[]> {
         if (SolomonDemonSymbolDictionaryRepository.fetchAllCache === undefined) {
-            const response = await fetch("/solomonDemonSource");
+            const response = await fetch("/api/solomonDemonSource");
             SolomonDemonSymbolDictionaryRepository.fetchAllCache = await response.json();
         }
 
