@@ -1,4 +1,4 @@
-﻿// PJ共通
+// PJ共通
 import { ComparableInterface } from '../../../interfaces/ComparableInterface';
 import type * as ArithmeticType from '../../../types/ArithmeticType';
 

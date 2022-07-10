@@ -1,4 +1,4 @@
-﻿export class ArraySort {
+export class ArraySort {
     /**
      * 配列要素のシャッフルを行う。 (Fisher–Yates shuffle)
      * @param array

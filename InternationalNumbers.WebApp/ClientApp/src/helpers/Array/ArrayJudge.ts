@@ -1,4 +1,4 @@
-﻿export class ArrayJudge {
+export class ArrayJudge {
     /**
      * ２つの配列の要素に重複があるかを確認する。
      * @param array1

@@ -1,4 +1,4 @@
-﻿// システム共通－辞書「数」
+// システム共通－辞書「数」
 import { NumberSymbolDictionary } from './NumberSymbolDictionary';
 import { NumberSymbolDictionaryRepository } from './repositories/NumberSymbolDictionaryRepository';
 

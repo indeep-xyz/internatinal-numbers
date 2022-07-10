@@ -1,4 +1,4 @@
-﻿import * as React from 'react';
+import * as React from 'react';
 
 // システム共通
 import { ArrayFactory } from '../../../../../helpers/Array/ArrayFactory';

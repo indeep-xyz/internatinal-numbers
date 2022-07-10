@@ -1,4 +1,4 @@
-﻿/** ソロモンの悪魔のシンボルを扱う画像フォルダのルートURLあ */
+/** ソロモンの悪魔のシンボルを扱う画像フォルダのルートURLあ */
 export const SolomonDemonSymbolImageDir: string = "/assets/Dictionary/SolomonDemonDictionary/symbols";
 
 /** ソロモンの悪魔のシンボル横幅リスト */

@@ -1,4 +1,4 @@
-﻿// 辞書「ソロモンの悪魔」系のヘルパー共通
+// 辞書「ソロモンの悪魔」系のヘルパー共通
 import { SolomonDemonSymbolDictionaryRepository } from './repositories/SolomonDemonSymbolDictionaryRepository';
 import { SolomonDemonSymbolDictionary } from './SolomonDemonSymbolDictionary';
 

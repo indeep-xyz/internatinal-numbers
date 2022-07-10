@@ -1,4 +1,4 @@
-﻿import { PublicImageFile } from "../../../../types/PublicFileType";
+import { PublicImageFile } from "../../../../types/PublicFileType";
 
 /**
  * ソロモンの悪魔の立場。（英語）

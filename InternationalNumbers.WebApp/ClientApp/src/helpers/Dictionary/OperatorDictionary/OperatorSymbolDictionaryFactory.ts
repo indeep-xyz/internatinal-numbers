@@ -1,4 +1,4 @@
-﻿import { OperatorSymbolDictionary } from './OperatorSymbolDictionary';
+import { OperatorSymbolDictionary } from './OperatorSymbolDictionary';
 
 /**
  * 記号形式の「演算子」の情報を扱うクラスの生成処理。

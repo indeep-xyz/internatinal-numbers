@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 比較可能なデータクラスのインターフェイス。
  */
 export interface ComparableInterface<TClass> {

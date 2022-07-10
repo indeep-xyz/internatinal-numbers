@@ -1,4 +1,4 @@
-﻿import { SolomonDemonSymbolDictionarySourceType } from '../types/SolomonDemonDictionaryType';
+import { SolomonDemonSymbolDictionarySourceType } from '../types/SolomonDemonDictionaryType';
 
 /**
  * 記号形式の「ソロモンの悪魔」の情報を扱うクラスのサーバー取得処理。

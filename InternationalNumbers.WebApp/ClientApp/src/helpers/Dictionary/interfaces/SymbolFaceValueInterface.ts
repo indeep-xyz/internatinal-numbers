@@ -1,4 +1,4 @@
-﻿import { SymbolDictionaryPresentationInterface } from "./SymbolDictionaryPresentationInterface";
+import { SymbolDictionaryPresentationInterface } from "./SymbolDictionaryPresentationInterface";
 
 /**
  * 辞書情報のうち「目に見える表現」に注目したデータのインターフェイス。

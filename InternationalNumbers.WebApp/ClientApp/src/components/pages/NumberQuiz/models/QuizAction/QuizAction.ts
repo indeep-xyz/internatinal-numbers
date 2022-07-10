@@ -1,4 +1,4 @@
-﻿/**
+/**
  * クイズゲームの進行状況を保持する。
  */
 export class GameAction {

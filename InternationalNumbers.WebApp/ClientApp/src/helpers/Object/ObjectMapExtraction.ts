@@ -1,4 +1,4 @@
-﻿export class ObjectMapExtraction {
+export class ObjectMapExtraction {
     /**
      * マップ形式のオブジェクトから無作為に１つ取得する。
      * @param array

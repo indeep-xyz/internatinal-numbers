@@ -1,4 +1,4 @@
-﻿// 辞書系のヘルパー共通
+// 辞書系のヘルパー共通
 import { NumberSymbolFace } from "../helpers/Dictionary/NumberDictionary/NumberSymbolFace";
 import { OperatorSymbolFace } from "../helpers/Dictionary/OperatorDictionary/OperatorSymbolFace";
 

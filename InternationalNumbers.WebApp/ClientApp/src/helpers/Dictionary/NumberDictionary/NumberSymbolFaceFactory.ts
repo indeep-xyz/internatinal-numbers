@@ -1,4 +1,4 @@
-﻿// PJ共通
+// PJ共通
 import { ArrayExtraction } from '../../Array/ArrayExtraction';
 import { ObjectMapExtraction } from '../../Object/ObjectMapExtraction';
 

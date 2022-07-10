@@ -1,4 +1,4 @@
-﻿export class BooleanFactory {
+export class BooleanFactory {
     /**
      * 分母／分子の確率で true を返す。
      * @param denominator 分母

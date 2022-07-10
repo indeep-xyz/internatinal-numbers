@@ -1,4 +1,4 @@
-﻿import * as React from 'react';
+import * as React from 'react';
 
 // 部品固有
 import styles from './LoadingIndicator.module.scss';

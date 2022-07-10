@@ -1,4 +1,4 @@
-﻿import * as React from 'react';
+import * as React from 'react';
 
 // 画面固有
 import { SymbolView } from '../SymbolView/SymbolView';

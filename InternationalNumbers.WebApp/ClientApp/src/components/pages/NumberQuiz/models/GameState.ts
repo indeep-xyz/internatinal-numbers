@@ -1,4 +1,4 @@
-﻿// 辞書「数」系のヘルパー共通
+// 辞書「数」系のヘルパー共通
 import { NumberSymbolDictionary } from '../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionary';
 
 // 画面固有

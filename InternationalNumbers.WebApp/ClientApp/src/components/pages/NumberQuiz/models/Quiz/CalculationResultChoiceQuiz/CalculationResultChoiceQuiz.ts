@@ -1,4 +1,4 @@
-﻿// PJ共通
+// PJ共通
 import { ArraySort } from '../../../../../../helpers/Array/ArraySort';
 
 // 辞書「数」系のヘルパー共通

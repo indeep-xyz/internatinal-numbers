@@ -1,4 +1,4 @@
-﻿export class ArrayExtraction {
+export class ArrayExtraction {
     /**
      * 配列要素から無作為に１つ取得する。
      * @param array

@@ -1,4 +1,4 @@
-﻿// 辞書系のヘルパー共通
+// 辞書系のヘルパー共通
 import { SymbolDictionaryPresentationInterface } from '../interfaces/SymbolDictionaryPresentationInterface';
 
 // 辞書「演算子」系のヘルパー共通

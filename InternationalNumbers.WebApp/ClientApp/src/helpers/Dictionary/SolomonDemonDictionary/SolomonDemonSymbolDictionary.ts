@@ -1,4 +1,4 @@
-﻿// PJ共通
+// PJ共通
 import { LanguageCodeMapType } from '../../../types/LanguageType';
 import { PublicImageFile } from '../../../types/PublicFileType';
 

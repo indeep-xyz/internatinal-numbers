@@ -1,4 +1,4 @@
-﻿import { QuizActionHistoryRepository } from "../../repositories/QuizActionHistoryRepository";
+import { QuizActionHistoryRepository } from "../../repositories/QuizActionHistoryRepository";
 
 /**
  * クイズゲームの進行状況を保持する。

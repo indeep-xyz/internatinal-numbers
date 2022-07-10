@@ -1,4 +1,4 @@
-﻿import { OperatorSymbolDictionarySourceType } from '../../types/OperatorDictionaryType';
+import { OperatorSymbolDictionarySourceType } from '../../types/OperatorDictionaryType';
 
 export const deutsch: OperatorSymbolDictionarySourceType = {
     "name": "deutsch",

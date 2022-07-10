@@ -1,4 +1,4 @@
-﻿// 辞書のヘルパー共通
+// 辞書のヘルパー共通
 import { SymbolDictionaryPresentationInterface } from '../../../../../helpers/Dictionary/interfaces/SymbolDictionaryPresentationInterface';
 import { SymbolFaceValueInterface } from '../../../../../helpers/Dictionary/interfaces/SymbolFaceValueInterface';
 

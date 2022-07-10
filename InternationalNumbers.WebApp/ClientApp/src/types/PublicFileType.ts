@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 画像ファイルのライセンス。
  */
 export type FileLicense = Readonly<"publicDomain">;

@@ -1,4 +1,4 @@
-﻿import { NumberSymbolDictionarySourceType } from '../types/NumberDictionaryType';
+import { NumberSymbolDictionarySourceType } from '../types/NumberDictionaryType';
 
 /**
  * 記号形式の「数」の情報を扱うクラスのサーバー取得処理。

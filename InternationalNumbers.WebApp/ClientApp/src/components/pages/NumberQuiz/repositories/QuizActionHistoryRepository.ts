@@ -1,4 +1,4 @@
-﻿/**
+/**
  * クイズゲームの操作履歴のリポジトリ。
  */
 export class QuizActionHistoryRepository {

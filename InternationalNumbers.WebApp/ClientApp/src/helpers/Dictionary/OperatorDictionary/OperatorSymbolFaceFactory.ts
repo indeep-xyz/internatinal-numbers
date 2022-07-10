@@ -1,4 +1,4 @@
-﻿// PJ共通
+// PJ共通
 import type * as ArithmeticType from '../../../types/ArithmeticType';
 import { ArrayExtraction } from '../../Array/ArrayExtraction';
 

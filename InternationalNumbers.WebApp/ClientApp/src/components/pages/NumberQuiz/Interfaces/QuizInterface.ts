@@ -1,4 +1,4 @@
-﻿/**
+/**
  * クイズを扱うクラスのインターフェイス。
  */
 export type QuizInterface = {

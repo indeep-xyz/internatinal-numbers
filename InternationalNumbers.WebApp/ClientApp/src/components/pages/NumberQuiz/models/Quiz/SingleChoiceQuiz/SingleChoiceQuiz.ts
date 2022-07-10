@@ -1,4 +1,4 @@
-﻿// 辞書「数」系のヘルパー共通
+// 辞書「数」系のヘルパー共通
 import { NumberSymbolFace } from '../../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolFace';
 import { NumberSymbolFaceFactory } from '../../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolFaceFactory';
 import { NumberSymbolDictionary } from '../../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionary';

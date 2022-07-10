@@ -1,4 +1,4 @@
-﻿import * as React from 'react';
+import * as React from 'react';
 
 // システム共通－辞書「数」
 import { NumberSymbolDictionary } from '../../../../../helpers/Dictionary/NumberDictionary/NumberSymbolDictionary';

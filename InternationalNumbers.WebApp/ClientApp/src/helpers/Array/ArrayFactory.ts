@@ -1,4 +1,4 @@
-﻿export class ArrayFactory {
+export class ArrayFactory {
     /**
      * 最小値～最大値の連続値をもつ配列を作成する。
      * @param array

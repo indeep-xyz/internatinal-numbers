@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 辞書情報の説明系の値に注目したデータのインターフェイス。
  */
 export interface SymbolDictionaryPresentationInterface {

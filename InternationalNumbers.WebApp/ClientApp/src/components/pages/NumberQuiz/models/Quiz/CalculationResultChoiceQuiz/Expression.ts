@@ -1,4 +1,4 @@
-﻿// PJ共通
+// PJ共通
 import { FourArithmeticOperatorType } from "../../../../../../types/ArithmeticType";
 import { ArrayExtraction } from "../../../../../../helpers/Array/ArrayExtraction";
 import { BooleanFactory } from "../../../../../../helpers/Boolean/BooleanFactory";

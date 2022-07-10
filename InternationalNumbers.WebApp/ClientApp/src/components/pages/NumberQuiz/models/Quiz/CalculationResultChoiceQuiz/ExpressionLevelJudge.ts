@@ -1,4 +1,4 @@
-﻿// PJ共通
+// PJ共通
 import { FourArithmeticOperatorType } from "../../../../../../types/ArithmeticType";
 import { ArrayJudge } from "../../../../../../helpers/Array/ArrayJudge";
 
