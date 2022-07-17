@@ -2,21 +2,38 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 const { env } = require('process');
 
 const target = env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${env.ASPNETCORE_HTTPS_PORT}` :
-  env.ASPNETCORE_URLS ? env.ASPNETCORE_URLS.split(';')[0] : 'http://localhost:21404';
+    env.ASPNETCORE_URLS ? env.ASPNETCORE_URLS.split(';')[0] : 'http://localhost:21404';
 
 // 差し替えURLの接頭辞
-const context =  [
-  "/api/",
+const apiContext = [
+    "/api/",
 ];
 
-module.exports = function(app) {
-  const appProxy = createProxyMiddleware(context, {
-    target: target,
-    secure: false,
-    headers: {
-      Connection: 'Keep-Alive'
-    }
-  });
+// 差し替えURLの接頭辞
+const webSocketContext = [
+    "/api/ws/",
+];
 
-  app.use(appProxy);
+module.exports = function (app) {
+
+    app.use(createProxyMiddleware(
+        webSocketContext,
+        {
+            target: target,
+            secure: false,
+            changeOrigin: true,
+            ws: true,
+        }
+    ));
+
+    app.use(createProxyMiddleware(
+        apiContext,
+        {
+            target: target,
+            secure: false,
+            headers: {
+                Connection: 'Keep-Alive'
+            }
+        }
+    ));
 };

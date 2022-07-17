@@ -1,0 +1,52 @@
+﻿.wrapper {
+    background-color: #202020;
+    text-align: center;
+    position: relative;
+}
+
+.numberShape {
+    font-size: 60vh;
+    height: 80vh;
+    max-height: 80vh;
+    position: relative;
+    top: -10vh;
+    opacity: 1;
+    animation: beating 0.3s ease-in;
+    color: #e0e0e0;
+    text-shadow: #000000 20px 10px;
+    pointer-events: none;
+
+    @keyframes beating {
+        0% {
+            opacity: 0.85;
+            color: #606060;
+            text-shadow: #000000 10px 10px;
+        }
+    }
+}
+
+.intervalInput {
+    filter: blur(0.5px);
+    font-family: Consolas;
+    width: 4em;
+}
+
+.intervalButton {
+    filter: blur(0.5px);
+    background-color: #202020;
+    color: #dfdfd0;
+    animation: interval 1.2s ease-in-out infinite;
+
+    @keyframes interval {
+        0% {
+            color: #d8d8d8;
+            text-shadow: 0 0 1px #cccf;
+        }
+
+        50% {
+            opacity: 1;
+            color: #dfdfd0;
+            text-shadow: 0 0 1px #fff, 0 0 40px #0fa;
+        }
+    }
+}

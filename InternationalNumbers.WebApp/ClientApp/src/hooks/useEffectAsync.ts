@@ -4,6 +4,10 @@ type functionArgumentType = {
     (): Promise<any>;
 }
 
+type finallyFunctionArgumentType = {
+    (): void;
+}
+
 /**
  * useEffectで非同期処理を行う。
  * 
@@ -13,6 +17,7 @@ type functionArgumentType = {
 export const useEffectAsync = (
     functionAsync: functionArgumentType,
     deps: Array<any>,
+    finallyFunctionAsync?: finallyFunctionArgumentType,
 ): void => {
 
     useEffect(
@@ -27,6 +32,7 @@ export const useEffectAsync = (
 
             return () => {
                 isLive = false;
+                finallyFunctionAsync?.();
             };
         },
 

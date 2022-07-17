@@ -1,9 +1,14 @@
+using InternationalNumbers.WebApp.Api.Hubs;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddControllers().AddNewtonsoftJson();
+builder.Services.AddSignalR().AddNewtonsoftJsonProtocol();
+
+builder.Services.AddSingleton<FesBeatTicker>();
 
 var app = builder.Build();
 
@@ -24,10 +29,11 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");
+
+app.MapHub<FesHub>("/api/ws/fes");
 
 app.MapFallbackToFile("index.html"); ;
 
